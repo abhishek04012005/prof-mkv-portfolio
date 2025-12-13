@@ -53,6 +53,7 @@ export default function SupervisionPage() {
       subheading="Student guidance, conference organization, and academic leadership roles"
       iconMap={supervisionIcons}
       onExplore={handleExplore}
+      routePrefix="supervision"
     />
   );
 }

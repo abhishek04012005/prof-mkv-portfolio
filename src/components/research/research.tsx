@@ -52,6 +52,7 @@ export default function ResearchPage() {
       subheading="My research projects, interests, and outputs"
       iconMap={researchIcons}
       onExplore={handleExplore}
+      routePrefix="research"
     />
   );
 }
