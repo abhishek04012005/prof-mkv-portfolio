@@ -1,22 +1,27 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './exploreDataDashboard.module.css';
 import {
   ArrowBack as ArrowBackIcon,
-  ExpandMore as ExpandMoreIcon,
-  ExpandLess as ExpandLessIcon,
-  Download as DownloadIcon,
-  OpenInNew as OpenNewIcon,
   Search as SearchIcon,
   Close as CloseIcon,
+  GridView as GridViewIcon,
+  ViewList as ViewListIcon,
+  Info as InfoIcon,
+  Download as DownloadIcon,
+  OpenInNew as OpenNewIcon,
+  ExpandMore as ChevronDownIcon,
 } from '@mui/icons-material';
+import bookImage from '../../../public/assets/about.png';
 
 export interface ExploreItem {
   id: string;
   title: string;
   year: number;
+  image?: string;
+  thumbnail?: string;
   [key: string]: any;
 }
 
@@ -37,41 +42,39 @@ export default function ExploreDataDashboard({
   renderDetails,
 }: ExploreDataDashboardProps) {
   const router = useRouter();
-  const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
   const [searchTerm, setSearchTerm] = useState('');
   const [sortField, setSortField] = useState<string>('year');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
-
-  const toggleRowExpansion = (itemId: string) => {
-    const newExpanded = new Set(expandedRows);
-    if (newExpanded.has(itemId)) {
-      newExpanded.delete(itemId);
-    } else {
-      newExpanded.add(itemId);
-    }
-    setExpandedRows(newExpanded);
-  };
+  const [viewMode, setViewMode] = useState<'table' | 'grid'>('table');
+  const [selectedItem, setSelectedItem] = useState<ExploreItem | null>(null);
+  const [expandedRowId, setExpandedRowId] = useState<string | null>(null);
 
   // Filter items
-  const filteredItems = data.items.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredItems = useMemo(
+    () =>
+      data.items.filter((item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
+    [data.items, searchTerm]
   );
 
   // Sort items
-  const sortedItems = [...filteredItems].sort((a, b) => {
-    const aVal = a[sortField] ?? '';
-    const bVal = b[sortField] ?? '';
+  const sortedItems = useMemo(() => {
+    return [...filteredItems].sort((a, b) => {
+      const aVal = a[sortField] ?? '';
+      const bVal = b[sortField] ?? '';
 
-    if (typeof aVal === 'string') {
+      if (typeof aVal === 'string') {
+        return sortOrder === 'asc'
+          ? aVal.localeCompare(bVal as string)
+          : (bVal as string).localeCompare(aVal);
+      }
+
       return sortOrder === 'asc'
-        ? aVal.localeCompare(bVal as string)
-        : (bVal as string).localeCompare(aVal);
-    }
-
-    return sortOrder === 'asc'
-      ? (aVal as number) - (bVal as number)
-      : (bVal as number) - (aVal as number);
-  });
+        ? (aVal as number) - (bVal as number)
+        : (bVal as number) - (aVal as number);
+    });
+  }, [filteredItems, sortField, sortOrder]);
 
   const handleSort = (field: string) => {
     if (sortField === field) {
@@ -82,238 +85,366 @@ export default function ExploreDataDashboard({
     }
   };
 
+  const getImageSource = (item: ExploreItem) => {
+    return item.image || item.thumbnail || bookImage.src;
+  };
+
+  const renderDetailFields = (item: ExploreItem) => {
+    return Object.entries(item)
+      .filter(
+        ([key, value]) =>
+          key !== 'id' &&
+          key !== 'title' &&
+          key !== 'year' &&
+          key !== 'image' &&
+          key !== 'thumbnail' &&
+          value &&
+          !(Array.isArray(value) && value.length === 0)
+      )
+      .map(([key, value]) => {
+        const displayLabel = key
+          .replace(/([A-Z])/g, ' $1')
+          .replace(/^./, (c) => c.toUpperCase());
+
+        const displayValue = Array.isArray(value) ? value.join(', ') : String(value);
+
+        return { key, displayLabel, displayValue };
+      });
+  };
+
   return (
     <div className={styles.dashboard}>
-      {/* Header Section */}
-      <div className={styles.header}>
-        <button
-          className={styles.backBtn}
-          onClick={() => router.back()}
-          aria-label="Go back"
-        >
-          <ArrowBackIcon />
-          <span>Back</span>
-        </button>
+      {/* Hero Header */}
+      <div className={styles.heroHeader}>
+        <div className={styles.heroBackdrop}></div>
+        
+        <div className={styles.heroContent}>
+          <button
+            className={styles.backBtn}
+            onClick={() => router.back()}
+            aria-label="Go back"
+          >
+            <ArrowBackIcon />
+          </button>
 
-        <div className={styles.headerContent}>
-          <h1 className={styles.title}>{data.title}</h1>
-          <p className={styles.description}>{data.description}</p>
-        </div>
+          <div className={styles.heroText}>
+            <h1 className={styles.heroTitle}>{data.title}</h1>
+            <p className={styles.heroDescription}>{data.description}</p>
+          </div>
 
-        <div className={styles.headerStats}>
-          <div className={styles.statBox}>
-            <span className={styles.statValue}>{data.items.length}</span>
-            <span className={styles.statLabel}>Total Items</span>
-          </div>
-          <div className={styles.statDivider}></div>
-          <div className={styles.statBox}>
-            <span className={styles.statValue}>{sortedItems.length}</span>
-            <span className={styles.statLabel}>Showing</span>
-          </div>
+          
         </div>
       </div>
 
-      {/* Search Bar */}
-      <div className={styles.searchSection}>
-        <div className={styles.searchWrapper}>
-          <SearchIcon className={styles.searchIcon} />
-          <input
-            type="text"
-            placeholder="Search by title..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className={styles.searchInput}
-          />
-          {searchTerm && (
-            <button
-              className={styles.clearSearchBtn}
-              onClick={() => setSearchTerm('')}
-              aria-label="Clear search"
-            >
-              <CloseIcon />
-            </button>
+      {/* Controls Section */}
+      <div className={styles.controlsBar}>
+        <div className={styles.searchSection}>
+          <div className={styles.searchBox}>
+            <SearchIcon className={styles.searchIconLeft} />
+            <input
+              type="text"
+              placeholder="Search by title..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className={styles.searchInput}
+            />
+            {searchTerm && (
+              <button
+                className={styles.clearBtn}
+                onClick={() => setSearchTerm('')}
+                aria-label="Clear search"
+              >
+                <CloseIcon />
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.viewToggle}>
+          <button
+            className={`${styles.viewToggleBtn} ${viewMode === 'table' ? styles.active : ''}`}
+            onClick={() => setViewMode('table')}
+            title="Table view"
+            aria-label="Switch to table view"
+          >
+            <ViewListIcon />
+            <span>Table</span>
+          </button>
+          <button
+            className={`${styles.viewToggleBtn} ${viewMode === 'grid' ? styles.active : ''}`}
+            onClick={() => setViewMode('grid')}
+            title="Grid view"
+            aria-label="Switch to grid view"
+          >
+            <GridViewIcon />
+            <span>Grid</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      {viewMode === 'table' ? (
+        // Table View
+        <div className={styles.tableSection}>
+          {sortedItems.length > 0 ? (
+            <div className={styles.tableWrapper}>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    <th className={styles.colImage}></th>
+                    <th
+                      className={styles.colTitle}
+                      onClick={() => handleSort('title')}
+                    >
+                      <div className={styles.headerContent}>
+                        Title
+                        {sortField === 'title' && (
+                          <span className={styles.sortIcon}>
+                            {sortOrder === 'asc' ? '↑' : '↓'}
+                          </span>
+                        )}
+                      </div>
+                    </th>
+                    <th
+                      className={styles.colYear}
+                      onClick={() => handleSort('year')}
+                    >
+                      <div className={styles.headerContent}>
+                        Year
+                        {sortField === 'year' && (
+                          <span className={styles.sortIcon}>
+                            {sortOrder === 'asc' ? '↑' : '↓'}
+                          </span>
+                        )}
+                      </div>
+                    </th>
+                    <th className={styles.colActions}>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sortedItems.map((item) => (
+                    <React.Fragment key={item.id}>
+                      <tr
+                        className={`${styles.tableRow} ${
+                          expandedRowId === item.id ? styles.expanded : ''
+                        }`}
+                      >
+                        <td className={styles.colImage}>
+                          <img
+                            src={getImageSource(item)}
+                            alt={item.title}
+                            className={styles.rowImage}
+                          />
+                        </td>
+                        <td className={styles.colTitle}>
+                          <div className={styles.titleContent}>
+                            <span className={styles.itemTitle}>{item.title}</span>
+                          </div>
+                        </td>
+                        <td className={styles.colYear}>
+                          <span className={styles.yearTag}>{item.year}</span>
+                        </td>
+                        <td className={styles.colActions}>
+                          <div className={styles.actionGroup}>
+                            <button
+                              className={styles.actionBtnSmall}
+                              onClick={() => setSelectedItem(item)}
+                              title="View details"
+                            >
+                              <InfoIcon />
+                            </button>
+                            <button
+                              className={styles.actionBtnSmall}
+                              onClick={() => setExpandedRowId(expandedRowId === item.id ? null : item.id)}
+                              title="Expand details"
+                            >
+                              <ChevronDownIcon />
+                            </button>
+                            {item.url && (
+                              <a
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.actionBtnSmall}
+                                title="Open"
+                              >
+                                <OpenNewIcon />
+                              </a>
+                            )}
+                            {(item.downloadUrl || item.pdfUrl) && (
+                              <a
+                                href={item.downloadUrl || item.pdfUrl}
+                                download
+                                className={styles.actionBtnSmall}
+                                title="Download"
+                              >
+                                <DownloadIcon />
+                              </a>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                      {expandedRowId === item.id && (
+                        <tr className={styles.expandedRow}>
+                          <td colSpan={4}>
+                            <div className={styles.expandedContent}>
+                              <div className={styles.expandedGrid}>
+                                {renderDetailFields(item).map(({ key, displayLabel, displayValue }) => (
+                                  <div key={key} className={styles.detailBox}>
+                                    <div className={styles.detailLabel}>{displayLabel}</div>
+                                    <div className={styles.detailValue}>{displayValue}</div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className={styles.emptyState}>
+              <div className={styles.emptyIcon}>🔍</div>
+              <h3>No items found</h3>
+              <p>Try adjusting your search criteria</p>
+            </div>
           )}
         </div>
-      </div>
-
-      {/* Table */}
-      <div className={styles.tableContainer}>
-        <table className={styles.table}>
-          <thead className={styles.tableHead}>
-            <tr>
-              <th className={styles.expandCol}></th>
-              <th
-                className={styles.titleCol}
-                onClick={() => handleSort('title')}
-              >
-                <div className={styles.headerCell}>
-                  Title
-                  {sortField === 'title' && (
-                    <span className={styles.sortIndicator}>
-                      {sortOrder === 'asc' ? '↑' : '↓'}
-                    </span>
-                  )}
-                </div>
-              </th>
-              <th
-                className={styles.yearCol}
-                onClick={() => handleSort('year')}
-              >
-                <div className={styles.headerCell}>
-                  Year
-                  {sortField === 'year' && (
-                    <span className={styles.sortIndicator}>
-                      {sortOrder === 'asc' ? '↑' : '↓'}
-                    </span>
-                  )}
-                </div>
-              </th>
-              <th className={styles.actionCol}>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedItems.length > 0 ? (
-              sortedItems.map((item) => (
-                <React.Fragment key={item.id}>
-                  <tr
-                    className={`${styles.tableRow} ${
-                      expandedRows.has(item.id) ? styles.expandedRow : ''
-                    }`}
-                  >
-                    <td className={styles.expandCol}>
+      ) : (
+        // Grid View
+        <div className={styles.gridSection}>
+          {sortedItems.length > 0 ? (
+            <div className={styles.gridContainer}>
+              {sortedItems.map((item) => (
+                <div key={item.id} className={styles.gridCard}>
+                  <div className={styles.cardImageWrapper}>
+                    <img
+                      src={getImageSource(item)}
+                      alt={item.title}
+                      className={styles.cardImage}
+                    />
+                    <span className={styles.cardYear}>{item.year}</span>
+                  </div>
+                  <div className={styles.cardBody}>
+                    <h3 className={styles.cardTitle}>{item.title}</h3>
+                    <div className={styles.cardActions}>
                       <button
-                        className={styles.expandBtn}
-                        onClick={() => toggleRowExpansion(item.id)}
-                        aria-label={
-                          expandedRows.has(item.id) ? 'Collapse' : 'Expand'
-                        }
+                        className={styles.cardBtn}
+                        onClick={() => setSelectedItem(item)}
                       >
-                        {expandedRows.has(item.id) ? (
-                          <ExpandLessIcon />
-                        ) : (
-                          <ExpandMoreIcon />
-                        )}
+                        View Details
                       </button>
-                    </td>
-                    <td className={styles.titleCol}>
-                      <span className={styles.itemTitle}>{item.title}</span>
-                    </td>
-                    <td className={styles.yearCol}>
-                      <span className={styles.yearBadge}>{item.year}</span>
-                    </td>
-                    <td className={styles.actionCol}>
-                      <div className={styles.actionButtons}>
+                      <div className={styles.cardIcons}>
                         {item.url && (
                           <a
                             href={item.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={styles.actionBtn}
-                            title="Open in new tab"
+                            className={styles.cardIcon}
+                            title="Open"
                           >
                             <OpenNewIcon />
                           </a>
                         )}
-                        {item.downloadUrl && (
+                        {(item.downloadUrl || item.pdfUrl) && (
                           <a
-                            href={item.downloadUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.actionBtn}
+                            href={item.downloadUrl || item.pdfUrl}
+                            download
+                            className={styles.cardIcon}
                             title="Download"
                           >
                             <DownloadIcon />
                           </a>
                         )}
-                        {item.pdfUrl && (
-                          <a
-                            href={item.pdfUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.actionBtn}
-                            title="Download PDF"
-                          >
-                            <DownloadIcon />
-                          </a>
-                        )}
                       </div>
-                    </td>
-                  </tr>
-
-                  {/* Expandable Details Row */}
-                  {expandedRows.has(item.id) && (
-                    <tr className={styles.detailsRow}>
-                      <td colSpan={4}>
-                        <div className={styles.detailsPanel}>
-                          {renderDetails ? (
-                            renderDetails(item)
-                          ) : (
-                            <DefaultItemDetails item={item} />
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  )}
-                </React.Fragment>
-              ))
-            ) : (
-              <tr>
-                <td colSpan={4} className={styles.emptyState}>
-                  <div className={styles.emptyContent}>
-                    <span className={styles.emptyIcon}>📭</span>
-                    <p>No items found matching your search.</p>
+                    </div>
                   </div>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
-
-function DefaultItemDetails({ item }: { item: ExploreItem }) {
-  const getDisplayValue = (value: any): string => {
-    if (Array.isArray(value)) {
-      return value.join(', ');
-    }
-    return String(value);
-  };
-
-  return (
-    <div className={require('./exploreDataDashboard.module.css').defaultDetails}>
-      <div className={require('./exploreDataDashboard.module.css').detailsGrid}>
-        {Object.entries(item).map(([key, value]) => {
-          if (
-            key === 'id' ||
-            key === 'title' ||
-            key === 'year' ||
-            !value ||
-            (Array.isArray(value) && value.length === 0)
-          ) {
-            return null;
-          }
-
-          const displayLabel = key
-            .replace(/([A-Z])/g, ' $1')
-            .replace(/^./, (c) => c.toUpperCase());
-
-          return (
-            <div
-              key={key}
-              className={require('./exploreDataDashboard.module.css').detailField}
-            >
-              <h5 className={require('./exploreDataDashboard.module.css').fieldLabel}>
-                {displayLabel}
-              </h5>
-              <p className={require('./exploreDataDashboard.module.css').fieldValue}>
-                {getDisplayValue(value)}
-              </p>
+                </div>
+              ))}
             </div>
-          );
-        })}
-      </div>
+          ) : (
+            <div className={styles.emptyState}>
+              <div className={styles.emptyIcon}>🔍</div>
+              <h3>No items found</h3>
+              <p>Try adjusting your search criteria</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Modal Details */}
+      {selectedItem && (
+        <div
+          className={styles.modalOverlay}
+          onClick={() => setSelectedItem(null)}
+        >
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className={styles.modalClose}
+              onClick={() => setSelectedItem(null)}
+              aria-label="Close modal"
+            >
+              <CloseIcon />
+            </button>
+
+            <div className={styles.modalImage}>
+              <img
+                src={getImageSource(selectedItem)}
+                alt={selectedItem.title}
+              />
+            </div>
+
+            <div className={styles.modalBody}>
+              <h2 className={styles.modalTitle}>{selectedItem.title}</h2>
+
+              <div className={styles.modalFields}>
+                {renderDetailFields(selectedItem).map(({ key, displayLabel, displayValue }) => (
+                  <div key={key} className={styles.fieldRow}>
+                    <span className={styles.fieldKey}>{displayLabel}:</span>
+                    <span className={styles.fieldVal}>{displayValue}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className={styles.modalActions}>
+                {selectedItem.url && (
+                  <a
+                    href={selectedItem.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.modalBtn}
+                  >
+                    <OpenNewIcon />
+                    Open
+                  </a>
+                )}
+                {(selectedItem.downloadUrl || selectedItem.pdfUrl) && (
+                  <a
+                    href={selectedItem.downloadUrl || selectedItem.pdfUrl}
+                    download
+                    className={styles.modalBtn}
+                  >
+                    <DownloadIcon />
+                    Download
+                  </a>
+                )}
+                <button
+                  className={styles.modalBtnClose}
+                  onClick={() => setSelectedItem(null)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
