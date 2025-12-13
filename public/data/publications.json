@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p1",
+    "title": "Recent Advances in Topic X",
+    "authors": ["Abhishek Choudhary", "Coauthor A"],
+    "year": 2025,
+    "type": "Book",
+    "venue": "Publisher Name"
+  },
+  {
+    "id": "p2",
+    "title": "Edited Volume on Topic Y",
+    "authors": ["Abhishek Choudhary"],
+    "year": 2024,
+    "type": "Edited Volume",
+    "venue": "Publisher"
+  },
+  {
+    "id": "p3",
+    "title": "A Journal Article on Method Z",
+    "authors": ["Coauthor B", "Abhishek Choudhary"],
+    "year": 2023,
+    "type": "Journal Article",
+    "venue": "Journal of Examples"
+  }
+]
