@@ -1,0 +1,600 @@
+.dashboard {
+  width: 100%;
+  background: var(--color-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+
+/* ============ HEADER ============ */
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: white;
+  border-bottom: 3px solid var(--color-primary-dark);
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+  transform: translateX(-3px);
+}
+
+.backBtn svg {
+  font-size: 20px;
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.description {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.headerStats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.statDivider {
+  width: 2px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ============ SEARCH SECTION ============ */
+.searchSection {
+  padding: 24px 32px;
+  background: var(--color-surface);
+}
+
+.searchWrapper {
+  position: relative;
+  max-width: 500px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-light);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 40px 12px 40px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  transition: all var(--transition-base);
+  font-family: inherit;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 84, 144, 0.1);
+}
+
+.clearSearchBtn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 4px;
+  transition: color var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearSearchBtn:hover {
+  color: var(--color-primary);
+}
+
+/* ============ TABLE ============ */
+.tableContainer {
+  flex: 1;
+  padding: 0 32px 32px 32px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.tableHead {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: white;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tableHead th {
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 0.95rem;
+  border: none;
+  user-select: none;
+}
+
+.expandCol {
+  width: 50px;
+}
+
+.titleCol {
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.titleCol:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.yearCol {
+  width: 100px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.yearCol:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.actionCol {
+  width: 120px;
+  text-align: center;
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sortIndicator {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.tableRow:hover {
+  background-color: var(--color-surface);
+}
+
+.tableRow.expandedRow {
+  background-color: #f0f4f8;
+}
+
+.tableRow td {
+  padding: 14px 12px;
+}
+
+.itemTitle {
+  color: var(--color-text);
+  font-weight: 500;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.yearBadge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+}
+
+.actionBtn:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.actionBtn svg {
+  font-size: 18px;
+}
+
+/* ============ DETAILS PANEL ============ */
+.detailsRow {
+  background-color: #f8f9fa;
+  border-top: 2px solid var(--color-primary);
+}
+
+.detailsPanel {
+  padding: 24px;
+}
+
+.defaultDetails {
+  width: 100%;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.detailField {
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.fieldLabel {
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fieldValue {
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* ============ EMPTY STATE ============ */
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--color-surface);
+}
+
+.emptyContent {
+  color: var(--color-text-light);
+}
+
+.emptyIcon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.emptyContent p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .headerStats {
+    width: 100%;
+  }
+
+  .detailsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 0;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border-bottom: 2px solid var(--color-primary-dark);
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .headerStats {
+    width: 100%;
+    padding: 12px 16px;
+  }
+
+  .searchSection {
+    padding: 16px 20px;
+  }
+
+  .searchWrapper {
+    max-width: 100%;
+  }
+
+  .tableContainer {
+    padding: 0 16px 16px 16px;
+    overflow-x: auto;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .tableHead th {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+
+  .tableRow td {
+    padding: 12px 8px;
+  }
+
+  .titleCol {
+    min-width: 150px;
+  }
+
+  .itemTitle {
+    font-size: 0.9rem;
+  }
+
+  .yearBadge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .actionBtn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .actionBtn svg {
+    font-size: 16px;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .detailField {
+    padding: 12px;
+  }
+
+  .fieldLabel {
+    font-size: 0.75rem;
+  }
+
+  .fieldValue {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .backBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 12px;
+  }
+
+  .backBtn span {
+    display: none;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .headerStats {
+    width: 100%;
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .statValue {
+    font-size: 1.4rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+
+  .searchSection {
+    padding: 12px 16px;
+  }
+
+  .searchInput {
+    padding: 10px 36px;
+    font-size: 0.95rem;
+  }
+
+  .tableContainer {
+    padding: 0 12px 12px 12px;
+    overflow-x: auto;
+  }
+
+  .table {
+    font-size: 0.8rem;
+  }
+
+  .tableHead th {
+    padding: 10px 6px;
+    font-size: 0.75rem;
+  }
+
+  .tableRow td {
+    padding: 10px 6px;
+  }
+
+  .expandCol {
+    width: 40px;
+  }
+
+  .actionCol {
+    width: 70px;
+  }
+
+  .headerCell {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .actionButton {
+    width: 28px;
+    height: 28px;
+  }
+
+  .actionBtn svg {
+    font-size: 14px;
+  }
+
+  .titleCol {
+    min-width: 120px;
+  }
+
+  .itemTitle {
+    font-size: 0.85rem;
+  }
+
+  .yearBadge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .detailsPanel {
+    padding: 16px 12px;
+  }
+
+  .detailsGrid {
+    gap: 10px;
+  }
+
+  .detailField {
+    padding: 10px;
+    border-left-width: 3px;
+  }
+
+  .emptyIcon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+
+  .emptyContent p {
+    font-size: 0.95rem;
+  }
+}
