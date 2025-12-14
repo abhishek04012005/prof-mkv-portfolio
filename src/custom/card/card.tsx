@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './card.module.css';
 import {
   ArrowForward as ArrowForwardIcon,
@@ -33,6 +34,7 @@ type Props = {
   subheading?: string;
   iconMap?: Record<string, React.ReactNode>;
   onExplore?: (categoryId: string) => void;
+  routePrefix?: string;
 };
 
 const DEFAULT_ICON_MAP: Record<string, React.ReactNode> = {
@@ -64,7 +66,9 @@ export default function CardPreview({
   subheading,
   iconMap = {},
   onExplore,
+  routePrefix = 'publications',
 }: Props) {
+  const router = useRouter();
   // Merge icon maps - custom icons override defaults
   const mergedIconMap: Record<string, React.ReactNode> = {};
 
@@ -87,17 +91,7 @@ export default function CardPreview({
   const { totalPublications = 0, hIndex = 0, citations = 0, completedProjects = 0, ongoingProjects = 0 } = stats;
 
   const handleExploreCategory = (categoryId: string) => {
-    if (onExplore) {
-      onExplore(categoryId);
-      return;
-    }
-    if (typeof window !== 'undefined') {
-      window.location.href = `/publications/${categoryId}`;
-    } else {
-      // fallback for SSR
-      // eslint-disable-next-line no-console
-      console.log('Explore', categoryId);
-    }
+    router.push(`/${routePrefix}/${categoryId}`);
   };
 
   return (
@@ -117,7 +111,7 @@ export default function CardPreview({
                 className={styles.iconBadge}
                 style={{ backgroundColor: 'var(--color-primary)' }}
               >
-                {category.cards.length}
+                {category.cards.length}<span className={styles.badgePlusIcon}>+</span>
               </div>
 
               <div className={styles.iconContainer}>
@@ -133,26 +127,34 @@ export default function CardPreview({
                 <h3 className={styles.cardTitle}>{category.title}</h3>
                 <p className={styles.cardDescription}>{category.description}</p>
 
-                <button
+              <button
                   type="button"
                   className={styles.exploreBtn}
                   style={{
-                    borderColor: 'var(--color-primary)',
-                    color: 'var(--color-primary)',
+                    borderColor: category.id === 'research-projects-ongoing' ? '#ccc' : 'var(--color-primary)',
+                    color: category.id === 'research-projects-ongoing' ? '#ccc' : 'var(--color-primary)',
+                    cursor: category.id === 'research-projects-ongoing' ? 'not-allowed' : 'pointer',
+                    opacity: category.id === 'research-projects-ongoing' ? 0.5 : 1,
                   }}
+                  disabled={category.id === 'research-projects-ongoing'}
                   onMouseEnter={(e) => {
                     const target = e.currentTarget as HTMLButtonElement;
-                    target.style.backgroundColor = 'var(--color-primary)';
-                    target.style.color = 'white';
+                    if (!target.disabled) {
+                      target.style.backgroundColor = 'var(--color-primary)';
+                      target.style.color = 'white';
+                    }
                   }}
                   onMouseLeave={(e) => {
                     const target = e.currentTarget as HTMLButtonElement;
-                    target.style.backgroundColor = 'transparent';
-                    target.style.color = 'var(--color-primary)';
+                    if (!target.disabled) {
+                      target.style.backgroundColor = 'transparent';
+                      target.style.color = 'var(--color-primary)';
+                    }
                   }}
                   onClick={() => handleExploreCategory(category.id)}
+                  title={category.id === 'research-projects-ongoing' ? 'No ongoing projects available' : 'Explore'}
                 >
-                  Explore
+                  {category.id === 'research-projects-ongoing' ? 'Coming Soon' : 'Explore'}
                   <ArrowForwardIcon className={styles.btnIcon} />
                 </button>
               </div>

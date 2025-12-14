@@ -46,6 +46,7 @@ export default function PublicationPage() {
       subheading="Selected works and research output"
       iconMap={publicationIcons}
       onExplore={handleExplore}
+      routePrefix="publications"
     />
   );
 }

@@ -3,11 +3,11 @@
 import CardPreview from '../../custom/card/card';
 import { supervisionData } from '../../data/supervision';
 import {
-  School as PhDIcon,
-  MenuBook as MPhilIcon,
-  MenuBookOutlined as PGIcon,
-  EmojiEvents as OrganizingIcon,
-  Groups as PanelIcon,
+  SchoolOutlined as PhDIcon,
+  AutoStoriesOutlined as MPhilIcon,
+  ClassOutlined as PGIcon,
+  EventNoteOutlined as OrganizingIcon,
+  GroupsOutlined as PanelIcon,
 } from '@mui/icons-material';
 
 // Supervision-specific icons
@@ -53,6 +53,7 @@ export default function SupervisionPage() {
       subheading="Student guidance, conference organization, and academic leadership roles"
       iconMap={supervisionIcons}
       onExplore={handleExplore}
+      routePrefix="supervision"
     />
   );
 }

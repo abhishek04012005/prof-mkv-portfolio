@@ -1,0 +1,1306 @@
+/* ============ ROOT COLORS ============ */
+:root {
+  --primary: #1a5490;
+  --primary-light: #3498db;
+  --primary-dark: #0d2d5c;
+  --text: #2c3e50;
+  --text-light: #7f8c8d;
+  --border: #ecf0f1;
+  --bg: #f8f9fa;
+}
+
+/* ============ DASHBOARD ============ */
+.dashboard {
+  background: #ffffff;
+  min-height: 100vh;
+  padding-top: 6rem;
+}
+
+/* ============ HEADER ============ */
+.heroHeader {
+  padding: 40px 16px;
+  background: white;
+  color: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heroHeader::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-2px);
+}
+
+.heroText {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  background-image: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* improves WebKit rendering */  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.heroDescription {
+  font-size: 0.9rem;
+   background-image: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* improves WebKit rendering */  font-weight: 800;
+  opacity: 0.92;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+.heroStats {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  opacity: 0.88;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+.statDivider {
+  display: none;
+}
+
+/* ============ CONTROLS ============ */
+.controlsBar {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+}
+
+.searchSection {
+  flex: 1;
+  min-width: 200px;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIconLeft {
+  position: absolute;
+  left: 12px;
+  color: var(--text-light);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 9px 12px 9px 38px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: white;
+  color: var(--text);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26, 84, 144, 0.08);
+}
+
+.searchInput::placeholder {
+  color: var(--text-light);
+}
+
+.clearBtn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+  font-size: 16px;
+}
+
+.clearBtn:hover {
+  color: var(--primary);
+}
+
+.viewToggle {
+  display: flex;
+  gap: 4px;
+  background: var(--bg);
+  padding: 3px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.viewToggleBtn {
+  background: transparent;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  min-width: 36px;
+  justify-content: center;
+}
+
+.viewToggleBtn:hover {
+  color: var(--primary);
+}
+
+.viewToggleBtn.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.viewToggleBtn span {
+  display: none;
+}
+
+/* ============ TABLE VIEW ============ */
+.tableSection {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.tableWrapper {
+  background: white;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 500px;
+}
+
+.table thead {
+  background: var(--bg);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table thead th {
+  padding: 12px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.table thead th:hover {
+  background: #f0f4f8;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sortIcon {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.colImage {
+  width: 50px;
+}
+
+.colTitle {
+  flex: 1;
+}
+
+
+.colActions {
+  text-align: center;
+}
+
+.isbnText {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.authorText {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.tableRow:hover {
+  background: var(--bg);
+}
+
+.tableRow.expanded {
+  background: var(--bg);
+}
+
+.tableRow td {
+  padding: 12px;
+  color: var(--text);
+}
+
+.rowImage {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.titleContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.itemTitle {
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.yearTag {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.actionGroup {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.actionBtnSmall {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--primary);
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.actionBtnSmall:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.actionBtnLarge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.actionBtnLarge:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(26, 84, 144, 0.3);
+}
+
+.actionBtnLarge span {
+  display: inline;
+}
+
+/* ============ EXPANDED ROW ============ */
+.expandedRow td {
+  padding: 0 !important;
+}
+
+.expandedContent {
+  padding: 12px;
+  background: var(--bg);
+}
+
+.expandedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.detailBox {
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 3px solid var(--primary);
+}
+
+.detailLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  margin-bottom: 3px;
+}
+
+.detailValue {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* ============ GRID VIEW ============ */
+.gridSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.gridContainer {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gridCard {
+  display: grid;
+  grid-template-columns: 60px 1fr 200px;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.gridCard:hover {
+  background: var(--bg);
+  border-bottom-color: var(--primary);
+}
+
+.cardImageWrapper {
+  width: 60px;
+  height: 60px;
+  background: var(--bg);
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gridCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardYear {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--primary);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.cardBody {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardActions {
+  display: flex;
+  gap: 6px;
+  margin-top: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cardBtn {
+  flex: 0 1 auto;
+  min-width: 100px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.cardBtn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(26, 84, 144, 0.3);
+}
+
+.cardIcons {
+  display: flex;
+  gap: 4px;
+}
+
+.cardIcon {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--primary);
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.cardIcon:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* ============ EMPTY STATE ============ */
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.emptyState h3 {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.emptyState p {
+  color: var(--text-light);
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* ============ MODAL ============ */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 650px;
+  max-height: 95vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.modalClose:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.modalImage {
+  width: 100%;
+  height: 240px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.modalImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalBody {
+  padding: 20px;
+}
+
+.modalTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+  padding-right: 24px;
+  word-break: break-word;
+}
+
+.modalFields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.fieldRow {
+  padding: 10px;
+  background: var(--bg);
+  border-radius: 4px;
+  border-left: 3px solid var(--primary);
+}
+
+.fieldKey {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  margin-bottom: 3px;
+}
+
+.fieldVal {
+  display: block;
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.modalActions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  flex-wrap: wrap;
+}
+
+.modalBtn,
+.modalBtnClose {
+  flex: 1;
+  min-width: 100px;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.modalBtn {
+  background: var(--primary);
+  color: white;
+}
+
+.modalBtn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.modalBtnClose {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.modalBtnClose:hover {
+  background: white;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ============ TABLET RESPONSIVE (768px) ============ */
+@media (max-width: 768px) {
+  .heroHeader {
+    padding: 32px 16px;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+
+  .heroDescription {
+    font-size: 0.85rem;
+  }
+
+  .heroStats {
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .statNumber {
+    font-size: 1.8rem;
+  }
+
+  .statLabel {
+    font-size: 0.7rem;
+  }
+
+  .controlsBar {
+    flex-direction: column;
+  }
+
+  .searchSection {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .viewToggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gridContainer {
+    display: block;
+  }
+
+  .gridCard {
+    grid-template-columns: 50px 1fr 160px;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .cardBtn {
+    min-width: 90px;
+    padding: 7px 12px;
+    font-size: 0.75rem;
+  }
+
+  .colImage {
+    width: 45px;
+  }
+
+  .colTitle {
+    min-width: 140px;
+  }
+
+  .colIsbn {
+    width: 100px;
+  }
+
+  .colAuthor {
+    width: 120px;
+  }
+
+  .colYear {
+    width: 60px;
+  }
+
+  .colActions {
+    width: 120px;
+  }
+
+  .actionBtnLarge {
+    padding: 7px 12px;
+    font-size: 0.75rem;
+  }
+
+  .actionBtnLarge span {
+    display: none;
+  }
+
+  .rowImage {
+    width: 38px;
+    height: 38px;
+  }
+
+  .expandedGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalImage {
+    height: 200px;
+  }
+
+  .modalBody {
+    padding: 16px;
+  }
+
+  .modalTitle {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .cardImageWrapper {
+    height: 160px;
+  }
+
+  .cardTitle {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============ MOBILE RESPONSIVE (480px) ============ */
+@media (max-width: 480px) {
+  .heroHeader {
+    padding: 24px 12px;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .backBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .heroTitle {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+
+  .heroDescription {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .heroStats {
+    gap: 20px;
+    margin-top: 12px;
+  }
+
+  .statNumber {
+    font-size: 1.6rem;
+  }
+
+  .statLabel {
+    font-size: 0.65rem;
+  }
+
+  .controlsBar {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .searchSection {
+    width: 100%;
+  }
+
+  .searchInput {
+    padding: 8px 10px 8px 34px;
+    font-size: 0.8rem;
+  }
+
+  .searchIconLeft {
+    left: 10px;
+    font-size: 14px;
+  }
+
+  .clearBtn {
+    right: 6px;
+    font-size: 14px;
+  }
+
+  .viewToggle {
+    width: 100%;
+  }
+
+  .viewToggleBtn {
+    padding: 6px 8px;
+    min-width: 32px;
+    font-size: 0.75rem;
+  }
+
+  .tableSection {
+    padding: 12px;
+  }
+
+  .gridSection {
+    padding: 12px;
+  }
+
+  .table {
+    font-size: 0.75rem;
+    min-width: 400px;
+  }
+
+  .table thead th {
+    padding: 8px 8px;
+    font-size: 0.7rem;
+  }
+
+  .tableRow td {
+    padding: 8px;
+  }
+
+  .colImage {
+    width: 42px;
+  }
+
+  .colTitle {
+    min-width: 120px;
+  }
+
+  .colIsbn {
+    width: 80px;
+  }
+
+  .colAuthor {
+    width: 100px;
+  }
+
+  .colYear {
+    width: 50px;
+  }
+
+  .colActions {
+    width: 90px;
+  }
+
+  .actionBtnLarge {
+    padding: 6px 10px;
+    font-size: 0.65rem;
+  }
+
+  .actionBtnLarge span {
+    display: none;
+  }
+
+  .rowImage {
+    width: 36px;
+    height: 36px;
+  }
+
+  .actionBtnSmall {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .gridContainer {
+    display: block;
+  }
+
+  .gridCard {
+    grid-template-columns: 45px 1fr 130px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .cardBtn {
+    min-width: 80px;
+    padding: 6px 10px;
+    font-size: 0.65rem;
+  }
+
+  .cardIcon {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+
+  .emptyState {
+    padding: 40px 16px;
+    margin: 12px 0;
+  }
+
+  .emptyIcon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .emptyState h3 {
+    font-size: 1rem;
+  }
+
+  .emptyState p {
+    font-size: 0.8rem;
+  }
+
+  .modalOverlay {
+    padding: 8px;
+  }
+
+  .modalContent {
+    max-height: 90vh;
+  }
+
+  .modalClose {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .modalImage {
+    height: 180px;
+  }
+
+  .modalBody {
+    padding: 14px;
+  }
+
+  .modalTitle {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    padding-right: 20px;
+  }
+
+  .modalFields {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .fieldRow {
+    padding: 8px;
+  }
+
+  .fieldKey {
+    font-size: 0.6rem;
+  }
+
+  .fieldVal {
+    font-size: 0.8rem;
+  }
+
+  .modalActions {
+    gap: 6px;
+    padding-top: 12px;
+  }
+
+  .modalBtn,
+  .modalBtnClose {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+    min-width: 90px;
+  }
+
+  .detailBox {
+    padding: 8px;
+  }
+
+  .detailLabel {
+    font-size: 0.6rem;
+  }
+
+  .detailValue {
+    font-size: 0.75rem;
+  }
+}
+
+/* ============ SMALL MOBILE (360px) ============ */
+@media (max-width: 360px) {
+  .heroTitle {
+    font-size: 1.2rem;
+  }
+
+  .statNumber {
+    font-size: 1.4rem;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    min-width: 320px;
+    font-size: 0.65rem;
+  }
+
+  .table thead th,
+  .tableRow td {
+    padding: 6px 4px;
+  }
+
+  .colImage {
+    width: 35px;
+  }
+
+  .colTitle {
+    min-width: 90px;
+  }
+
+  .colIsbn {
+    width: 70px;
+  }
+
+  .colAuthor {
+    width: 80px;
+  }
+
+  .colYear {
+    width: 45px;
+  }
+
+  .colActions {
+    width: 70px;
+  }
+
+  .itemTitle {
+    font-size: 0.7rem;
+  }
+
+  .yearTag {
+    padding: 3px 6px;
+    font-size: 0.6rem;
+  }
+
+  .actionBtnSmall {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .actionBtnLarge {
+    padding: 5px 8px;
+    font-size: 0.6rem;
+    min-width: 60px;
+  }
+
+  .gridContainer {
+    display: block;
+  }
+
+  .gridCard {
+    grid-template-columns: 40px 1fr 100px;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .cardImageWrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cardTitle {
+    font-size: 0.7rem;
+  }
+
+  .cardBtn {
+    min-width: 70px;
+    padding: 5px 8px;
+    font-size: 0.6rem;
+  }
+
+  .cardIcon {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+}

@@ -53,6 +53,7 @@ export default function EventsPage() {
       subheading="International summer schools, workshops, lectures, presentations, and conference sessions chaired"
       iconMap={eventsIcons}
       onExplore={handleExplore}
+      routePrefix="events"
     />
   );
 }
