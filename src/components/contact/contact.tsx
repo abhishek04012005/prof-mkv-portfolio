@@ -2,6 +2,15 @@
 
 import { useState } from 'react';
 import styles from './contact.module.css';
+import {
+  Mail as MailIcon,
+  Phone as PhoneIcon,
+  LocationOn as LocationIcon,
+  Schedule as ScheduleIcon,
+  Lightbulb as LightbulbIcon,
+  Bolt as BoltIcon,
+  ArrowForward as ArrowForwardIcon,
+} from '@mui/icons-material';
 
 interface FormData {
   name: string;
@@ -76,28 +85,28 @@ export default function Contact() {
 
   const contactItems = [
     {
-      icon: '📧',
+      icon: MailIcon,
       label: 'Email',
       value: 'contact@example.com',
       href: 'mailto:contact@example.com',
       color: 'email',
     },
     {
-      icon: '📱',
+      icon: PhoneIcon,
       label: 'Phone',
       value: '+91 (0) 1234-567890',
       href: 'tel:+91-1234567890',
       color: 'phone',
     },
     {
-      icon: '📍',
+      icon: LocationIcon,
       label: 'Location',
       value: 'Lab 401, IIT Delhi',
       href: '#',
       color: 'location',
     },
     {
-      icon: '🕐',
+      icon: ScheduleIcon,
       label: 'Office Hours',
       value: 'Mon - Fri, 10 AM - 5 PM IST',
       href: '#',
@@ -129,35 +138,38 @@ export default function Contact() {
               <h3 className={styles.sectionTitle}>Quick Contact</h3>
 
               <div className={styles.infoGrid}>
-                {contactItems.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    className={`${styles.infoCard} ${styles[`color-${item.color}`]}`}
-                  >
-                    <div className={styles.iconWrapper}>
-                      <span className={styles.icon}>{item.icon}</span>
-                    </div>
-                    <div className={styles.infoContent}>
-                      <p className={styles.infoLabel}>{item.label}</p>
-                      <p className={styles.infoValue}>{item.value}</p>
-                    </div>
-                    <div className={styles.arrowIcon}>→</div>
-                  </a>
-                ))}
+                {contactItems.map((item, idx) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <a
+                      key={idx}
+                      href={item.href}
+                      className={`${styles.infoCard} ${styles[`color-${item.color}`]}`}
+                    >
+                      <div className={styles.iconWrapper}>
+                        <IconComponent className={styles.iconComponent} />
+                      </div>
+                      <div className={styles.infoContent}>
+                        <p className={styles.infoLabel}>{item.label}</p>
+                        <p className={styles.infoValue}>{item.value}</p>
+                      </div>
+                      <div className={styles.arrowIcon}><ArrowForwardIcon className={styles.arrowIconComponent} /></div>
+                    </a>
+                  );
+                })}
               </div>
 
               {/* Additional Info */}
               <div className={styles.additionalInfo}>
                 <div className={styles.infoBox}>
-                  <div className={styles.boxIcon}>💡</div>
+                  <div className={styles.boxIcon}><LightbulbIcon className={styles.boxIconComponent} /></div>
                   <div>
                     <h4 className={styles.boxTitle}>Best Time to Reach</h4>
                     <p className={styles.boxText}>2 PM - 4 PM IST for calls</p>
                   </div>
                 </div>
                 <div className={styles.infoBox}>
-                  <div className={styles.boxIcon}>⚡</div>
+                  <div className={styles.boxIcon}><BoltIcon className={styles.boxIconComponent} /></div>
                   <div>
                     <h4 className={styles.boxTitle}>Response Time</h4>
                     <p className={styles.boxText}>1-2 business days</p>

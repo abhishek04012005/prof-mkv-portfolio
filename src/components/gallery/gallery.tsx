@@ -3,6 +3,22 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import styles from './gallery.module.css';
+import {
+  PhotoCamera as PhotoCameraIcon,
+  Event as EventsIcon,
+  Science as ScienceIcon,
+  Mic as MicIcon,
+  Group as GroupIcon,
+  EmojiEvents as AwardsIcon,
+  Search as SearchIcon,
+  Star as StarIcon,
+  Collections as CollectionsIcon,
+  PeopleAlt as PeopleAltIcon,
+  TouchApp as TouchAppIcon,
+  SearchOutlined as SearchOutlinedIcon,
+  PushPin as PushPinIcon,
+  Keyboard as KeyboardIcon,
+} from '@mui/icons-material';
 
 type FilterType = 'all' | 'events' | 'research' | 'conferences' | 'team' | 'awards';
 
@@ -159,13 +175,13 @@ export default function Gallery() {
     },
   ];
 
-  const filters: { id: FilterType; label: string; icon: string }[] = [
-    { id: 'all', label: 'All Photos', icon: '📷' },
-    { id: 'events', label: 'Events', icon: '🎉' },
-    { id: 'research', label: 'Research', icon: '🔬' },
-    { id: 'conferences', label: 'Conferences', icon: '🎤' },
-    { id: 'team', label: 'Team', icon: '👥' },
-    { id: 'awards', label: 'Awards', icon: '🏆' },
+  const filters: { id: FilterType; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
+    { id: 'all', label: 'All Photos', icon: PhotoCameraIcon },
+    { id: 'events', label: 'Events', icon: EventsIcon },
+    { id: 'research', label: 'Research', icon: ScienceIcon },
+    { id: 'conferences', label: 'Conferences', icon: MicIcon },
+    { id: 'team', label: 'Team', icon: GroupIcon },
+    { id: 'awards', label: 'Awards', icon: AwardsIcon },
   ];
 
   // Calculate stats
@@ -213,7 +229,7 @@ export default function Gallery() {
             {/* Stats Card */}
             <div className={styles.statsCard}>
               <div className={styles.statItem}>
-                <div className={styles.statIcon}>📷</div>
+                <div className={styles.statIcon}><PhotoCameraIcon className={styles.statIconComponent} /></div>
                 <div className={styles.statContent}>
                   <p className={styles.statLabel}>Total Photos</p>
                   <p className={styles.statValue}>{stats.totalImages}</p>
@@ -223,7 +239,7 @@ export default function Gallery() {
               <div className={styles.divider}></div>
 
               <div className={styles.statItem}>
-                <div className={styles.statIcon}>🎉</div>
+                <div className={styles.statIcon}><EventsIcon className={styles.statIconComponent} /></div>
                 <div className={styles.statContent}>
                   <p className={styles.statLabel}>Events</p>
                   <p className={styles.statValue}>{stats.events}</p>
@@ -233,7 +249,7 @@ export default function Gallery() {
               <div className={styles.divider}></div>
 
               <div className={styles.statItem}>
-                <div className={styles.statIcon}>🔬</div>
+                <div className={styles.statIcon}><ScienceIcon className={styles.statIconComponent} /></div>
                 <div className={styles.statContent}>
                   <p className={styles.statLabel}>Research</p>
                   <p className={styles.statValue}>{stats.research}</p>
@@ -243,7 +259,7 @@ export default function Gallery() {
               <div className={styles.divider}></div>
 
               <div className={styles.statItem}>
-                <div className={styles.statIcon}>🎤</div>
+                <div className={styles.statIcon}><MicIcon className={styles.statIconComponent} /></div>
                 <div className={styles.statContent}>
                   <p className={styles.statLabel}>Conferences</p>
                   <p className={styles.statValue}>{stats.conferences}</p>
@@ -256,19 +272,19 @@ export default function Gallery() {
               <h4 className={styles.cardTitle}>Gallery Highlights</h4>
               <div className={styles.highlightsList}>
                 <div className={styles.highlightItem}>
-                  <span className={styles.highlightIcon}>🌟</span>
+                  <StarIcon className={styles.highlightIconComponent} />
                   <span className={styles.highlightText}>Professional Moments</span>
                 </div>
                 <div className={styles.highlightItem}>
-                  <span className={styles.highlightIcon}>📸</span>
+                  <CollectionsIcon className={styles.highlightIconComponent} />
                   <span className={styles.highlightText}>High-Quality Images</span>
                 </div>
                 <div className={styles.highlightItem}>
-                  <span className={styles.highlightIcon}>🏅</span>
+                  <AwardsIcon className={styles.highlightIconComponent} />
                   <span className={styles.highlightText}>Award Recognition</span>
                 </div>
                 <div className={styles.highlightItem}>
-                  <span className={styles.highlightIcon}>🤝</span>
+                  <PeopleAltIcon className={styles.highlightIconComponent} />
                   <span className={styles.highlightText}>Team Collaborations</span>
                 </div>
               </div>
@@ -279,19 +295,19 @@ export default function Gallery() {
               <h4 className={styles.cardTitle}>Gallery Features</h4>
               <ul className={styles.tipsList}>
                 <li className={styles.tipItem}>
-                  <span className={styles.tipIcon}>🖱️</span>
+                  <TouchAppIcon className={styles.tipIconComponent} />
                   <span>Click on any image to view details</span>
                 </li>
                 <li className={styles.tipItem}>
-                  <span className={styles.tipIcon}>🔍</span>
+                  <SearchOutlinedIcon className={styles.tipIconComponent} />
                   <span>Use search to find specific moments</span>
                 </li>
                 <li className={styles.tipItem}>
-                  <span className={styles.tipIcon}>📌</span>
+                  <PushPinIcon className={styles.tipIconComponent} />
                   <span>Filter by category or date</span>
                 </li>
                 <li className={styles.tipItem}>
-                  <span className={styles.tipIcon}>⌨️</span>
+                  <KeyboardIcon className={styles.tipIconComponent} />
                   <span>View full details in modal</span>
                 </li>
               </ul>
@@ -310,22 +326,25 @@ export default function Gallery() {
                 className={styles.searchInput}
                 aria-label="Search gallery"
               />
-              <div className={styles.searchIcon}>🔍</div>
+              <SearchIcon className={styles.searchIconComponent} />
             </div>
 
             {/* Tab Navigation */}
             <div className={styles.tabNav}>
-              {filters.map((filter) => (
-                <button
-                  key={filter.id}
-                  className={`${styles.tabBtn} ${activeFilter === filter.id ? styles.active : ''}`}
-                  onClick={() => setActiveFilter(filter.id)}
-                  aria-selected={activeFilter === filter.id}
-                >
-                  <span className={styles.tabIcon}>{filter.icon}</span>
-                  <span className={styles.tabLabel}>{filter.label}</span>
-                </button>
-              ))}
+              {filters.map((filter) => {
+                const IconComponent = filter.icon;
+                return (
+                  <button
+                    key={filter.id}
+                    className={`${styles.tabBtn} ${activeFilter === filter.id ? styles.active : ''}`}
+                    onClick={() => setActiveFilter(filter.id)}
+                    aria-selected={activeFilter === filter.id}
+                  >
+                    <IconComponent className={styles.tabIcon} />
+                    <span className={styles.tabLabel}>{filter.label}</span>
+                  </button>
+                );
+              })}
             </div>
 
             {/* Results Count */}
@@ -366,11 +385,36 @@ export default function Gallery() {
                       <div className={styles.imageOverlay}>
                         <div className={styles.overlayContent}>
                           <div className={styles.categoryBadge}>
-                            {image.category === 'events' && '🎉 Events'}
-                            {image.category === 'research' && '🔬 Research'}
-                            {image.category === 'conferences' && '🎤 Conference'}
-                            {image.category === 'team' && '👥 Team'}
-                            {image.category === 'awards' && '🏆 Awards'}
+                            {image.category === 'events' && (
+                              <>
+                                <EventsIcon className={styles.badgeIcon} />
+                                <span>Events</span>
+                              </>
+                            )}
+                            {image.category === 'research' && (
+                              <>
+                                <ScienceIcon className={styles.badgeIcon} />
+                                <span>Research</span>
+                              </>
+                            )}
+                            {image.category === 'conferences' && (
+                              <>
+                                <MicIcon className={styles.badgeIcon} />
+                                <span>Conference</span>
+                              </>
+                            )}
+                            {image.category === 'team' && (
+                              <>
+                                <GroupIcon className={styles.badgeIcon} />
+                                <span>Team</span>
+                              </>
+                            )}
+                            {image.category === 'awards' && (
+                              <>
+                                <AwardsIcon className={styles.badgeIcon} />
+                                <span>Awards</span>
+                              </>
+                            )}
                           </div>
                           <h3 className={styles.imageTitle}>{image.title}</h3>
                           <p className={styles.imageHint}>Click to view details</p>
@@ -381,7 +425,7 @@ export default function Gallery() {
                 ))
               ) : (
                 <div className={styles.emptyState}>
-                  <div className={styles.emptyIcon}>📷</div>
+                  <PhotoCameraIcon className={styles.emptyIconComponent} />
                   <h3 className={styles.emptyTitle}>No photos found</h3>
                   <p className={styles.emptyMessage}>
                     Try adjusting your search or filter criteria

@@ -1,6 +1,14 @@
 'use client';
 import Link from 'next/link';
 import styles from './footer.module.css';
+import {
+  LinkedIn as LinkedInIcon,
+  Twitter as TwitterIcon,
+  School as SchoolIcon,
+  GitHub as GitHubIcon,
+  Email as EmailIcon,
+  Science as ScienceIcon,
+} from '@mui/icons-material';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,12 +32,12 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: '🔗', label: 'LinkedIn', href: 'https://linkedin.com', color: 'linkedin' },
-    { icon: '𝕏', label: 'Twitter', href: 'https://twitter.com', color: 'twitter' },
-    { icon: '📊', label: 'Research Gate', href: 'https://researchgate.net', color: 'research' },
-    { icon: '🎓', label: 'Google Scholar', href: 'https://scholar.google.com', color: 'scholar' },
-    { icon: '💼', label: 'GitHub', href: 'https://github.com', color: 'github' },
-    { icon: '📧', label: 'Email', href: 'mailto:contact@example.com', color: 'email' },
+    { icon: LinkedInIcon, label: 'LinkedIn', href: 'https://linkedin.com', color: 'linkedin' },
+    { icon: TwitterIcon, label: 'Twitter', href: 'https://twitter.com', color: 'twitter' },
+    { icon: ScienceIcon, label: 'Research Gate', href: 'https://researchgate.net', color: 'research' },
+    { icon: SchoolIcon, label: 'Google Scholar', href: 'https://scholar.google.com', color: 'scholar' },
+    { icon: GitHubIcon, label: 'GitHub', href: 'https://github.com', color: 'github' },
+    { icon: EmailIcon, label: 'Email', href: 'mailto:contact@example.com', color: 'email' },
   ];
 
   const footerLinks = [
@@ -60,19 +68,22 @@ export default function Footer() {
               <div className={styles.socialLinksContainer}>
                 <p className={styles.socialLabel}>Follow</p>
                 <div className={styles.socialLinks}>
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      title={social.label}
-                      className={`${styles.socialLink} ${styles[`social-${social.color}`]}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Visit ${social.label}`}
-                    >
-                      <span className={styles.socialIcon}>{social.icon}</span>
-                    </a>
-                  ))}
+                  {socialLinks.map((social) => {
+                    const IconComponent = social.icon;
+                    return (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        title={social.label}
+                        className={`${styles.socialLink} ${styles[`social-${social.color}`]}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${social.label}`}
+                      >
+                        <IconComponent className={styles.socialIconComponent} />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>

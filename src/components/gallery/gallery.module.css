@@ -86,6 +86,13 @@
   flex-shrink: 0;
 }
 
+.statIconComponent {
+  font-size: 2.2rem !important;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--color-primary);
+}
+
 .statContent {
   margin: 0;
 }
@@ -172,6 +179,14 @@
   flex-shrink: 0;
 }
 
+.highlightIconComponent {
+  font-size: 1.1rem !important;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
 .highlightText {
   font-weight: 600;
   font-size: 0.9rem;
@@ -218,6 +233,14 @@
 
 .tipIcon {
   font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.tipIconComponent {
+  font-size: 1rem !important;
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-primary);
   flex-shrink: 0;
 }
 
@@ -269,6 +292,16 @@
   color: var(--color-text-light);
 }
 
+.searchIconComponent {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.1rem !important;
+  width: 1.1rem;
+  height: 1.1rem;
+  pointer-events: none;
+  color: var(--color-text-light);
+}
+
 /* Tab Navigation */
 .tabNav {
   display: flex;
@@ -306,6 +339,12 @@
 
 .tabIcon {
   font-size: 1.1rem;
+}
+
+.tabIcon {
+  font-size: 1.1rem !important;
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 .tabLabel {
@@ -427,7 +466,9 @@
 }
 
 .categoryBadge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.4rem 0.8rem;
   background-color: var(--color-primary);
   color: white;
@@ -437,6 +478,12 @@
   text-transform: uppercase;
   letter-spacing: 0.1px;
   margin-bottom: 0.5rem;
+}
+
+.badgeIcon {
+  font-size: 0.85rem !important;
+  width: 0.85rem;
+  height: 0.85rem;
 }
 
 .imageTitle {
@@ -467,6 +514,14 @@
 
 .emptyIcon {
   font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.emptyIconComponent {
+  font-size: 3rem !important;
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-primary);
   margin-bottom: 1rem;
 }
 

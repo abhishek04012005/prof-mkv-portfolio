@@ -236,6 +236,13 @@
   justify-content: center;
 }
 
+.iconComponent {
+  font-size: 1.8rem !important;
+  width: 1.8rem;
+  height: 1.8rem;
+  color: var(--color-primary);
+}
+
 .infoContent {
   flex: 1;
   margin: 0;
@@ -270,6 +277,12 @@
   transition: all 0.3s ease;
 }
 
+.arrowIconComponent {
+  font-size: 1.5rem !important;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .infoCard:hover .arrowIcon {
   opacity: 1;
   transform: translateX(0);
@@ -301,6 +314,13 @@
 .boxIcon {
   font-size: 1.8rem;
   flex-shrink: 0;
+}
+
+.boxIconComponent {
+  font-size: 1.8rem !important;
+  width: 1.8rem;
+  height: 1.8rem;
+  color: var(--color-primary);
 }
 
 .boxTitle {

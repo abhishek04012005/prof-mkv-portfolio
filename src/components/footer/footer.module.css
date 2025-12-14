@@ -178,7 +178,20 @@
   transition: transform 0.3s ease;
 }
 
+.socialIconComponent {
+  font-size: 1.2rem !important;
+  width: 1.2rem;
+  height: 1.2rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
 .socialLink:hover .socialIcon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.socialLink:hover .socialIconComponent {
   transform: scale(1.2) rotate(5deg);
 }
 

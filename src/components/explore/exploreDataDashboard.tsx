@@ -85,6 +85,12 @@ export default function ExploreDataDashboard({
     }
   };
 
+  const handleViewDetails = (item: ExploreItem) => {
+    // Navigate to detail page with category and item ID
+    const url = `${window.location.pathname}/${item.id}`;
+    router.push(url);
+  };
+
   const getImageSource = (item: ExploreItem) => {
     return item.image || item.thumbnail || bookImage.src;
   };
@@ -205,6 +211,7 @@ export default function ExploreDataDashboard({
                         )}
                       </div>
                     </th>
+                    <th className={styles.colIsbn}>ISBN</th>
                     <th
                       className={styles.colYear}
                       onClick={() => handleSort('year')}
@@ -218,17 +225,14 @@ export default function ExploreDataDashboard({
                         )}
                       </div>
                     </th>
-                    <th className={styles.colActions}>Actions</th>
+                    <th className={styles.colAuthor}>Author</th>
+                    <th className={styles.colActions}>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {sortedItems.map((item) => (
                     <React.Fragment key={item.id}>
-                      <tr
-                        className={`${styles.tableRow} ${
-                          expandedRowId === item.id ? styles.expanded : ''
-                        }`}
-                      >
+                      <tr className={styles.tableRow}>
                         <td className={styles.colImage}>
                           <img
                             src={getImageSource(item)}
@@ -241,65 +245,28 @@ export default function ExploreDataDashboard({
                             <span className={styles.itemTitle}>{item.title}</span>
                           </div>
                         </td>
+                        <td className={styles.colIsbn}>
+                          <span className={styles.isbnText}>{item.isbn || 'N/A'}</span>
+                        </td>
                         <td className={styles.colYear}>
                           <span className={styles.yearTag}>{item.year}</span>
+                        </td>
+                        <td className={styles.colAuthor}>
+                          <span className={styles.authorText}>{item.authors || 'N/A'}</span>
                         </td>
                         <td className={styles.colActions}>
                           <div className={styles.actionGroup}>
                             <button
-                              className={styles.actionBtnSmall}
-                              onClick={() => setSelectedItem(item)}
-                              title="View details"
+                              className={styles.actionBtnLarge}
+                              onClick={() => handleViewDetails(item)}
+                              title="View full details page"
                             >
                               <InfoIcon />
+                              <span>Details</span>
                             </button>
-                            <button
-                              className={styles.actionBtnSmall}
-                              onClick={() => setExpandedRowId(expandedRowId === item.id ? null : item.id)}
-                              title="Expand details"
-                            >
-                              <ChevronDownIcon />
-                            </button>
-                            {item.url && (
-                              <a
-                                href={item.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.actionBtnSmall}
-                                title="Open"
-                              >
-                                <OpenNewIcon />
-                              </a>
-                            )}
-                            {(item.downloadUrl || item.pdfUrl) && (
-                              <a
-                                href={item.downloadUrl || item.pdfUrl}
-                                download
-                                className={styles.actionBtnSmall}
-                                title="Download"
-                              >
-                                <DownloadIcon />
-                              </a>
-                            )}
                           </div>
                         </td>
                       </tr>
-                      {expandedRowId === item.id && (
-                        <tr className={styles.expandedRow}>
-                          <td colSpan={4}>
-                            <div className={styles.expandedContent}>
-                              <div className={styles.expandedGrid}>
-                                {renderDetailFields(item).map(({ key, displayLabel, displayValue }) => (
-                                  <div key={key} className={styles.detailBox}>
-                                    <div className={styles.detailLabel}>{displayLabel}</div>
-                                    <div className={styles.detailValue}>{displayValue}</div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      )}
                     </React.Fragment>
                   ))}
                 </tbody>
@@ -330,36 +297,38 @@ export default function ExploreDataDashboard({
                   </div>
                   <div className={styles.cardBody}>
                     <h3 className={styles.cardTitle}>{item.title}</h3>
-                    <div className={styles.cardActions}>
-                      <button
-                        className={styles.cardBtn}
-                        onClick={() => setSelectedItem(item)}
-                      >
-                        View Details
-                      </button>
-                      <div className={styles.cardIcons}>
-                        {item.url && (
-                          <a
-                            href={item.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.cardIcon}
-                            title="Open"
-                          >
-                            <OpenNewIcon />
-                          </a>
-                        )}
-                        {(item.downloadUrl || item.pdfUrl) && (
-                          <a
-                            href={item.downloadUrl || item.pdfUrl}
-                            download
-                            className={styles.cardIcon}
-                            title="Download"
-                          >
-                            <DownloadIcon />
-                          </a>
-                        )}
-                      </div>
+                  </div>
+                  <div className={styles.cardActions}>
+                    <button
+                      className={styles.cardBtn}
+                      onClick={() => handleViewDetails(item)}
+                      title="View full details"
+                    >
+                      <InfoIcon />
+                      Details
+                    </button>
+                    <div className={styles.cardIcons}>
+                      {item.url && (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.cardIcon}
+                          title="Open"
+                        >
+                          <OpenNewIcon />
+                        </a>
+                      )}
+                      {(item.downloadUrl || item.pdfUrl) && (
+                        <a
+                          href={item.downloadUrl || item.pdfUrl}
+                          download
+                          className={styles.cardIcon}
+                          title="Download"
+                        >
+                          <DownloadIcon />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -152,7 +152,7 @@
 
 /* ============ CONTROLS ============ */
 .controlsBar {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 16px;
   display: flex;
@@ -263,7 +263,7 @@
 
 /* ============ TABLE VIEW ============ */
 .tableSection {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 16px;
 }
@@ -327,16 +327,22 @@
 
 .colTitle {
   flex: 1;
-  min-width: 180px;
 }
 
-.colYear {
-  width: 70px;
-}
 
 .colActions {
-  width: 110px;
   text-align: center;
+}
+
+.isbnText {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.authorText {
+  font-size: 0.9rem;
+  color: var(--text);
 }
 
 .tableRow {
@@ -394,6 +400,8 @@
   display: flex;
   gap: 4px;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .actionBtnSmall {
@@ -417,6 +425,33 @@
   background: var(--primary);
   color: white;
   border-color: var(--primary);
+}
+
+.actionBtnLarge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.actionBtnLarge:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(26, 84, 144, 0.3);
+}
+
+.actionBtnLarge span {
+  display: inline;
 }
 
 /* ============ EXPANDED ROW ============ */
@@ -466,34 +501,34 @@
 }
 
 .gridContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .gridCard {
+  display: grid;
+  grid-template-columns: 60px 1fr 200px;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
   background: white;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.2s ease;
 }
 
 .gridCard:hover {
-  border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(26, 84, 144, 0.1);
-  transform: translateY(-2px);
+  background: var(--bg);
+  border-bottom-color: var(--primary);
 }
 
 .cardImageWrapper {
-  position: relative;
-  width: 100%;
-  height: 180px;
+  width: 60px;
+  height: 60px;
   background: var(--bg);
   overflow: hidden;
+  border-radius: 4px;
+  position: relative;
 }
 
 .cardImage {
@@ -509,22 +544,23 @@
 
 .cardYear {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 4px;
+  right: 4px;
   background: var(--primary);
   color: white;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.65rem;
   font-weight: 600;
 }
 
 .cardBody {
-  padding: 12px;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
+  min-width: 0;
 }
 
 .cardTitle {
@@ -542,28 +578,35 @@
 .cardActions {
   display: flex;
   gap: 6px;
-  margin-top: auto;
-  flex-wrap: wrap;
+  margin-top: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .cardBtn {
-  flex: 1;
-  min-width: 80px;
+  flex: 0 1 auto;
+  min-width: 100px;
   background: var(--primary);
   color: white;
   border: none;
-  padding: 7px 10px;
+  padding: 8px 14px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   transition: all 0.2s;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
 }
 
 .cardBtn:hover {
   background: var(--primary-dark);
   transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(26, 84, 144, 0.3);
 }
 
 .cardIcons {
@@ -575,17 +618,18 @@
   background: white;
   border: 1px solid var(--border);
   color: var(--primary);
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
   flex-shrink: 0;
+  padding: 0;
 }
 
 .cardIcon:hover {
@@ -829,20 +873,52 @@
   }
 
   .gridContainer {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 12px;
+    display: block;
+  }
+
+  .gridCard {
+    grid-template-columns: 50px 1fr 160px;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .cardBtn {
+    min-width: 90px;
+    padding: 7px 12px;
+    font-size: 0.75rem;
   }
 
   .colImage {
     width: 45px;
   }
 
+  .colTitle {
+    min-width: 140px;
+  }
+
+  .colIsbn {
+    width: 100px;
+  }
+
+  .colAuthor {
+    width: 120px;
+  }
+
   .colYear {
-    width: 65px;
+    width: 60px;
   }
 
   .colActions {
-    width: 100px;
+    width: 120px;
+  }
+
+  .actionBtnLarge {
+    padding: 7px 12px;
+    font-size: 0.75rem;
+  }
+
+  .actionBtnLarge span {
+    display: none;
   }
 
   .rowImage {
@@ -977,15 +1053,32 @@
   }
 
   .colTitle {
-    min-width: 140px;
+    min-width: 120px;
+  }
+
+  .colIsbn {
+    width: 80px;
+  }
+
+  .colAuthor {
+    width: 100px;
   }
 
   .colYear {
-    width: 55px;
+    width: 50px;
   }
 
   .colActions {
     width: 90px;
+  }
+
+  .actionBtnLarge {
+    padding: 6px 10px;
+    font-size: 0.65rem;
+  }
+
+  .actionBtnLarge span {
+    display: none;
   }
 
   .rowImage {
@@ -1000,43 +1093,24 @@
   }
 
   .gridContainer {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 10px;
+    display: block;
   }
 
-  .cardImageWrapper {
-    height: 140px;
-  }
-
-  .cardYear {
-    top: 8px;
-    right: 8px;
-    font-size: 0.7rem;
-    padding: 3px 8px;
-  }
-
-  .cardBody {
-    padding: 10px;
+  .gridCard {
+    grid-template-columns: 45px 1fr 130px;
     gap: 8px;
-  }
-
-  .cardTitle {
-    font-size: 0.8rem;
-  }
-
-  .cardActions {
-    gap: 4px;
+    padding: 8px;
   }
 
   .cardBtn {
-    padding: 6px 8px;
-    font-size: 0.7rem;
-    min-width: 70px;
+    min-width: 80px;
+    padding: 6px 10px;
+    font-size: 0.65rem;
   }
 
   .cardIcon {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     font-size: 12px;
   }
 
@@ -1146,26 +1220,87 @@
 
   .table {
     min-width: 320px;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 
   .table thead th,
   .tableRow td {
-    padding: 6px;
+    padding: 6px 4px;
+  }
+
+  .colImage {
+    width: 35px;
+  }
+
+  .colTitle {
+    min-width: 90px;
+  }
+
+  .colIsbn {
+    width: 70px;
+  }
+
+  .colAuthor {
+    width: 80px;
+  }
+
+  .colYear {
+    width: 45px;
+  }
+
+  .colActions {
+    width: 70px;
   }
 
   .itemTitle {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .yearTag {
-    padding: 3px 8px;
-    font-size: 0.65rem;
+    padding: 3px 6px;
+    font-size: 0.6rem;
   }
 
   .actionBtnSmall {
-    width: 26px;
-    height: 26px;
-    font-size: 11px;
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .actionBtnLarge {
+    padding: 5px 8px;
+    font-size: 0.6rem;
+    min-width: 60px;
+  }
+
+  .gridContainer {
+    display: block;
+  }
+
+  .gridCard {
+    grid-template-columns: 40px 1fr 100px;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .cardImageWrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cardTitle {
+    font-size: 0.7rem;
+  }
+
+  .cardBtn {
+    min-width: 70px;
+    padding: 5px 8px;
+    font-size: 0.6rem;
+  }
+
+  .cardIcon {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
   }
 }
