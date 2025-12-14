@@ -96,6 +96,14 @@ export default function ItemDetail({
       });
     }
 
+    if (item.journal_or_book) {
+      fields.push({
+        label: 'Journal / Book',
+        value: item.journal_or_book,
+        icon: '📚',
+      });
+    }
+
     if (item.volume) {
       fields.push({
         label: 'Volume',
@@ -141,6 +149,104 @@ export default function ItemDetail({
         label: 'Citations',
         value: String(item.citations),
         icon: '📈',
+      });
+    }
+
+    if (item.type) {
+      fields.push({
+        label: 'Type',
+        value: item.type,
+        icon: '🏷️',
+      });
+    }
+
+    // Book Review specific fields
+    if (item.bookTitle) {
+      fields.push({
+        label: 'Book Title',
+        value: item.bookTitle,
+        icon: '📖',
+      });
+    }
+
+    if (item.bookAuthors) {
+      fields.push({
+        label: 'Book Authors',
+        value: item.bookAuthors,
+        icon: '✍️',
+      });
+    }
+
+    if (item.bookPublisher) {
+      fields.push({
+        label: 'Book Publisher',
+        value: item.bookPublisher,
+        icon: '🏢',
+      });
+    }
+
+    if (item.bookYear) {
+      fields.push({
+        label: 'Book Year',
+        value: String(item.bookYear),
+        icon: '📅',
+      });
+    }
+
+    if (item.reviewer) {
+      fields.push({
+        label: 'Reviewer',
+        value: item.reviewer,
+        icon: '👤',
+      });
+    }
+
+    // Research Project specific fields
+    if (item.fundingAgency) {
+      fields.push({
+        label: 'Funding Agency',
+        value: item.fundingAgency,
+        icon: '💰',
+      });
+    }
+
+    if (item.fundingAmount) {
+      fields.push({
+        label: 'Funding Amount',
+        value: item.fundingAmount,
+        icon: '💵',
+      });
+    }
+
+    if (item.status) {
+      fields.push({
+        label: 'Status',
+        value: item.status.charAt(0).toUpperCase() + item.status.slice(1),
+        icon: '🔄',
+      });
+    }
+
+    if (item.startYear) {
+      fields.push({
+        label: 'Start Year',
+        value: String(item.startYear),
+        icon: '📅',
+      });
+    }
+
+    if (item.endYear) {
+      fields.push({
+        label: 'End Year',
+        value: String(item.endYear),
+        icon: '📅',
+      });
+    }
+
+    if (item.coInvestigators && item.coInvestigators.length > 0) {
+      fields.push({
+        label: 'Co-Investigators',
+        value: item.coInvestigators.join(', '),
+        icon: '👥',
       });
     }
 
@@ -297,7 +403,7 @@ export default function ItemDetail({
                 </div>
               </section>
 
-              {/* Abstract Section */}
+              {/* Abstract/Description Section */}
               {item.abstract && (
                 <section className={styles.section}>
                   <h2 className={styles.sectionTitle}>
@@ -305,6 +411,32 @@ export default function ItemDetail({
                     Overview
                   </h2>
                   <p className={styles.abstractText}>{item.abstract}</p>
+                </section>
+              )}
+
+              {/* Description Section (for Research Projects) */}
+              {item.description && item.description !== item.abstract && (
+                <section className={styles.section}>
+                  <h2 className={styles.sectionTitle}>
+                    <AbstractIcon className={styles.titleIcon} />
+                    Description
+                  </h2>
+                  <p className={styles.abstractText}>{item.description}</p>
+                </section>
+              )}
+
+              {/* Outcomes Section (for Research Projects) */}
+              {item.outcomes && item.outcomes.length > 0 && (
+                <section className={styles.section}>
+                  <h2 className={styles.sectionTitle}>
+                    <KeywordsIcon className={styles.titleIcon} />
+                    Project Outcomes
+                  </h2>
+                  <ul className={styles.outcomesList}>
+                    {item.outcomes.map((outcome: string, index: number) => (
+                      <li key={index} className={styles.outcomeItem}>{outcome}</li>
+                    ))}
+                  </ul>
                 </section>
               )}
 

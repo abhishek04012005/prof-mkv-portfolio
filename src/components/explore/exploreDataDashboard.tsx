@@ -211,7 +211,22 @@ export default function ExploreDataDashboard({
                         )}
                       </div>
                     </th>
-                    <th className={styles.colIsbn}>ISBN</th>
+                    {data.id === 'book-reviews' ? (
+                      <>
+                        <th className={styles.colIsbn}>Book Title</th>
+                        <th className={styles.colAuthor}>Book Author</th>
+                      </>
+                    ) : data.id.includes('research') ? (
+                      <>
+                        <th className={styles.colIsbn}>Funding Agency</th>
+                        <th className={styles.colAuthor}>Amount / Status</th>
+                      </>
+                    ) : (
+                      <>
+                        <th className={styles.colIsbn}>ISBN / Journal</th>
+                        <th className={styles.colAuthor}>Author</th>
+                      </>
+                    )}
                     <th
                       className={styles.colYear}
                       onClick={() => handleSort('year')}
@@ -225,7 +240,6 @@ export default function ExploreDataDashboard({
                         )}
                       </div>
                     </th>
-                    <th className={styles.colAuthor}>Author</th>
                     <th className={styles.colActions}>Action</th>
                   </tr>
                 </thead>
@@ -245,14 +259,40 @@ export default function ExploreDataDashboard({
                             <span className={styles.itemTitle}>{item.title}</span>
                           </div>
                         </td>
-                        <td className={styles.colIsbn}>
-                          <span className={styles.isbnText}>{item.isbn || 'N/A'}</span>
-                        </td>
+                        {data.id === 'book-reviews' ? (
+                          <>
+                            <td className={styles.colIsbn}>
+                              <span className={styles.isbnText}>{item.bookTitle || 'N/A'}</span>
+                            </td>
+                            <td className={styles.colAuthor}>
+                              <span className={styles.authorText}>{item.bookAuthors || 'N/A'}</span>
+                            </td>
+                          </>
+                        ) : data.id.includes('research') ? (
+                          <>
+                            <td className={styles.colIsbn}>
+                              <span className={styles.isbnText}>{item.fundingAgency || 'N/A'}</span>
+                            </td>
+                            <td className={styles.colAuthor}>
+                              <span className={styles.authorText}>
+                                {item.fundingAmount && item.status
+                                  ? `${item.fundingAmount} / ${item.status}`
+                                  : item.fundingAmount || item.status || 'N/A'}
+                              </span>
+                            </td>
+                          </>
+                        ) : (
+                          <>
+                            <td className={styles.colIsbn}>
+                              <span className={styles.isbnText}>{item.isbn || item.journal_or_book || 'N/A'}</span>
+                            </td>
+                            <td className={styles.colAuthor}>
+                              <span className={styles.authorText}>{item.authors || 'N/A'}</span>
+                            </td>
+                          </>
+                        )}
                         <td className={styles.colYear}>
                           <span className={styles.yearTag}>{item.year}</span>
-                        </td>
-                        <td className={styles.colAuthor}>
-                          <span className={styles.authorText}>{item.authors || 'N/A'}</span>
                         </td>
                         <td className={styles.colActions}>
                           <div className={styles.actionGroup}>
