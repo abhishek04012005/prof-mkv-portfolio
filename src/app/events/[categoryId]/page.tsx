@@ -1,13 +1,47 @@
-'use client';
-
-import { useParams } from 'next/navigation';
+import { Metadata } from 'next';
 import { eventsData } from '../../../data/events';
 import ExploreDataDashboard, { ExploreCategoryData } from '../../../components/explore/exploreDataDashboard';
 
-export default function EventsExplore() {
-  const params = useParams();
-  const categoryId = params.categoryId as string;
+interface Props {
+  params: {
+    categoryId: string;
+  };
+}
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { categoryId } = params;
+  const category = eventsData.find((cat) => cat.id === categoryId);
+
+  if (!category) {
+    return {
+      title: 'Category Not Found | Prof. Manish K. Verma',
+      description: 'The requested events category could not be found.',
+    };
+  }
+
+  const baseUrl = 'https://prof-manish-k-verma.com';
+
+  return {
+    title: `${category.title} | Prof. Manish K. Verma`,
+    description: `${category.description} View ${category.events.length} events organized or coordinated by Prof. Manish K. Verma.`,
+    keywords: [category.title, 'events', 'conferences', 'workshops', 'Prof. Manish K. Verma', 'academic events'],
+    openGraph: {
+      title: category.title,
+      description: category.description,
+      url: `${baseUrl}/events/${categoryId}`,
+      type: 'website',
+      siteName: 'Prof. Manish K. Verma',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: category.title,
+      description: category.description,
+    },
+  };
+}
+
+export default function EventsExplore({ params }: Props) {
+  const { categoryId } = params;
   const category = eventsData.find((cat) => cat.id === categoryId);
 
   if (!category) {

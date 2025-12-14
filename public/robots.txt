@@ -1,0 +1,40 @@
+# robots.txt for Prof. Manish K. Verma's Academic Portfolio
+# Last updated: 2025-12-14
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Allow: /publications/
+Allow: /research/
+Allow: /supervision/
+Allow: /events/
+
+# Disallow private/admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.next/
+
+# Crawl delay (ms) for respectful crawling
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://prof-manish-k-verma.com/sitemap.xml
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
