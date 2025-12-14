@@ -1,6 +1,5 @@
 .footer {
-  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-background) 100%);
-  color: var(--color-text);
+  background-color: var(--color-background);
   border-top: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
@@ -14,121 +13,91 @@
     var(--color-primary-light),
     var(--color-primary)
   );
-  animation: shimmer 3s infinite;
 }
 
-@keyframes shimmer {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
+/* ============================================
+   MAIN FOOTER CONTAINER
+   ============================================ */
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem 1rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* ============================================
-   MAIN CONTENT GRID
-   ============================================ */
-
-.mainContent {
+  padding: 3rem 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 3fr;
   gap: 3rem;
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid var(--color-border);
+  align-items: start;
 }
 
 @media (max-width: 1023px) {
-  .mainContent {
-    grid-template-columns: repeat(2, 1fr);
+  .container {
+    grid-template-columns: 1fr;
     gap: 2.5rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding: 2.5rem 1rem;
   }
 }
 
 @media (max-width: 640px) {
-  .mainContent {
-    grid-template-columns: 1fr;
+  .container {
+    padding: 2rem 1rem;
     gap: 2rem;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
   }
 }
 
 /* ============================================
-   COLUMN STYLES
+   BRAND COLUMN
    ============================================ */
 
-.column {
+.brandColumn {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* Brand Section */
-.brandSection {
+.brandContent {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.8rem;
 }
 
 .brandName {
   font-size: 1.3rem;
-  font-weight: 900;
+  font-weight: 800;
   margin: 0;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
 }
 
-.brandTitle {
-  font-size: 0.9rem;
+.brandName:hover {
+  opacity: 0.8;
+}
+
+.brandSubtitle {
+  font-size: 0.85rem;
   font-weight: 700;
-  margin: 0;
   color: var(--color-text-light);
   text-transform: uppercase;
-  letter-spacing: 0.15px;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 
 .brandDesc {
   font-size: 0.9rem;
+  color: var(--color-text-light);
   line-height: 1.6;
   margin: 0;
-  color: var(--color-text-light);
 }
 
-/* Social Links */
-.socialLinksContainer {
+/* Social Links Container */
+.socialContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-}
-
-.socialLabel {
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin: 0;
-  color: var(--color-text);
-  text-transform: uppercase;
-  letter-spacing: 0.1px;
+  gap: 0.8rem;
 }
 
 .socialLinks {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -136,13 +105,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--color-background);
-  border: 1.5px solid var(--color-border);
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -158,105 +127,97 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.1;
-  transition: width 0.6s, height 0.6s;
+  transition: width 0.5s, height 0.5s;
 }
 
 .socialLink:hover {
-  border-color: currentColor;
-  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-overlay-light);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(26, 84, 144, 0.15);
 }
 
 .socialLink:hover::before {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
-.socialIcon {
-  font-size: 1.2rem;
+.socialSymbol {
+  font-size: 1.3rem;
   position: relative;
   z-index: 1;
   transition: transform 0.3s ease;
 }
 
-.socialIconComponent {
-  font-size: 1.2rem !important;
-  width: 1.2rem;
-  height: 1.2rem;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
+.socialLink:hover .socialSymbol {
+  transform: scale(1.15);
 }
 
-.socialLink:hover .socialIcon {
-  transform: scale(1.2) rotate(5deg);
+/* ============================================
+   NAVIGATION SECTIONS
+   ============================================ */
+
+.navSections {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 }
 
-.socialLink:hover .socialIconComponent {
-  transform: scale(1.2) rotate(5deg);
+@media (max-width: 1023px) {
+  .navSections {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 }
 
-.social-linkedin:hover {
-  border-color: #0a66c2;
-  color: #0a66c2;
+@media (max-width: 640px) {
+  .navSections {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
-.social-twitter:hover {
-  border-color: #000000;
-  color: #000000;
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.social-research:hover {
-  border-color: #0084ff;
-  color: #0084ff;
-}
-
-.social-scholar:hover {
-  border-color: #4285f4;
-  color: #4285f4;
-}
-
-.social-github:hover {
-  border-color: #333;
-  color: #333;
-}
-
-.social-email:hover {
-  border-color: #ea4335;
-  color: #ea4335;
-}
-
-/* Column Title */
-.columnTitle {
-  font-size: 1rem;
+.sectionTitle {
+  font-size: 0.95rem;
   font-weight: 800;
-  margin: 0 0 1.2rem 0;
+  margin: 0;
   color: var(--color-text);
   position: relative;
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.columnTitle::after {
+.sectionTitle::before {
   content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), transparent);
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
   border-radius: 2px;
 }
 
-/* Link List */
-.linkList {
+.sectionLinks {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
 }
 
-.link {
+.sectionLinks li {
+  list-style: none;
+}
+
+.footerNavLink {
   font-size: 0.9rem;
   color: var(--color-text-light);
   text-decoration: none;
@@ -267,319 +228,216 @@
   width: fit-content;
 }
 
-.link::before {
+.footerNavLink::before {
   content: '';
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  background: var(--color-primary);
   transition: width 0.3s ease;
 }
 
-.link:hover {
+.footerNavLink:hover {
   color: var(--color-primary);
-}
-
-.link:hover::before {
-  width: 100%;
-}
-
-/* Institution Info */
-.institutionInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.infoItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  font-size: 0.9rem;
-  color: var(--color-text-light);
-  margin: 0;
-  line-height: 1.5;
-  transition: all 0.3s ease;
-}
-
-.infoItem:hover {
-  color: var(--color-text);
   transform: translateX(4px);
 }
 
-.infoIcon {
-  font-size: 1.2rem;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+.footerNavLink:hover::before {
+  width: 100%;
 }
 
-.infoItem:hover .infoIcon {
-  transform: scale(1.2);
-}
-
-.instLink {
+.footerNavLink.active {
   color: var(--color-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.instLink:hover {
-  text-decoration: underline;
-  color: var(--color-primary-light);
-}
-
-/* ============================================
-   NEWSLETTER SECTION
-   ============================================ */
-
-.newsletterSection {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  border-radius: 12px;
-  padding: 2.5rem;
-  margin-bottom: 3rem;
-  box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.2);
-}
-
-.newsletterContent {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  .newsletterContent {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.newsletterTitle {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: 0 0 0.5rem 0;
-  color: white;
-}
-
-.newsletterDesc {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-  line-height: 1.5;
-}
-
-.newsletterForm {
-  display: flex;
-  gap: 0.5rem;
-  flex: 1;
-  max-width: 400px;
-}
-
-@media (max-width: 768px) {
-  .newsletterForm {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
-.newsletterInput {
-  flex: 1;
-  padding: 0.8rem 1rem;
-  border: none;
-  border-radius: 6px;
-  background-color: rgba(255, 255, 255, 0.95);
-  color: var(--color-text);
-  font-size: 0.9rem;
-  font-family: inherit;
-  transition: all 0.3s ease;
-}
-
-.newsletterInput::placeholder {
-  color: var(--color-text-light);
-}
-
-.newsletterInput:focus {
-  outline: none;
-  background-color: white;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-}
-
-.newsletterBtn {
-  padding: 0.8rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 6px;
   font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.newsletterBtn:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-color: white;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .newsletterBtn {
-    width: 100%;
-  }
+.footerNavLink.active::before {
+  width: 100%;
 }
 
 /* ============================================
-   BOTTOM SECTION
+   BOTTOM BAR
    ============================================ */
 
-.bottomSection {
+.bottomBar {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 1rem;
+}
+
+.bottomContainer {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding-top: 2rem;
   flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
-  .bottomSection {
+  .bottomContainer {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1.5rem;
   }
+}
+
+/* Copyright Section */
+.copyrightSection {
+  flex: 1;
+  min-width: 200px;
 }
 
 .copyright {
-  flex: 1;
-}
-
-.copyrightText {
   font-size: 0.85rem;
   color: var(--color-text-light);
   margin: 0;
   font-weight: 500;
 }
 
-.footerLinksBottom {
+/* Bottom Links */
+.bottomLinks {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
   flex: 1;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.footerLink {
+@media (max-width: 768px) {
+  .bottomLinks {
+    justify-content: flex-start;
+  }
+}
+
+.bottomLink {
   font-size: 0.85rem;
   color: var(--color-text-light);
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: 500;
+  position: relative;
 }
 
-.footerLink:hover {
-  color: var(--color-primary);
-}
-
-.madeBy {
-  flex: 1;
-  text-align: right;
-}
-
-.madeByText {
-  font-size: 0.85rem;
-  color: var(--color-text-light);
-  margin: 0;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.madeBy:hover .madeByText {
-  color: var(--color-primary);
-}
-
-/* ============================================
-   DECORATIVE ELEMENTS
-   ============================================ */
-
-.bottomDecor {
+.bottomLink::after {
+  content: '';
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(
-    circle,
-    rgba(var(--color-primary-rgb), 0.08) 0%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  pointer-events: none;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.bottomLink:hover {
+  color: var(--color-primary);
+}
+
+.bottomLink:hover::after {
+  width: 100%;
+}
+
+.separator {
+  color: var(--color-border);
+  font-weight: 300;
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE MOBILE
    ============================================ */
 
 @media (max-width: 640px) {
-  .container {
-    padding: 2.5rem 1rem;
-  }
-
-  .mainContent {
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-
-  .columnTitle {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
+  .footer {
+    margin-top: 2rem;
   }
 
   .brandName {
     font-size: 1.1rem;
   }
 
-  .newsletterSection {
-    padding: 1.8rem;
+  .brandSubtitle {
+    font-size: 0.8rem;
   }
 
-  .newsletterTitle {
-    font-size: 1rem;
+  .brandDesc {
+    font-size: 0.85rem;
   }
 
-  .bottomSection {
+  .socialLinks {
+    gap: 0.4rem;
+  }
+
+  .socialLink {
+    width: 40px;
+    height: 40px;
+  }
+
+  .socialSymbol {
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 0.9rem;
+  }
+
+  .sectionTitle::before {
+    width: 18px;
+    height: 2px;
+  }
+
+  .footerNavLink {
+    font-size: 0.85rem;
+  }
+
+  .bottomContainer {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
-    padding-top: 1.5rem;
   }
 
-  .madeBy {
-    text-align: left;
-  }
-
-  .footerLinksBottom {
+  .bottomLinks {
     justify-content: flex-start;
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+  }
+
+  .bottomLink {
+    font-size: 0.8rem;
+  }
+
+  .separator {
+    font-size: 0.75rem;
   }
 }
 
+/* ============================================
+   TABLET BREAKPOINTS
+   ============================================ */
+
 @media (min-width: 641px) and (max-width: 1023px) {
   .container {
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 
-  .mainContent {
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
+  .bottomContainer {
+    gap: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
+  }
+
+  .bottomContainer {
+    padding: 1.5rem 2rem;
   }
 }
-
