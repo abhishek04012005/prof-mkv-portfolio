@@ -3,13 +3,13 @@ import { researchData } from '../../../data/research';
 import ExploreDataDashboard, { ExploreCategoryData } from '../../../components/explore/exploreDataDashboard';
 
 interface Props {
-  params: {
+  params: Promise<{
     categoryId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { categoryId } = params;
+  const { categoryId } = await params;
   const category = researchData.find((cat) => cat.id === categoryId);
 
   if (!category) {
@@ -60,8 +60,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ResearchExplore({ params }: Props) {
-  const { categoryId } = params;
+export default async function ResearchExplore({ params }: Props) {
+  const { categoryId } = await params;
   const category = researchData.find((cat) => cat.id === categoryId);
 
   if (!category) {

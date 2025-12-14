@@ -4,14 +4,14 @@ import { publicationData } from '../../../../data/publication';
 import ItemDetail from '../../../../components/detail/itemDetail';
 
 interface Props {
-  params: {
+  params: Promise<{
     categoryId: string;
     itemId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { categoryId, itemId } = params;
+  const { categoryId, itemId } = await params;
   const category = publicationData.find((cat) => cat.id === categoryId);
   const item = category?.publications.find((pub) => pub.id === itemId);
 
@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function PublicationDetail({ params }: Props) {
-  const { categoryId, itemId } = params;
+export default async function PublicationDetail({ params }: Props) {
+  const { categoryId, itemId } = await params;
   const category = publicationData.find((cat) => cat.id === categoryId);
   const item = category?.publications.find((pub) => pub.id === itemId);
 

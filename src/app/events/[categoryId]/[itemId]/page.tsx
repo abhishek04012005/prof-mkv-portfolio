@@ -4,14 +4,14 @@ import { eventsData } from '../../../../data/events';
 import ItemDetail from '../../../../components/detail/itemDetail';
 
 interface Props {
-  params: {
+  params: Promise<{
     categoryId: string;
     itemId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { categoryId, itemId } = params;
+  const { categoryId, itemId } = await params;
   const category = eventsData.find((cat) => cat.id === categoryId);
   const item = category?.events.find((evt) => evt.id === itemId);
 
@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function EventItemDetail({ params }: Props) {
-  const { categoryId, itemId } = params;
+export default async function EventItemDetail({ params }: Props) {
+  const { categoryId, itemId } = await params;
   const category = eventsData.find((cat) => cat.id === categoryId);
   const item = category?.events.find((evt) => evt.id === itemId);
 

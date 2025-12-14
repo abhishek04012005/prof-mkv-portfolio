@@ -4,14 +4,14 @@ import { supervisionData } from '../../../../data/supervision';
 import ItemDetail from '../../../../components/detail/itemDetail';
 
 interface Props {
-  params: {
+  params: Promise<{
     categoryId: string;
     itemId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { categoryId, itemId } = params;
+  const { categoryId, itemId } = await params;
   const category = supervisionData.find((cat) => cat.id === categoryId);
   const item = category?.supervision.find((sup) => sup.id === itemId);
 
@@ -45,8 +45,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function SupervisionItemDetail({ params }: Props) {
-  const { categoryId, itemId } = params;
+export default async function SupervisionItemDetail({ params }: Props) {
+  const { categoryId, itemId } = await params;
   const category = supervisionData.find((cat) => cat.id === categoryId);
   const item = category?.supervision.find((sup) => sup.id === itemId);
 
