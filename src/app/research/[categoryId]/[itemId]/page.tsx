@@ -72,7 +72,6 @@ export default async function ResearchItemDetail({ params }: Props) {
     <ItemDetail
       item={item}
       categoryTitle={category.title}
-      onBack={() => {}}
     />
   );
 }

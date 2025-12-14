@@ -88,7 +88,6 @@ export default async function PublicationDetail({ params }: Props) {
     <ItemDetail
       item={item}
       categoryTitle={category.title}
-      onBack={() => {}}
     />
   );
 }
