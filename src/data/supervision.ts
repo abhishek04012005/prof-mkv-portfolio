@@ -6,7 +6,7 @@ export interface SupervisionItem {
   year: number;
   startYear?: number;
   endYear?: number;
-  status?: 'completed' | 'ongoing' | 'planned';
+  status?: 'completed' | 'ongoing' | 'planned' | 'awarded';
   institution?: string;
   department?: string;
   specialization?: string;
@@ -20,6 +20,11 @@ export interface SupervisionItem {
   url?: string;
   downloadUrl?: string;
   doi?: string;
+  degreeAwarded?: string;
+  thesisTitle?: string;
+  researchArea?: string;
+  awardDate?: string;
+  notes?: string;
 }
 
 export interface SupervisionCategory {
@@ -32,114 +37,151 @@ export interface SupervisionCategory {
 
 export const supervisionData: SupervisionCategory[] = [
   {
-    id: 'phd-supervision',
-    title: 'PhD Supervision',
-    icon: '🎓',
-    description: 'PhD students supervised and mentored',
-    supervision: [
+    "id": "phd-supervision",
+    "title": "PhD Supervision",
+    "icon": "SchoolOutlined",
+    "description": "PhD students supervised and mentored; degrees awarded",
+    "supervision": [
       {
-        id: 'phd-1',
-        title: 'Machine Learning for IoT Systems',
-        studentName: 'Mr. Raj Kumar',
-        supervisorName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startYear: 2021,
-        endYear: 2024,
-        status: 'completed',
-        institution: 'XYZ University',
-        department: 'Department of Computer Science',
-        specialization: 'Machine Learning & IoT',
-        researchTopic: 'Deep Learning Approaches for IoT Sensor Data Analysis in Smart Cities',
-        abstract: 'The research focused on developing deep learning models for real-time analysis of IoT sensor data in smart city environments, with applications in traffic management and energy optimization.',
-        description: 'The research focused on developing deep learning models for real-time analysis of IoT sensor data in smart city environments, with applications in traffic management and energy optimization.',
-        keywords: ['Machine Learning', 'Deep Learning', 'IoT', 'Smart Cities', 'Sensor Data'],
-        outcomes: [
-          'Successfully completed PhD thesis',
-          'Published 6 research papers in peer-reviewed journals',
-          '2 conference papers presented at international conferences',
-          '1 patent filed for IoT sensor processing method',
-          'Currently working as ML Engineer at leading tech company',
-        ],
-        publications: ['article-1', 'article-2', 'article-3'],
-        awards: ['Best Research Paper Award 2023', 'University Gold Medal 2024'],
+        "id": "manisha-women-ageing-health-chapra-bihar-2025",
+        "title": "Manisha Women Ageing Health Chapra Bihar 2025",
+        "studentName": "Ms. Manisha",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "Women, Ageing and Health: A Sociological Study of Chapra District of Bihar",
+        "researchArea": "Ageing, Women's Health, Medical Sociology",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "February 2025",
+        "year": 2025,
+        "status": "awarded",
+        "notes": ""
       },
       {
-        id: 'phd-2',
-        title: 'Cloud Security and Cryptography',
-        studentName: 'Ms. Priya Sharma',
-        supervisorName: 'Prof. Manish K. Verma',
-        year: 2023,
-        startYear: 2020,
-        endYear: 2023,
-        status: 'completed',
-        institution: 'XYZ University',
-        department: 'Department of Computer Science',
-        specialization: 'Cybersecurity & Cloud Computing',
-        researchTopic: 'Blockchain-Based Security Mechanisms for Cloud Infrastructure',
-        abstract: 'This research proposes novel blockchain-based security mechanisms for protecting cloud computing resources and ensuring data integrity in distributed environments.',
-        description: 'This research proposes novel blockchain-based security mechanisms for protecting cloud computing resources and ensuring data integrity in distributed environments.',
-        keywords: ['Blockchain', 'Cloud Security', 'Cryptography', 'Distributed Systems'],
-        outcomes: [
-          'Successfully completed PhD thesis with distinction',
-          'Published 5 research papers in top-tier journals',
-          '3 international conference papers',
-          '2 patents granted for security mechanisms',
-          'Post-doctoral researcher at leading research institute',
-        ],
-        publications: ['article-4', 'article-5'],
-        awards: ['National Award for Cybersecurity Research 2023'],
+        "id": "pawan-kumar-river-bank-erosion-displacement-sharda-2023",
+        "title": "Pawan Kumar River Bank Erosion Displacement Sharda 2023",
+        "studentName": "Mr. Pawan Kumar",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "River Bank Erosion, Displacement and Sustainability: A Sociological Study of People Affected by River Sharda",
+        "researchArea": "Environmental Sociology, Displacement, Sustainability",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "August 2023",
+        "year": 2023,
+        "status": "awarded",
+        "notes": ""
       },
       {
-        id: 'phd-3',
-        title: 'Federated Learning and Privacy Preservation',
-        studentName: 'Mr. Arjun Nair',
-        supervisorName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startYear: 2021,
-        status: 'ongoing',
-        institution: 'XYZ University',
-        department: 'Department of Computer Science',
-        specialization: 'Machine Learning & Privacy',
-        researchTopic: 'Privacy-Preserving Federated Learning Frameworks for Healthcare Applications',
-        abstract: 'Research on developing federated learning frameworks that enable collaborative ML model training while preserving data privacy in healthcare systems.',
-        description: 'Research on developing federated learning frameworks that enable collaborative ML model training while preserving data privacy in healthcare systems.',
-        keywords: ['Federated Learning', 'Privacy', 'Healthcare', 'Machine Learning'],
-        outcomes: [
-          'Framework prototype developed',
-          '2 papers published in reputed journals',
-          '2 papers submitted to conferences',
-          'Collaboration with healthcare institutions',
-          'Patent application filed',
-        ],
+        "id": "khusboo-globalization-new-tourism-wellness-yoga-2023",
+        "title": "Khusboo Globalization New Tourism Wellness Yoga 2023",
+        "studentName": "Dr. Khusboo",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "Globalization and New Tourism: A Sociological Study of Wellness with Special Focus on Yoga",
+        "researchArea": "Tourism Sociology, Wellness, Globalization, Yoga Studies",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "August 2023",
+        "year": 2023,
+        "status": "awarded",
+        "notes": ""
       },
       {
-        id: 'phd-4',
-        title: 'AI and Autonomous Systems',
-        studentName: 'Ms. Kavya Mishra',
-        supervisorName: 'Prof. Manish K. Verma',
-        year: 2025,
-        startYear: 2022,
-        status: 'ongoing',
-        institution: 'XYZ University',
-        department: 'Department of Computer Science',
-        specialization: 'Artificial Intelligence & Robotics',
-        researchTopic: 'Deep Reinforcement Learning for Autonomous Vehicle Navigation',
-        abstract: 'This research explores advanced deep reinforcement learning techniques for autonomous vehicle navigation in complex urban environments.',
-        description: 'This research explores advanced deep reinforcement learning techniques for autonomous vehicle navigation in complex urban environments.',
-        keywords: ['AI', 'Reinforcement Learning', 'Autonomous Vehicles', 'Robotics'],
-        outcomes: [
-          'Simulation framework developed',
-          '3 papers published',
-          'Collaboration with automotive industry',
-          'Expected completion in 2025',
-        ],
+        "id": "moni-chandra-ujjawala-yojna-health-environment-peri-urban-up-2023",
+        "title": "Moni Chandra Ujjawala Yojna Health Environment Peri Urban Uttar Pradesh 2023",
+        "studentName": "Dr. Moni Chandra",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "Ujjawala Yojna, Health and Environment: A Sociological Study of Women of Peri-Urban Areas of Selected Cities of Uttar Pradesh",
+        "researchArea": "Public Policy, Women's Health, Environmental Sociology",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "July 2023",
+        "year": 2023,
+        "status": "awarded",
+        "notes": ""
       },
-    ],
-  },
-  {
+      {
+        "id": "soniya-singh-sanitation-health-slums-allahabad-2022",
+        "title": "Soniya Singh Sanitation Health Slums Allahabad 2022",
+        "studentName": "Dr. Soniya Singh",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "Issues of Sanitation and Health: A Sociological Study of Selected Slums of Allahabad City",
+        "researchArea": "Urban Sociology, Sanitation, Public Health",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "May 2022",
+        "year": 2022,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "arti-kureel-women-health-schemes-maternal-health-lucknow-2020",
+        "title": "Arti Kureel Women Health Schemes Maternal Health Lucknow 2020",
+        "studentName": "Dr. Arti Kureel",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "Implementation of Women Health Related Schemes and its Impact on Maternal Health: A Sociological Study of Lucknow district",
+        "researchArea": "Health Policy, Maternal Health, Program Evaluation",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "17 February 2020",
+        "year": 2020,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "narendra-gupta-poverty-food-insecurity-health-bundelkhand-2017",
+        "title": "Narendra Gupta Poverty Food Insecurity Health Bundelkhand 2017",
+        "studentName": "Dr. Narendra Gupta",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "Poverty, Food Insecurity and Health Predicaments: A Sociological Study of Selected Villages of Banda and Mahoba Districts of Bundelkhand Region of Uttar Pradesh",
+        "researchArea": "Poverty Studies, Food Security, Rural Health",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "7 December 2017",
+        "year": 2017,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "alka-shah-development-ecological-changes-tribal-health-up-2015",
+        "title": "Alka Shah Development Ecological Changes Tribal Health Uttar Pradesh 2015",
+        "studentName": "Dr. Alka Shah",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "Development, Ecological Changes and Tribal Health: A Sociological Study of Selected Districts of Uttar Pradesh",
+        "researchArea": "Tribal Studies, Environmental Sociology, Public Health",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "21 September 2015",
+        "year": 2015,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "sandeep-kumar-rural-urban-interface-peri-urban-lucknow-2015",
+        "title": "Sandeep Kumar Rural Urban Interface Peri Urban Lucknow 2015",
+        "studentName": "Dr. Sandeep Kumar",
+        "supervisorName": "Prof. Manish K. Verma",
+        "degreeAwarded": "Ph.D.",
+        "thesisTitle": "Rural Urban Interface and Formation of Peri-Urban Areas: A Sociological Study of Lucknow City",
+        "researchArea": "Urban Studies, Peri-Urbanization, Rural-Urban Interface",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "12 August 2015",
+        "year": 2015,
+        "status": "awarded",
+        "notes": ""
+      }
+    ]
+  }, {
     id: 'mphil-supervision',
     title: 'MPhil Supervision',
-    icon: '📚',
+    icon: 'AutoStoriesOutlined',
     description: 'MPhil students supervised and guided',
     supervision: [
       {
@@ -235,7 +277,7 @@ export const supervisionData: SupervisionCategory[] = [
   {
     id: 'pg-dissertation-supervision',
     title: 'PG Dissertation Supervision',
-    icon: '📖',
+    icon: 'ClassOutlined',
     description: 'Postgraduate dissertation projects supervised',
     supervision: [
       {
@@ -352,7 +394,7 @@ export const supervisionData: SupervisionCategory[] = [
   {
     id: 'organizing-roles',
     title: 'Organizing Roles',
-    icon: '🎯',
+    icon: 'EventNoteOutlined',
     description: 'Conference and workshop organization roles',
     supervision: [
       {
@@ -434,7 +476,7 @@ export const supervisionData: SupervisionCategory[] = [
   {
     id: 'session-chairing-panel',
     title: 'Session Chairing and Panel Supervision',
-    icon: '🎪',
+    icon: 'GroupsOutlined',
     description: 'Conference sessions chaired and panel discussions supervised',
     supervision: [
       {

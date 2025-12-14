@@ -127,26 +127,34 @@ export default function CardPreview({
                 <h3 className={styles.cardTitle}>{category.title}</h3>
                 <p className={styles.cardDescription}>{category.description}</p>
 
-                <button
+              <button
                   type="button"
                   className={styles.exploreBtn}
                   style={{
-                    borderColor: 'var(--color-primary)',
-                    color: 'var(--color-primary)',
+                    borderColor: category.id === 'research-projects-ongoing' ? '#ccc' : 'var(--color-primary)',
+                    color: category.id === 'research-projects-ongoing' ? '#ccc' : 'var(--color-primary)',
+                    cursor: category.id === 'research-projects-ongoing' ? 'not-allowed' : 'pointer',
+                    opacity: category.id === 'research-projects-ongoing' ? 0.5 : 1,
                   }}
+                  disabled={category.id === 'research-projects-ongoing'}
                   onMouseEnter={(e) => {
                     const target = e.currentTarget as HTMLButtonElement;
-                    target.style.backgroundColor = 'var(--color-primary)';
-                    target.style.color = 'white';
+                    if (!target.disabled) {
+                      target.style.backgroundColor = 'var(--color-primary)';
+                      target.style.color = 'white';
+                    }
                   }}
                   onMouseLeave={(e) => {
                     const target = e.currentTarget as HTMLButtonElement;
-                    target.style.backgroundColor = 'transparent';
-                    target.style.color = 'var(--color-primary)';
+                    if (!target.disabled) {
+                      target.style.backgroundColor = 'transparent';
+                      target.style.color = 'var(--color-primary)';
+                    }
                   }}
                   onClick={() => handleExploreCategory(category.id)}
+                  title={category.id === 'research-projects-ongoing' ? 'No ongoing projects available' : 'Explore'}
                 >
-                  Explore
+                  {category.id === 'research-projects-ongoing' ? 'Coming Soon' : 'Explore'}
                   <ArrowForwardIcon className={styles.btnIcon} />
                 </button>
               </div>

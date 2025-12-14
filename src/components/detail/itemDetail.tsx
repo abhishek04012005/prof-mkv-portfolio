@@ -250,6 +250,67 @@ export default function ItemDetail({
       });
     }
 
+    // Research Outputs specific fields (articles, chapters, publications)
+    if (item.volume_issue) {
+      fields.push({
+        label: 'Volume/Issue',
+        value: item.volume_issue,
+        icon: '📊',
+      });
+    }
+
+    if (item.downloadUrl) {
+      fields.push({
+        label: 'Download URL',
+        value: item.downloadUrl,
+        icon: '⬇️',
+      });
+    }
+
+    // PhD Supervision specific fields
+    if (item.studentName) {
+      fields.push({
+        label: 'Student Name',
+        value: item.studentName,
+        icon: '👤',
+      });
+    }
+
+    if (item.degreeAwarded) {
+      fields.push({
+        label: 'Degree Awarded',
+        value: item.degreeAwarded,
+        icon: '🎓',
+      });
+    }
+
+    if (item.thesisTitle) {
+      fields.push({
+        label: 'Thesis Title',
+        value: item.thesisTitle,
+        icon: '📚',
+      });
+    }
+
+    if (item.researchArea) {
+      fields.push({
+        label: 'Research Area',
+        value: item.researchArea,
+        icon: '🔬',
+      });
+    }
+
+    if (item.awardDate) {
+      fields.push({
+        label: 'Award Date',
+        value: item.awardDate,
+        icon: '📅',
+      });
+    }
+
+    // Research Interests/Areas specific fields are handled via abstract and description
+    // Keywords are displayed separately below
+
     return fields;
   };
 

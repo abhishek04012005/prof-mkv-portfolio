@@ -216,10 +216,20 @@ export default function ExploreDataDashboard({
                         <th className={styles.colIsbn}>Book Title</th>
                         <th className={styles.colAuthor}>Book Author</th>
                       </>
-                    ) : data.id.includes('research') ? (
+                    ) : data.id.includes('research-projects') ? (
                       <>
                         <th className={styles.colIsbn}>Funding Agency</th>
                         <th className={styles.colAuthor}>Amount / Status</th>
+                      </>
+                    ) : data.id === 'research-interests' || data.id === 'research-outputs' ? (
+                      <>
+                        <th className={styles.colIsbn}>Keywords</th>
+                        <th className={styles.colAuthor}>Focus Area</th>
+                      </>
+                    ) : data.id === 'phd-supervision' ? (
+                      <>
+                        <th className={styles.colIsbn}>Student Name</th>
+                        <th className={styles.colAuthor}>Research Area</th>
                       </>
                     ) : (
                       <>
@@ -268,7 +278,7 @@ export default function ExploreDataDashboard({
                               <span className={styles.authorText}>{item.bookAuthors || 'N/A'}</span>
                             </td>
                           </>
-                        ) : data.id.includes('research') ? (
+                        ) : data.id.includes('research-projects') ? (
                           <>
                             <td className={styles.colIsbn}>
                               <span className={styles.isbnText}>{item.fundingAgency || 'N/A'}</span>
@@ -278,6 +288,36 @@ export default function ExploreDataDashboard({
                                 {item.fundingAmount && item.status
                                   ? `${item.fundingAmount} / ${item.status}`
                                   : item.fundingAmount || item.status || 'N/A'}
+                              </span>
+                            </td>
+                          </>
+                        ) : data.id === 'research-interests' || data.id === 'research-outputs' ? (
+                          <>
+                            <td className={styles.colIsbn}>
+                              <span className={styles.isbnText}>
+                                {item.keywords && item.keywords.length > 0
+                                  ? item.keywords.slice(0, 2).join(', ')
+                                  : 'N/A'}
+                              </span>
+                            </td>
+                            <td className={styles.colAuthor}>
+                              <span className={styles.authorText}>
+                                {item.description && item.description.length > 50
+                                  ? item.description.substring(0, 50) + '...'
+                                  : item.description || item.abstract || 'N/A'}
+                              </span>
+                            </td>
+                          </>
+                        ) : data.id === 'phd-supervision' ? (
+                          <>
+                            <td className={styles.colIsbn}>
+                              <span className={styles.isbnText}>{item.studentName || 'N/A'}</span>
+                            </td>
+                            <td className={styles.colAuthor}>
+                              <span className={styles.authorText}>
+                                {item.researchArea && item.researchArea.length > 50
+                                  ? item.researchArea.substring(0, 50) + '...'
+                                  : item.researchArea || 'N/A'}
                               </span>
                             </td>
                           </>
