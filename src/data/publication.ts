@@ -23,6 +23,7 @@ export interface Publication {
   bookAuthors?: string;
   bookPublisher?: string;
   bookYear?: number;
+  [key: string]: string | number | string[] | boolean | undefined;
 }
 
 export interface PublicationCategory {

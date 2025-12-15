@@ -24,6 +24,7 @@ export interface ResearchItem {
   citations?: number;
   outcomes?: string[];
   coInvestigators?: string[];
+  [key: string]: string | number | string[] | boolean | undefined;
 }
 
 export interface ResearchCategory {

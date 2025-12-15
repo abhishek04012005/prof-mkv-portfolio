@@ -1,32 +1,58 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from './itemDetail.module.css';
 import {
-  ArrowBack as ArrowBackIcon,
+  Close as CloseIcon,
   OpenInNew as OpenNewIcon,
   Download as DownloadIcon,
   Share as ShareIcon,
-  Star as StarIcon,
-  VerifiedUser as VerifiedIcon,
+  ContentCopy as CopyIcon,
+  CheckCircle as CheckIcon,
   Info as InfoIcon,
-  EmojiEvents as KeywordsIcon,
-  Article as AbstractIcon,
-  Description as CitationIcon,
+  LocalOffer as TagIcon,
+  Description as SummaryIcon,
+  TrendingUp as InsightsIcon,
+  Link as LinkIcon,
 } from '@mui/icons-material';
 import bookImage from '../../../public/assets/about.png';
 
 export interface DetailItem {
   id: string;
   title: string;
-  [key: string]: any;
+  abstract?: string;
+  authors?: string | string[];
+  year?: number | string;
+  journal?: string;
+  journal_or_book?: string;
+  doi?: string;
+  pages?: string;
+  volume?: string;
+  issue?: string;
+  url?: string;
+  pdfUrl?: string;
+  downloadUrl?: string;
+  keywords?: string[];
+  fundingAgency?: string;
+  fundingAmount?: string;
+  coInvestigators?: string[];
+  outcome?: string[];
+  summary?: string;
+  venue?: string;
+  startDate?: string;
+  endDate?: string;
+  category?: string;
+  studentName?: string;
+  thesisTitle?: string;
+  [key: string]: string | number | string[] | boolean | undefined;
 }
 
 interface DetailField {
   label: string;
-  value: string;
+  value: unknown;
   icon?: string;
 }
 
@@ -44,6 +70,7 @@ export default function ItemDetail({
   renderDetailFields,
 }: ItemDetailProps) {
   const router = useRouter();
+  const [copied, setCopied] = useState(false);
 
   const handleBack = () => {
     if (onBack) {
@@ -54,7 +81,7 @@ export default function ItemDetail({
   };
 
   const getImageSource = () => {
-    return item.image || item.thumbnail || bookImage.src;
+    return (item.image as string) || (item.thumbnail as string) || bookImage.src;
   };
 
   const getFields = (): DetailField[] => {
@@ -160,7 +187,6 @@ export default function ItemDetail({
       });
     }
 
-    // Book Review specific fields
     if (item.bookTitle) {
       fields.push({
         label: 'Book Title',
@@ -201,7 +227,6 @@ export default function ItemDetail({
       });
     }
 
-    // Research Project specific fields
     if (item.fundingAgency) {
       fields.push({
         label: 'Funding Agency',
@@ -221,7 +246,7 @@ export default function ItemDetail({
     if (item.status) {
       fields.push({
         label: 'Status',
-        value: item.status.charAt(0).toUpperCase() + item.status.slice(1),
+        value: String(item.status).charAt(0).toUpperCase() + String(item.status).slice(1),
         icon: '🔄',
       });
     }
@@ -242,15 +267,14 @@ export default function ItemDetail({
       });
     }
 
-    if (item.coInvestigators && item.coInvestigators.length > 0) {
+    if (item.coInvestigators && Array.isArray(item.coInvestigators) && item.coInvestigators.length > 0) {
       fields.push({
         label: 'Co-Investigators',
-        value: item.coInvestigators.join(', '),
+        value: (item.coInvestigators as unknown[]).join(', '),
         icon: '👥',
       });
     }
 
-    // Research Outputs specific fields (articles, chapters, publications)
     if (item.volume_issue) {
       fields.push({
         label: 'Volume/Issue',
@@ -267,7 +291,6 @@ export default function ItemDetail({
       });
     }
 
-    // PhD Supervision specific fields
     if (item.studentName) {
       fields.push({
         label: 'Student Name',
@@ -308,239 +331,239 @@ export default function ItemDetail({
       });
     }
 
-    // Research Interests/Areas specific fields are handled via abstract and description
-    // Keywords are displayed separately below
-
     return fields;
   };
 
   const fields = getFields();
-
-  // Generate SEO meta description
-  const seoDescription = item.abstract 
-    ? item.abstract.substring(0, 155) 
+  const seoDescription = (item.abstract as string)
+    ? (item.abstract as string).substring(0, 155)
     : `${item.title} - ${categoryTitle}`;
+
+  const handleCopy = () => {
+    if (typeof window !== 'undefined') {
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: String(item.title),
+          text: (item.abstract as string) || String(item.title),
+          url: typeof window !== 'undefined' ? window.location.href : '',
+        });
+      } catch (err) {
+        handleCopy();
+      }
+    } else {
+      handleCopy();
+    }
+  };
 
   return (
     <>
-      {/* SEO Meta Tags */}
       <Head>
         <title>{item.title} | {categoryTitle} - Prof. Manish K. Verma</title>
         <meta name="description" content={seoDescription} />
-        <meta name="keywords" content={item.keywords ? item.keywords.join(', ') : categoryTitle} />
-        <meta property="og:title" content={item.title} />
+        <meta name="keywords" content={item.keywords ? (item.keywords as string[]).join(', ') : categoryTitle} />
+        <meta property="og:title" content={String(item.title)} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:image" content={getImageSource()} />
         <meta property="og:type" content="article" />
-        <meta name="author" content={item.authors || 'Prof. Manish K. Verma'} />
-        <meta name="publish_date" content={item.year ? `${item.year}-01-01` : ''} />
+        <meta name="author" content={(item.authors as string) || 'Prof. Manish K. Verma'} />
         <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
       </Head>
 
-      <div className={styles.detailPage}>
+      <div className={styles.container}>
         {/* Header */}
-        <div className={styles.header}>
-          <div className={styles.headerContent}>
-            <button
-              className={styles.backBtn}
-              onClick={handleBack}
-              aria-label="Go back"
-              title="Go back"
-            >
-              <ArrowBackIcon />
-            </button>
-            <div className={styles.headerText}>
-              <span className={styles.category}>{categoryTitle}</span>
-              <h1 className={styles.title}>{item.title}</h1>
+        <header className={styles.header}>
+          <div className={styles.headerCategory}>{categoryTitle}</div>
+        </header>
+
+        <main className={styles.mainContent}>
+          {/* Image Section with Details */}
+          <div className={styles.imageSection}>
+            <div style={{ position: 'relative', zIndex: 4 }}>
+              <Image
+                src={getImageSource()}
+                alt={String(item.title)}
+                width={500}
+                height={500}
+                className={styles.heroImage}
+                priority
+              />
             </div>
-          </div>
-        </div>
-
-        {/* Main Content */}
-        <div className={styles.container}>
-          <div className={styles.contentWrapper}>
-            {/* Sidebar - Image & Actions */}
-            <div className={styles.sidebar}>
-              <div className={styles.imageBox}>
-                <img
-                  src={getImageSource()}
-                  alt={item.title}
-                  className={styles.image}
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Featured Badge */}
-              <div className={styles.featuredBadge}>
-                <StarIcon />
-                <span>Featured {categoryTitle}</span>
-              </div>
-
-              {/* Quick Actions */}
-              <div className={styles.quickActions}>
-                {item.url && (
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.actionBtn}
-                    title="Open URL"
-                  >
-                    <OpenNewIcon />
-                    <span>View Online</span>
-                  </a>
-                )}
-                {(item.pdfUrl || item.downloadUrl) && (
-                  <a
-                    href={item.pdfUrl || item.downloadUrl}
-                    download
-                    className={styles.actionBtn}
-                    title="Download PDF"
-                  >
-                    <DownloadIcon />
-                    <span>Download</span>
-                  </a>
-                )}
-                <button
-                  className={styles.actionBtn}
-                  onClick={() => {
-                    if (navigator.share) {
-                      navigator.share({
-                        title: item.title,
-                        text: item.abstract || item.title,
-                        url: window.location.href,
-                      });
-                    } else {
-                      navigator.clipboard.writeText(window.location.href);
-                      alert('Link copied to clipboard!');
-                    }
-                  }}
-                  title="Share"
-                >
-                  <ShareIcon />
-                  <span>Share</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Main Content */}
-            <div className={styles.mainContent}>
-              {/* Meta Info Bar */}
-              <div className={styles.metaBar}>
-                <div className={styles.metaItem}>
-                  <span className={styles.metaLabel}>Published</span>
-                  <span className={styles.metaValue}>{item.year || 'N/A'}</span>
-                </div>
-                {item.authors && (
-                  <div className={styles.metaItem}>
-                    <span className={styles.metaLabel}>Author</span>
-                    <span className={styles.metaValue}>{item.authors}</span>
-                  </div>
-                )}
-                {item.citations && (
-                  <div className={styles.metaItem}>
-                    <VerifiedIcon className={styles.metaIcon} />
-                    <span className={styles.metaValue}>{item.citations} Citations</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Details Section */}
-              <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>
-                  <InfoIcon className={styles.titleIcon} />
-                  Key Information
-                </h2>
-                <div className={styles.detailsGrid}>
-                  {fields.map((field, index) => (
-                    <div key={index} className={styles.detailItem}>
-                      <div className={styles.detailLabel}>
-                        {field.icon && <span className={styles.icon}>{field.icon}</span>}
-                        <span>{field.label}</span>
-                      </div>
-                      <div className={styles.detailValue}>{field.value}</div>
+            
+            {/* Quick Details Overlay */}
+            {(item.authors || item.year || item.journal) && (
+              <div className={styles.imageDetailsPanel}>
+                <div className={styles.detailsPanelContent}>
+                  {item.authors && (
+                    <div className={styles.detailItem}>
+                      <span className={styles.detailItemLabel}>Author: </span>
+                      <span className={styles.detailItemValue}>{item.authors}</span>
                     </div>
-                  ))}
+                  )}
+                  {item.year && (
+                    <div className={styles.detailItem}>
+                      <span className={styles.detailItemLabel}>Year: </span>
+                      <span className={styles.detailItemValue}>{item.year}</span>
+                    </div>
+                  )}
+                  {item.journal && (
+                    <div className={styles.detailItem}>
+                      <span className={styles.detailItemLabel}>Journal/Publisher: </span>
+                      <span className={styles.detailItemValue}>{item.journal}</span>
+                    </div>
+                  )}
+                  {item.publisher && (
+                    <div className={styles.detailItem}>
+                      <span className={styles.detailItemLabel}>Publisher: </span>
+                      <span className={styles.detailItemValue}>{item.publisher}</span>
+                    </div>
+                  )}
+                  {item.type && (
+                    <div className={styles.detailItem}>
+                      <span className={styles.detailItemLabel}>Type: </span>
+                      <span className={styles.detailItemValue}>{item.type}</span>
+                    </div>
+                  )}
                 </div>
-              </section>
+              </div>
+            )}
+          </div>
 
-              {/* Abstract/Description Section */}
+          {/* Content Section */}
+          <article className={styles.contentSection}>
+            {/* Title */}
+            <h1 className={styles.mainTitle}>{item.title}</h1>
+
+            {/* Details Sections */}
+            <div className={styles.sectionsContainer}>
+              {/* Overview Section */}
               {item.abstract && (
-                <section className={styles.section}>
-                  <h2 className={styles.sectionTitle}>
-                    <AbstractIcon className={styles.titleIcon} />
-                    Overview
-                  </h2>
-                  <p className={styles.abstractText}>{item.abstract}</p>
-                </section>
-              )}
-
-              {/* Description Section (for Research Projects) */}
-              {item.description && item.description !== item.abstract && (
-                <section className={styles.section}>
-                  <h2 className={styles.sectionTitle}>
-                    <AbstractIcon className={styles.titleIcon} />
-                    Description
-                  </h2>
-                  <p className={styles.abstractText}>{item.description}</p>
-                </section>
-              )}
-
-              {/* Outcomes Section (for Research Projects) */}
-              {item.outcomes && item.outcomes.length > 0 && (
-                <section className={styles.section}>
-                  <h2 className={styles.sectionTitle}>
-                    <KeywordsIcon className={styles.titleIcon} />
-                    Project Outcomes
-                  </h2>
-                  <ul className={styles.outcomesList}>
-                    {item.outcomes.map((outcome: string, index: number) => (
-                      <li key={index} className={styles.outcomeItem}>{outcome}</li>
-                    ))}
-                  </ul>
+                <section className={styles.expandSection}>
+                  <div className={styles.sectionHeader}>
+                    <SummaryIcon />
+                    <span>Overview</span>
+                  </div>
+                  <div className={styles.sectionContent}>
+                    <p className={styles.abstractText}>{item.abstract}</p>
+                  </div>
                 </section>
               )}
 
               {/* Keywords Section */}
-              {item.keywords && item.keywords.length > 0 && (
-                <section className={styles.section}>
-                  <h2 className={styles.sectionTitle}>
-                    <KeywordsIcon className={styles.titleIcon} />
-                    Topics & Keywords
-                  </h2>
-                  <div className={styles.keywordsList}>
-                    {item.keywords.map((keyword: string, index: number) => (
-                      <a
-                        key={index}
-                        href={`#${keyword.replace(/\s+/g, '-').toLowerCase()}`}
-                        className={styles.keyword}
-                        title={`Search for ${keyword}`}
-                      >
-                        {keyword}
-                      </a>
-                    ))}
+              {item.keywords && Array.isArray(item.keywords) && item.keywords.length > 0 && (
+                <section className={styles.expandSection}>
+                  <div className={styles.sectionHeader}>
+                    <TagIcon />
+                    <span>Keywords</span>
+                  </div>
+                  <div className={styles.sectionContent}>
+                    <div className={styles.keywordsList}>
+                      {(item.keywords as string[]).map((keyword, idx) => (
+                        <span key={idx} className={styles.keywordTag}>{keyword}</span>
+                      ))}
+                    </div>
                   </div>
                 </section>
               )}
 
-              {/* Citation Info */}
-              <section className={styles.section + ' ' + styles.citationSection}>
-                <h2 className={styles.sectionTitle}>
-                  <CitationIcon className={styles.titleIcon} />
-                  Citation
-                </h2>
-                <div className={styles.citationBox}>
-                  <p className={styles.citationText}>
-                    {item.authors || 'Author Unknown'} ({item.year || 'N/A'}). 
-                    <em>{item.title}</em>. 
-                    {item.journal && `${item.journal}.`}
-                    {item.publisher && `${item.publisher}.`}
-                  </p>
-                </div>
-              </section>
+              {/* Details Section */}
+              {fields.length > 0 && (
+                <section className={styles.expandSection}>
+                  <div className={styles.sectionHeader}>
+                    <InfoIcon />
+                    <span>Details</span>
+                  </div>
+                  <div className={styles.sectionContent}>
+                    <div className={styles.detailsList}>
+                      {fields.map((field, idx) => (
+                        <div key={idx} className={styles.detailRow}>
+                          <span className={styles.detailKey}>{field.label}</span>
+                          <span className={styles.detailVal}>
+                            {typeof field.value === 'string' ? field.value : JSON.stringify(field.value)}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* Outcomes Section */}
+              {item.outcomes && Array.isArray(item.outcomes) && item.outcomes.length > 0 && (
+                <section className={styles.expandSection}>
+                  <div className={styles.sectionHeader}>
+                    <InsightsIcon />
+                    <span>Outcomes</span>
+                  </div>
+                  <div className={styles.sectionContent}>
+                    <ul className={styles.outcomesList}>
+                      {(item.outcomes as string[]).map((outcome, idx) => (
+                        <li key={idx} className={styles.outcomeItem}>{outcome}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              )}
+
+              {/* Citation Section */}
+              {(item.title || item.authors || item.year) && (
+                <section className={styles.expandSection}>
+                  <div className={styles.sectionHeader}>
+                    <LinkIcon />
+                    <span>Citation</span>
+                  </div>
+                  <div className={styles.sectionContent}>
+                    <div className={styles.citationBox}>
+                      <code className={styles.citationText}>
+                          {(item.authors as string) || 'Unknown Author'} ({item.year || 'N/A'}). {item.title}
+                          {item.journal && `. ${item.journal}`}
+                          {item.publisher && `. ${item.publisher}`}
+                      </code>
+                    </div>
+                    <button
+                      className={styles.citationCopyBtn}
+                      onClick={handleCopy}
+                    >
+                      <CopyIcon /> {copied ? 'Copied!' : 'Copy Citation'}
+                    </button>
+                  </div>
+                </section>
+              )}
             </div>
-          </div>
-        </div>
+
+            {/* Action Buttons */}
+            {(item.url || item.pdfUrl || item.downloadUrl) && (
+              <div className={styles.actionsBar}>
+                {item.url && (
+                  <a
+                    href={String(item.url)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.actionButton}
+                  >
+                    <OpenNewIcon /> View Online
+                  </a>
+                )}
+                {(item.pdfUrl || item.downloadUrl) && (
+                  <a
+                    href={String(item.pdfUrl || item.downloadUrl)}
+                    download
+                    className={styles.actionButton}
+                  >
+                    <DownloadIcon /> Download
+                  </a>
+                )}
+              </div>
+            )}
+          </article>
+        </main>
       </div>
     </>
   );

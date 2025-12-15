@@ -25,6 +25,7 @@ export interface SupervisionItem {
   researchArea?: string;
   awardDate?: string;
   notes?: string;
+  [key: string]: string | number | string[] | boolean | undefined;
 }
 
 export interface SupervisionCategory {

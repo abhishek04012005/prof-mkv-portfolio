@@ -24,6 +24,7 @@ export interface EventItem {
   url?: string;
   downloadUrl?: string;
   doi?: string;
+  [key: string]: string | number | string[] | boolean | undefined;
 }
 
 export interface EventCategory {
