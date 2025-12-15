@@ -380,7 +380,8 @@ export default function ItemDetail({
       <div className={styles.container}>
         {/* Header */}
         <header className={styles.header}>
-          <div className={styles.headerCategory}>{categoryTitle}</div>
+          <h1 className={styles.headerCategory}>{item.title}</h1>
+
         </header>
 
         <main className={styles.mainContent}>
@@ -396,7 +397,7 @@ export default function ItemDetail({
                 priority
               />
             </div>
-            
+
             {/* Quick Details Overlay */}
             {(item.authors || item.year || item.journal) && (
               <div className={styles.imageDetailsPanel}>
@@ -439,7 +440,7 @@ export default function ItemDetail({
           {/* Content Section */}
           <article className={styles.contentSection}>
             {/* Title */}
-            <h1 className={styles.mainTitle}>{item.title}</h1>
+            {/* <h1 className={styles.mainTitle}>{item.title}</h1> */}
 
             {/* Details Sections */}
             <div className={styles.sectionsContainer}>
@@ -522,9 +523,9 @@ export default function ItemDetail({
                   <div className={styles.sectionContent}>
                     <div className={styles.citationBox}>
                       <code className={styles.citationText}>
-                          {(item.authors as string) || 'Unknown Author'} ({item.year || 'N/A'}). {item.title}
-                          {item.journal && `. ${item.journal}`}
-                          {item.publisher && `. ${item.publisher}`}
+                        {(item.authors as string) || 'Unknown Author'} ({item.year || 'N/A'}). {item.title}
+                        {item.journal && `. ${item.journal}`}
+                        {item.publisher && `. ${item.publisher}`}
                       </code>
                     </div>
                     <button

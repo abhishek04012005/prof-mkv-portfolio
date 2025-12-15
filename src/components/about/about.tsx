@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { professorDetails, getEducationSorted, getExperienceSorted, getExpertiseWithSkills } from '@/data/professorDetails';
+import { professorDetails, getEducationSorted, getExperienceSorted, getExpertiseWithSkills, getTotalExperience } from '@/data/professorDetails';
 import styles from './about.module.css';
 import aboutImage from '../../../public/assets/about.png';
 import PersonIcon from '@mui/icons-material/Person';
@@ -22,6 +22,11 @@ export default function About() {
   const education = getEducationSorted();
   const experience = getExperienceSorted();
   const expertise = getExpertiseWithSkills();
+  
+  // Get stats from professor details
+  const totalExperience = getTotalExperience();
+  const totalPhDSupervisions = professorDetails.teaching.supervisions.phd;
+  const totalResearchProjects = professorDetails.publicationStats.researchProjects;
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: PersonIcon },
@@ -98,20 +103,20 @@ export default function About() {
                     </div>
 
                     {/* Quick Stats */}
-                    <div className={styles.statsGrid}>
+                    {/* <div className={styles.statsGrid}>
                       <div className={styles.statCard}>
-                        <div className={styles.statNumber}>20+</div>
+                        <div className={styles.statNumber}>{totalExperience}+</div>
                         <div className={styles.statName}>Years Experience</div>
                       </div>
                       <div className={styles.statCard}>
-                        <div className={styles.statNumber}>50+</div>
-                        <div className={styles.statName}>PhD Mentorships</div>
+                        <div className={styles.statNumber}>{totalPhDSupervisions}+</div>
+                        <div className={styles.statName}>PhD Supervisions</div>
                       </div>
                       <div className={styles.statCard}>
-                        <div className={styles.statNumber}>15+</div>
-                        <div className={styles.statName}>Active Projects</div>
+                        <div className={styles.statNumber}>{totalResearchProjects}+</div>
+                        <div className={styles.statName}>Research Projects</div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               )}

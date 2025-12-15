@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { professorDetails, getPublicationStats, getCurrentExperience } from '@/data/professorDetails';
+import { professorDetails, getPublicationStats, getCurrentExperience, getTotalExperience } from '@/data/professorDetails';
 import styles from './hero.module.css';
 
 export default function Hero() {
@@ -16,8 +16,15 @@ export default function Hero() {
     const { firstName, lastName, designation, middleInitial, title } = professorDetails.personalInfo;
     const { shortBio } = professorDetails.bio;
     const { profilePhoto } = professorDetails.profileImages;
-    const { totalPublications, hIndex, citations, articles, presentations, experience } = getPublicationStats();
+    const publicationStats = getPublicationStats();
+    const totalExperience = getTotalExperience();
     const currentExperience = getCurrentExperience();
+    
+    // Use data from professorDetails
+    const presentations = publicationStats.presentations;
+    const articles = publicationStats.articles;
+    const experience = totalExperience;
+    const totalPublications = publicationStats.totalPublications;
 
     return (
         <section className={`${styles.hero} ${isVisible ? styles.visible : ''}`}>

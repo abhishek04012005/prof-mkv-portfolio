@@ -176,7 +176,7 @@ export default function ExploreDataDashboard({
             <ViewListIcon />
             <span>Table</span>
           </button>
-          <button
+          {/* <button
             className={`${styles.viewToggleBtn} ${viewMode === 'grid' ? styles.active : ''}`}
             onClick={() => setViewMode('grid')}
             title="Grid view"
@@ -184,7 +184,7 @@ export default function ExploreDataDashboard({
           >
             <GridViewIcon />
             <span>Grid</span>
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -341,8 +341,8 @@ export default function ExploreDataDashboard({
                               onClick={() => handleViewDetails(item)}
                               title="View full details page"
                             >
-                              <InfoIcon />
-                              <span>Details</span>
+                              {/* <InfoIcon /> */}
+                              <span>View Details</span>
                             </button>
                           </div>
                         </td>
