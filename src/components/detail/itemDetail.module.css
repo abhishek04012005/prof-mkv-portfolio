@@ -381,6 +381,25 @@
   font-size: 18px;
 }
 
+.buyButton {
+  background-color: var(--color-primary);
+}
+
+.buyButton:hover {
+  background-color: var(--color-primary-light);
+}
+
+.comingSoonButton {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.comingSoonButton:hover {
+  background-color: #95a5a6;
+  transform: none;
+  box-shadow: none;
+}
+
 /* ============ RESPONSIVE STYLES ============ */
 @media (max-width: 900px) {
   .imageSection {

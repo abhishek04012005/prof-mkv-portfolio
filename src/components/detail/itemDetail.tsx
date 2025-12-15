@@ -17,6 +17,8 @@ import {
   Description as SummaryIcon,
   TrendingUp as InsightsIcon,
   Link as LinkIcon,
+  ShoppingCart as ShoppingCartIcon,
+  VisibilityOff as VisibilityOffIcon,
 } from '@mui/icons-material';
 import bookImage from '../../../public/assets/book-published/book1.png';
 
@@ -47,6 +49,8 @@ export interface DetailItem {
   category?: string;
   studentName?: string;
   thesisTitle?: string;
+  image?: string;
+  buyUrl?: string;
   [key: string]: string | number | string[] | boolean | undefined;
 }
 
@@ -81,7 +85,11 @@ export default function ItemDetail({
   };
 
   const getImageSource = () => {
-    return (item.image as string) || (item.thumbnail as string) || bookImage.src;
+    // Use book image from publication data first, then fallback to generic book image
+    if (item.image) {
+      return item.image;
+    }
+    return (item.thumbnail as string) || bookImage.src;
   };
 
   const getFields = (): DetailField[] => {
@@ -433,6 +441,50 @@ export default function ItemDetail({
                     </div>
                   )}
                 </div>
+
+                {/* Action Buttons */}
+                {(item.url || item.pdfUrl || item.downloadUrl || item.buyUrl || item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
+                  <div className={styles.actionsBar}>
+                    {item.url && (
+                      <a
+                        href={String(item.url)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.actionButton}
+                      >
+                        <OpenNewIcon /> View Online
+                      </a>
+                    )}
+                    {(item.pdfUrl || item.downloadUrl) && (
+                      <a
+                        href={String(item.pdfUrl || item.downloadUrl)}
+                        download
+                        className={styles.actionButton}
+                      >
+                        <DownloadIcon /> Download
+                      </a>
+                    )}
+                    {item.buyUrl && (
+                      <a
+                        href={String(item.buyUrl)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.actionButton} ${styles.buyButton}`}
+                      >
+                        <ShoppingCartIcon /> Buy Now
+                      </a>
+                    )}
+                    {!item.buyUrl && (item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
+                      <button
+                        className={`${styles.actionButton} ${styles.comingSoonButton}`}
+                        disabled
+                        title="Coming soon"
+                      >
+                        <VisibilityOffIcon /> Coming Soon
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -539,30 +591,7 @@ export default function ItemDetail({
               )}
             </div>
 
-            {/* Action Buttons */}
-            {(item.url || item.pdfUrl || item.downloadUrl) && (
-              <div className={styles.actionsBar}>
-                {item.url && (
-                  <a
-                    href={String(item.url)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.actionButton}
-                  >
-                    <OpenNewIcon /> View Online
-                  </a>
-                )}
-                {(item.pdfUrl || item.downloadUrl) && (
-                  <a
-                    href={String(item.pdfUrl || item.downloadUrl)}
-                    download
-                    className={styles.actionButton}
-                  >
-                    <DownloadIcon /> Download
-                  </a>
-                )}
-              </div>
-            )}
+           
           </article>
         </main>
       </div>

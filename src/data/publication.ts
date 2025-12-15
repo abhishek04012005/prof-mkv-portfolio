@@ -23,6 +23,9 @@ export interface Publication {
   bookAuthors?: string;
   bookPublisher?: string;
   bookYear?: number;
+  // Book specific fields
+  image?: string;
+  buyUrl?: string;
   [key: string]: string | number | string[] | boolean | undefined;
 }
 
@@ -50,6 +53,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-1-03-299641-7',
         abstract: 'Edited book exploring perspectives, issues, and challenges related to New Education Policy, sustainable development, and nation building.',
         keywords: ['Education Policy', 'Sustainable Development', 'Nation Building', 'Higher Education'],
+        image: '/assets/book-published/book1.png',
+        buyUrl: 'https://www.routledge.com/New-Education-Policy-Sustainable-Development-and-Nation-Building-Perspectives-Issues-and-Challenges/Verma/p/book/9781032996417',
       },
       {
         id: 'book-pub-2',
@@ -60,6 +65,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-316-1432-7',
         abstract: 'Comprehensive edited volume addressing challenges and opportunities in education and sustainable development.',
         keywords: ['Education', 'Sustainable Development', 'Future Prospects', 'Development'],
+        image: '/assets/book-published/book2.png',
+        buyUrl: 'https://www.amazon.com/dp/8131614328/ref=olp-opf-redir?aod=1&condition=new',
       },
       {
         id: 'book-pub-3',
@@ -70,6 +77,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-316-1460-0',
         abstract: 'Edited book providing a roadmap for inclusive development through integration of NEP 2020 and SDGs.',
         keywords: ['Inclusive Development', 'National Education Policy', 'Sustainable Development Goals', 'Policy Integration'],
+        image: '/assets/book-published/book3.png',
+        buyUrl: 'https://www.directtextbook.com/isbn/9788131614600-roadmap-for-inclusive-development',
       },
       {
         id: 'book-pub-4',
@@ -90,6 +99,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-316-1471-6',
         abstract: 'Edited volume examining the relationship between National Education Policy and Sustainable Development Goals.',
         keywords: ['Education Policy', 'Sustainable Development', 'SDGs', 'Development'],
+        image: '/assets/book-published/book5.png',
+        buyUrl: 'https://www.directtextbook.com/isbn/9788131614716-national-education-policy-and-sustainable-development-goals',
       },
       {
         id: 'book-pub-6',
@@ -100,6 +111,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-0-367-54182-8',
         abstract: 'Edited book exploring various perspectives and issues in environment and sustainable development.',
         keywords: ['Environment', 'Sustainable Development', 'Environmental Issues', 'Perspectives'],
+        image: '/assets/book-published/book6.png',
+        buyUrl: 'https://www.campusbooks.com/search/9788131614716?buysellrent=buy&popup',
       },
       {
         id: 'book-pub-7',
@@ -110,6 +123,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-981-33-6248-2',
         abstract: 'Comprehensive edited volume on environmental, developmental, and sustainability issues in India.',
         keywords: ['Environment', 'Development', 'Sustainability', 'India', 'Environmental Issues'],
+        image: '/assets/book-published/book7.png',
+        buyUrl: 'https://isbnsearch.org/isbn/9789813362482',
       },
       {
         id: 'book-pub-8',
@@ -120,6 +135,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-1-138-36377-9',
         abstract: 'Edited book addressing perspectives, issues, and concerns at the intersection of globalization, environment, and social justice.',
         keywords: ['Globalization', 'Environment', 'Social Justice', 'Environmental Justice'],
+        image: '/assets/book-published/book8.png',
+        buyUrl: 'https://www.amazon.com/dp/1138363774/ref=olp-opf-redir?aod=1&condition=new',
       },
       {
         id: 'book-pub-9',
@@ -130,6 +147,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-212-1415-5',
         abstract: 'Edited volume exploring globalization, social justice, and sustainable development in the Indian context.',
         keywords: ['Globalization', 'Social Justice', 'Sustainable Development', 'India'],
+        image: '/assets/book-published/book9.png',
+        buyUrl: 'https://www.directtextbook.com/isbn/9788121214155-globalisation-social-justice-and-sustainable-development-in-india',
       },
       {
         id: 'book-pub-10',
@@ -150,6 +169,8 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-316-0709-1',
         abstract: 'Edited book examining discourse, policies, and practices related to globalization and environment.',
         keywords: ['Globalization', 'Environment', 'Environmental Policy', 'Sustainability'],
+        image: '/assets/book-published/book11.png',
+        buyUrl: 'https://www.alibris.com/cart.view?siteID=aG0YMzso4D0-G7C79OMQ11GmxzhwEhwrMg',
       },
       {
         id: 'book-pub-12',
