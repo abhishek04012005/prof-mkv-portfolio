@@ -18,7 +18,7 @@ import {
   TrendingUp as InsightsIcon,
   Link as LinkIcon,
 } from '@mui/icons-material';
-import bookImage from '../../../public/assets/about.png';
+import bookImage from '../../../public/assets/book-published/book1.png';
 
 export interface DetailItem {
   id: string;
@@ -387,7 +387,7 @@ export default function ItemDetail({
         <main className={styles.mainContent}>
           {/* Image Section with Details */}
           <div className={styles.imageSection}>
-            <div style={{ position: 'relative', zIndex: 4 }}>
+            <div className={styles.imageContainer}>
               <Image
                 src={getImageSource()}
                 alt={String(item.title)}

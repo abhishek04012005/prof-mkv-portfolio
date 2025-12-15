@@ -14,7 +14,7 @@ import {
   OpenInNew as OpenNewIcon,
   ExpandMore as ChevronDownIcon,
 } from '@mui/icons-material';
-import bookImage from '../../../public/assets/about.png';
+import bookImage from '../../../public/assets/book-published/book1.png';
 
 export interface ExploreItem {
   id: string;
