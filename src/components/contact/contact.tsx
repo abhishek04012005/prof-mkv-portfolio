@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from './contact.module.css';
 import { submitContactForm } from '@/utils/supabase';
+import { professorDetails, getOfficeHoursFormatted } from '@/data/professorDetails';
 import {
   Mail as MailIcon,
   Phone as PhoneIcon,
@@ -48,6 +49,41 @@ export default function Contact() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<FieldError>({});
   const [touchedFields, setTouchedFields] = useState<Set<string>>(new Set());
+
+  // Get contact data from professorDetails
+  const { email, phone, whatsapp } = professorDetails.personalInfo;
+  const { building, address, officeHours } = professorDetails.officeLocation;
+  
+  const contactItems = [
+    {
+      icon: MailIcon,
+      label: 'Email',
+      value: email,
+      href: `mailto:${email}`,
+      color: 'email',
+    },
+    {
+      icon: PhoneIcon,
+      label: 'Phone',
+      value: phone,
+      href: `tel:${phone}`,
+      color: 'phone',
+    },
+    {
+      icon: LocationIcon,
+      label: 'Location',
+      value: `${building}, BBAU Lucknow`,
+      href: '#',
+      color: 'location',
+    },
+    {
+      icon: ScheduleIcon,
+      label: 'Office Hours',
+      value: `Mon to Sat - 10 AM to 4 PM IST`,
+      href: '#',
+      color: 'hours',
+    },
+  ];
 
   const validateForm = (): boolean => {
     const errors: FieldError = {};
@@ -185,37 +221,6 @@ export default function Contact() {
     }
   };
 
-  const contactItems = [
-    {
-      icon: MailIcon,
-      label: 'Email',
-      value: 'contact@example.com',
-      href: 'mailto:contact@example.com',
-      color: 'email',
-    },
-    {
-      icon: PhoneIcon,
-      label: 'Phone',
-      value: '+91 (0) 1234-567890',
-      href: 'tel:+91-1234567890',
-      color: 'phone',
-    },
-    {
-      icon: LocationIcon,
-      label: 'Location',
-      value: 'Lab 401, IIT Delhi',
-      href: '#',
-      color: 'location',
-    },
-    {
-      icon: ScheduleIcon,
-      label: 'Office Hours',
-      value: 'Mon - Fri, 10 AM - 5 PM IST',
-      href: '#',
-      color: 'hours',
-    },
-  ];
-
   return (
     <section className={styles.contact}>
       <div className={styles.container}>
@@ -263,7 +268,7 @@ export default function Contact() {
               </div>
 
               {/* Additional Info - Mobile Friendly Grid */}
-              <div className={styles.additionalInfo}>
+              {/* <div className={styles.additionalInfo}>
                 <div className={styles.infoBox}>
                   <LightbulbIcon className={styles.boxIcon} />
                   <div className={styles.boxContent}>
@@ -278,7 +283,7 @@ export default function Contact() {
                     <p className={styles.boxText}>1-2 business days</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
