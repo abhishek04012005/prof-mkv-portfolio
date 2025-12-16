@@ -180,6 +180,12 @@ interface ProfessorDetailsType {
 // DATA
 // ============================================
 
+export const getTotalExperience = (): number => {
+  const currentYear = new Date().getFullYear();
+  const earliestStart = currentYear - 1998; // set start year so experience = 27
+  return earliestStart; 
+};
+
 export const professorDetails: ProfessorDetailsType = {
     // Personal Information
     personalInfo: {
@@ -228,7 +234,7 @@ export const professorDetails: ProfessorDetailsType = {
             shortBio:
                 "Dean, Ambedkar School of Social Sciences & Dean, School of Vocational & Futuristic Studies; Professor & Head, Department of Sociology at Babasaheb Bhimrao Ambedkar University, Lucknow. Council Member, Indian Council of Social Science Research (ICSSR), Ministry of Education, Government of India (2024-2026); Former Chief Vigilance Officer; Former Controller of Examinations; Former Secretary, Indian Sociological Society (2022-2023); Former Managing Committee Member, Indian Sociological Society (2017-2022).",
             longBio:
-                'Prof. Manish K. Verma is a distinguished academic with over 26 years of teaching experience in Sociology. He has served in multiple prestigious administrative roles including Dean of two major schools at BBAU, Head of Department, Controller of Examinations, and Chief Vigilance Officer. A Council Member of ICSSR under the Ministry of Education, Government of India, he has contributed significantly to academic and social science research through publications, research projects, and mentorship of numerous doctoral and postgraduate students.',
+                `Prof. Manish K. Verma is a distinguished academic with over ${getTotalExperience()} years of teaching experience in Sociology. He has served in multiple prestigious administrative roles including Dean of two major schools at BBAU, Head of Department, Controller of Examinations, and Chief Vigilance Officer. A Council Member of ICSSR under the Ministry of Education, Government of India, he has contributed significantly to academic and social science research through publications, research projects, and mentorship of numerous doctoral and postgraduate students.`,
             funFact: 'With deep expertise in Sociology and social sciences, Prof. Verma has been instrumental in shaping academic policy and institutional governance at both national and university levels.',
         },
 
@@ -649,15 +655,11 @@ export const getSocialMediaByKey = (
  * Get total years of experience
  * @returns Number of years
  */
-export const getTotalExperience = (): number => {
-    const currentYear = new Date().getFullYear();
-    const earliestStart = Math.min(...professorDetails.experience.map((exp) => exp.startYear));
-    return currentYear - earliestStart;
-};
+
 
 /**
  * Get education and experience timeline combined
- * @returns Combined timeline array sorted by year
+ * @returns Combined timeline array otsorted by year
  */
 export const getTimeline = (): Array<{
     type: 'education' | 'experience';

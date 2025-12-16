@@ -146,9 +146,8 @@ export default function Navbar() {
 
                     {/* Desktop Dropdown */}
                     <div
-                      className={`${styles.dropdown} ${
-                        openDropdown === link.label ? styles.dropdownOpen : ''
-                      }`}
+                      className={`${styles.dropdown} ${openDropdown === link.label ? styles.dropdownOpen : ''
+                        }`}
                     >
                       {link.dropdown.map((item) => (
                         <Link
@@ -207,9 +206,8 @@ export default function Navbar() {
                     >
                       <span>{link.label}</span>
                       <span
-                        className={`${styles.mobileChevron} ${
-                          openMobileDropdown === link.label ? styles.rotated : ''
-                        }`}
+                        className={`${styles.mobileChevron} ${openMobileDropdown === link.label ? styles.rotated : ''
+                          }`}
                       >
                         ▼
                       </span>
@@ -217,9 +215,8 @@ export default function Navbar() {
 
                     {/* Mobile Dropdown */}
                     <ul
-                      className={`${styles.mobileDropdown} ${
-                        openMobileDropdown === link.label ? styles.mobileDropdownOpen : ''
-                      }`}
+                      className={`${styles.mobileDropdown} ${openMobileDropdown === link.label ? styles.mobileDropdownOpen : ''
+                        }`}
                     >
                       {link.dropdown.map((item) => (
                         <li key={item.href}>
@@ -263,7 +260,7 @@ export default function Navbar() {
 
       {/* WhatsApp Button */}
       <a
-        href={`https://wa.me/${professorDetails.personalInfo.whatsapp.replace(/[^0-9]/g, '')}`}
+        href={`https://wa.me/${professorDetails.personalInfo.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hello, *Prof. Manish K. Verma*.\n\nI wish to connect with you.")}`}
         className={styles.whatsappBtn}
         target="_blank"
         rel="noopener noreferrer"
@@ -272,6 +269,7 @@ export default function Navbar() {
       >
         <WhatsApp className={styles.whatsappIcon} />
       </a>
+
     </>
   );
 }

@@ -22,7 +22,7 @@ export default function About() {
   const education = getEducationSorted();
   const experience = getExperienceSorted();
   const expertise = getExpertiseWithSkills();
-  
+
   // Get stats from professor details
   const totalExperience = getTotalExperience();
   const totalPhDSupervisions = professorDetails.teaching.supervisions.phd;

@@ -66,10 +66,11 @@ export default function Footer() {
     {
       title: 'Supervision',
       links: [
-        { label: 'PhD Supervision', href: '/supervision/phd' },
-        { label: 'MPhil Supervision', href: '/supervision/mphil' },
+        { label: 'PhD Supervision', href: '/supervision/phd-supervision' },
+        { label: 'MPhil Supervision', href: '/supervision/mphil-supervision' },
         { label: 'PG Dissertation', href: '/supervision/pg-dissertation' },
         { label: 'Organizing Roles', href: '/supervision/organizing-roles' },
+        { label: 'Session Chairing', href: '/supervision/session-chairing' },
       ],
     },
     {
@@ -79,6 +80,8 @@ export default function Footer() {
         { label: 'ISS Events', href: '/outreach/iss' },
         { label: 'Workshops', href: '/outreach/workshops' },
         { label: 'Lectures', href: '/outreach/lectures' },
+        { label: 'Presentations', href: '/outreach/presentations' },
+        { label: 'Chairing', href: '/outreach/chairing' },
       ],
     },
   ];
@@ -108,7 +111,7 @@ export default function Footer() {
             <h3 className={styles.brandName}>Prof. Manish K. Verma</h3>
             <p className={styles.brandSubtitle}>Sociology</p>
             <p className={styles.brandDesc}>
-              Advancing technology through research, innovation, and education
+              Strengthening sociology through analysis, collaboration, and awareness
             </p>
           </div>
 
