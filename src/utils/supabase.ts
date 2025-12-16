@@ -11,8 +11,7 @@ export const supabase = (supabaseUrl && supabaseAnonKey)
 export interface ContactMessage {
   id?: string;
   name: string;
-  email: string;
-  subject: string;
+  phone: string;
   message: string;
   created_at?: string;
 }
@@ -31,8 +30,7 @@ export async function submitContactForm(data: ContactMessage) {
       .insert([
         {
           name: data.name,
-          email: data.email,
-          subject: data.subject,
+          phone: data.phone,
           message: data.message,
         },
       ])

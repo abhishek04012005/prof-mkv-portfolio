@@ -135,11 +135,11 @@ export default function About() {
                           </div>
                           <p className={styles.timelineUniversity}>{edu.university}</p>
                           <p className={styles.timelineField}>{edu.field}</p>
-                          {edu.specialization && (
+                          {/* {edu.specialization && (
                             <div className={styles.specializationBadge}>
                               Specialization: {edu.specialization}
                             </div>
-                          )}
+                          )} */}
                         </div>
                       </div>
                     ))}

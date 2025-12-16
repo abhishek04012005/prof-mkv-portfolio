@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { professorDetails } from '@/data/professorDetails';
@@ -19,9 +20,15 @@ interface NavLink {
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+
+  // Hide navbar on admin routes (including /admin/login)
+  if (pathname.startsWith('/admin')) {
+    return null;
+  }
 
   const navLinks: NavLink[] = [
     { label: 'Home', href: '/' },

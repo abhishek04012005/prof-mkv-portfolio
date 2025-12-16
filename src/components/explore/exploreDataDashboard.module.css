@@ -171,6 +171,8 @@
   position: relative;
   display: flex;
   align-items: center;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
 }
 
 .searchIconLeft {
@@ -334,6 +336,53 @@
   text-align: center;
 }
 
+.colBuy {
+  text-align: center;
+  width: 50px;
+}
+
+.buyBtnSmall {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--primary);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.buyBtnActive {
+  background: white;
+  border: none;
+  color: var(--color-primary);
+}
+
+.buyBtnActive:hover {
+  /* background: #27ae60; */
+  /* color: white; */
+  /* border-color: #27ae60; */
+}
+
+.comingSoonBtnSmall {
+  background: white;
+  border: none;
+  color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.comingSoonBtnSmall:hover {
+  background: white;
+  color: #95a5a6;
+  border-color: #95a5a6;
+}
+
 .isbnText {
   font-family: 'Courier New', monospace;
   font-size: 0.85rem;
@@ -343,6 +392,7 @@
 .authorText {
   font-size: 0.9rem;
   color: var(--text);
+  text-transform: uppercase;
 }
 
 .tableRow {
@@ -386,7 +436,7 @@
 
 .yearTag {
   display: inline-block;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
   padding: 4px 10px;
   border-radius: 4px;
@@ -428,12 +478,12 @@
 }
 
 .actionBtnLarge {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   padding: 8px 14px;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
   border: none;
   border-radius: 4px;
@@ -441,13 +491,16 @@
   font-weight: 600;
   font-size: 0.8rem;
   transition: all 0.2s;
-  white-space: nowrap;
+  white-space: nowrap; */
+  background: white;
+  border: none;
+  color: var(--color-primary);
 }
 
 .actionBtnLarge:hover {
-  background: var(--primary-dark);
+  background: none;
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(26, 84, 144, 0.3);
+  /* box-shadow: 0 2px 8px rgba(26, 84, 144, 0.3); */
 }
 
 .actionBtnLarge span {
@@ -638,6 +691,31 @@
   border-color: var(--primary);
 }
 
+.buyIcon {
+  background: white;
+  border: 1px solid #27ae60;
+  color: #27ae60;
+}
+
+.buyIcon:hover {
+  background: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+.comingSoonIcon {
+  background: white;
+  border: 1px solid #95a5a6;
+  color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.comingSoonIcon:hover {
+  background: white;
+  color: #95a5a6;
+  border-color: #95a5a6;
+}
+
 /* ============ EMPTY STATE ============ */
 .emptyState {
   text-align: center;
@@ -814,6 +892,25 @@
   transform: translateY(-1px);
 }
 
+.buyBtn {
+  background: #27ae60;
+}
+
+.buyBtn:hover {
+  background: #229954;
+  transform: translateY(-1px);
+}
+
+.comingSoonBtn {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+.comingSoonBtn:hover {
+  background: #95a5a6;
+  transform: none;
+}
+
 .modalBtnClose {
   background: var(--bg);
   color: var(--text);
@@ -906,6 +1003,10 @@
 
   .colYear {
     width: 60px;
+  }
+
+  .colBuy {
+    width: 50px;
   }
 
   .colActions {

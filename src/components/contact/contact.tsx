@@ -19,8 +19,7 @@ import {
 
 interface FormData {
   name: string;
-  email: string;
-  subject: string;
+  phone: string;
   message: string;
 }
 
@@ -36,8 +35,7 @@ interface FieldError {
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
-    email: '',
-    subject: '',
+    phone: '',
     message: '',
   });
 
@@ -94,17 +92,13 @@ export default function Contact() {
       errors.name = 'Name must be at least 2 characters';
     }
 
-    if (!formData.email.trim()) {
-      errors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errors.email = 'Please enter a valid email address';
+    if (!formData.phone.trim()) {
+      errors.phone = 'Phone number is required';
+    } else if (!/^[6-9]\d{9}$/.test(formData.phone)) {
+      errors.phone = 'Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9';
     }
 
-    if (!formData.subject.trim()) {
-      errors.subject = 'Subject is required';
-    } else if (formData.subject.trim().length < 3) {
-      errors.subject = 'Subject must be at least 3 characters';
-    }
+   
 
     if (!formData.message.trim()) {
       errors.message = 'Message is required';
@@ -120,41 +114,48 @@ export default function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+    
+    // For phone field, only allow digits and limit to 10
+    let finalValue = value;
+    if (name === 'phone') {
+      finalValue = value.replace(/\D/g, '').slice(0, 10);
+    }
+    
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: finalValue,
     }));
 
     if (touchedFields.has(name)) {
       const errors = { ...fieldErrors };
       if (name === 'name') {
-        if (!value.trim()) {
+        if (!finalValue.trim()) {
           errors.name = 'Name is required';
-        } else if (value.trim().length < 2) {
+        } else if (finalValue.trim().length < 2) {
           errors.name = 'Name must be at least 2 characters';
         } else {
           delete errors.name;
         }
-      } else if (name === 'email') {
-        if (!value.trim()) {
-          errors.email = 'Email is required';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          errors.email = 'Please enter a valid email address';
+      } else if (name === 'phone') {
+        if (!finalValue.trim()) {
+          errors.phone = 'Phone number is required';
+        } else if (!/^[6-9]\d{9}$/.test(finalValue)) {
+          errors.phone = 'Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9';
         } else {
-          delete errors.email;
+          delete errors.phone;
         }
       } else if (name === 'subject') {
-        if (!value.trim()) {
+        if (!finalValue.trim()) {
           errors.subject = 'Subject is required';
-        } else if (value.trim().length < 3) {
+        } else if (finalValue.trim().length < 3) {
           errors.subject = 'Subject must be at least 3 characters';
         } else {
           delete errors.subject;
         }
       } else if (name === 'message') {
-        if (!value.trim()) {
+        if (!finalValue.trim()) {
           errors.message = 'Message is required';
-        } else if (value.trim().length < 10) {
+        } else if (finalValue.trim().length < 10) {
           errors.message = 'Message must be at least 10 characters';
         } else {
           delete errors.message;
@@ -185,8 +186,7 @@ export default function Contact() {
     try {
       await submitContactForm({
         name: formData.name.trim(),
-        email: formData.email.trim(),
-        subject: formData.subject.trim(),
+        phone: formData.phone.trim(),
         message: formData.message.trim(),
       });
 
@@ -197,8 +197,7 @@ export default function Contact() {
 
       setFormData({
         name: '',
-        email: '',
-        subject: '',
+        phone: '',
         message: '',
       });
 
@@ -252,7 +251,7 @@ export default function Contact() {
                     <a
                       key={idx}
                       href={item.href}
-                      className={`${styles.infoCard} ${styles[`color-${item.color}`]}`}
+                      className={`${styles.infoCard}`}
                     >
                       <div className={styles.iconWrapper}>
                         <IconComponent className={styles.iconComponent} />
@@ -327,71 +326,42 @@ export default function Contact() {
                   )}
                 </div>
 
-                {/* Email Field */}
+                {/* Phone Number Field */}
                 <div className={styles.formGroupWrapper}>
                   <div
                     className={`${styles.formGroup} ${
-                      focusedField === 'email' ? styles.focused : ''
-                    } ${formData.email ? styles.filled : ''} ${
-                      fieldErrors.email && touchedFields.has('email') ? styles.error : ''
+                      focusedField === 'phone' ? styles.focused : ''
+                    } ${formData.phone ? styles.filled : ''} ${
+                      fieldErrors.phone && touchedFields.has('phone') ? styles.error : ''
                     }`}
                   >
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
                       onChange={handleInputChange}
-                      onFocus={() => setFocusedField('email')}
+                      onFocus={() => setFocusedField('phone')}
                       onBlur={handleBlur}
                       placeholder=" "
+                      maxLength={10}
+                      pattern="[6-9][0-9]{9}"
                       className={styles.input}
                     />
-                    <label htmlFor="email" className={styles.label}>
-                      Email Address
+                    <label htmlFor="phone" className={styles.label}>
+                      Mobile Number
                     </label>
                     <div className={styles.inputBorder}></div>
                   </div>
-                  {fieldErrors.email && touchedFields.has('email') && (
+                  {fieldErrors.phone && touchedFields.has('phone') && (
                     <span className={styles.errorMessage}>
                       <ErrorIcon className={styles.errorIcon} />
-                      {fieldErrors.email}
+                      {fieldErrors.phone}
                     </span>
                   )}
                 </div>
 
-                {/* Subject Field */}
-                <div className={styles.formGroupWrapper}>
-                  <div
-                    className={`${styles.formGroup} ${
-                      focusedField === 'subject' ? styles.focused : ''
-                    } ${formData.subject ? styles.filled : ''} ${
-                      fieldErrors.subject && touchedFields.has('subject') ? styles.error : ''
-                    }`}
-                  >
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      onFocus={() => setFocusedField('subject')}
-                      onBlur={handleBlur}
-                      placeholder=" "
-                      className={styles.input}
-                    />
-                    <label htmlFor="subject" className={styles.label}>
-                      Subject
-                    </label>
-                    <div className={styles.inputBorder}></div>
-                  </div>
-                  {fieldErrors.subject && touchedFields.has('subject') && (
-                    <span className={styles.errorMessage}>
-                      <ErrorIcon className={styles.errorIcon} />
-                      {fieldErrors.subject}
-                    </span>
-                  )}
-                </div>
+                
 
                 {/* Message Field */}
                 <div className={styles.formGroupWrapper}>
@@ -410,7 +380,7 @@ export default function Contact() {
                       onFocus={() => setFocusedField('message')}
                       onBlur={handleBlur}
                       placeholder=" "
-                      rows={5}
+                      rows={3}
                       maxLength={1000}
                       className={styles.input}
                     />

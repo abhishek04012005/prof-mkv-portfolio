@@ -382,7 +382,7 @@
 }
 
 .buyButton {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
 }
 
 .buyButton:hover {
@@ -390,7 +390,7 @@
 }
 
 .comingSoonButton {
-  background-color: #95a5a6;
+  background-color: #95a5a6;  
   cursor: not-allowed;
 }
 

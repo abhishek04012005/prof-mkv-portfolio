@@ -99,7 +99,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-316-1471-6',
         abstract: 'Edited volume examining the relationship between National Education Policy and Sustainable Development Goals.',
         keywords: ['Education Policy', 'Sustainable Development', 'SDGs', 'Development'],
-        image: '/assets/book-published/book5.png',
+        image: '/assets/book-published/book3.png',
         buyUrl: 'https://www.directtextbook.com/isbn/9788131614716-national-education-policy-and-sustainable-development-goals',
       },
       {
@@ -111,7 +111,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-0-367-54182-8',
         abstract: 'Edited book exploring various perspectives and issues in environment and sustainable development.',
         keywords: ['Environment', 'Sustainable Development', 'Environmental Issues', 'Perspectives'],
-        image: '/assets/book-published/book6.png',
+        image: '/assets/book-published/book3.png',
         buyUrl: 'https://www.campusbooks.com/search/9788131614716?buysellrent=buy&popup',
       },
       {
@@ -135,7 +135,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-1-138-36377-9',
         abstract: 'Edited book addressing perspectives, issues, and concerns at the intersection of globalization, environment, and social justice.',
         keywords: ['Globalization', 'Environment', 'Social Justice', 'Environmental Justice'],
-        image: '/assets/book-published/book8.png',
+        image: '/assets/book-published/book3.png',
         buyUrl: 'https://www.amazon.com/dp/1138363774/ref=olp-opf-redir?aod=1&condition=new',
       },
       {
