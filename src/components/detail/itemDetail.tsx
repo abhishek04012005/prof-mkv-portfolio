@@ -17,8 +17,10 @@ import {
   Description as SummaryIcon,
   TrendingUp as InsightsIcon,
   Link as LinkIcon,
+  ShoppingCart as ShoppingCartIcon,
+  VisibilityOff as VisibilityOffIcon,
 } from '@mui/icons-material';
-import bookImage from '../../../public/assets/about.png';
+import bookImage from '../../../public/assets/book-published/book1.png';
 
 export interface DetailItem {
   id: string;
@@ -47,6 +49,8 @@ export interface DetailItem {
   category?: string;
   studentName?: string;
   thesisTitle?: string;
+  image?: string;
+  buyUrl?: string;
   [key: string]: string | number | string[] | boolean | undefined;
 }
 
@@ -81,7 +85,11 @@ export default function ItemDetail({
   };
 
   const getImageSource = () => {
-    return (item.image as string) || (item.thumbnail as string) || bookImage.src;
+    // Use book image from publication data first, then fallback to generic book image
+    if (item.image) {
+      return item.image;
+    }
+    return (item.thumbnail as string) || bookImage.src;
   };
 
   const getFields = (): DetailField[] => {
@@ -380,13 +388,14 @@ export default function ItemDetail({
       <div className={styles.container}>
         {/* Header */}
         <header className={styles.header}>
-          <div className={styles.headerCategory}>{categoryTitle}</div>
+          <h1 className={styles.headerCategory}>{item.title}</h1>
+
         </header>
 
         <main className={styles.mainContent}>
           {/* Image Section with Details */}
           <div className={styles.imageSection}>
-            <div style={{ position: 'relative', zIndex: 4 }}>
+            <div className={styles.imageContainer}>
               <Image
                 src={getImageSource()}
                 alt={String(item.title)}
@@ -396,7 +405,7 @@ export default function ItemDetail({
                 priority
               />
             </div>
-            
+
             {/* Quick Details Overlay */}
             {(item.authors || item.year || item.journal) && (
               <div className={styles.imageDetailsPanel}>
@@ -432,6 +441,50 @@ export default function ItemDetail({
                     </div>
                   )}
                 </div>
+
+                {/* Action Buttons */}
+                {(item.url || item.pdfUrl || item.downloadUrl || item.buyUrl || item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
+                  <div className={styles.actionsBar}>
+                    {item.url && (
+                      <a
+                        href={String(item.url)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.actionButton}
+                      >
+                        <OpenNewIcon /> View Online
+                      </a>
+                    )}
+                    {(item.pdfUrl || item.downloadUrl) && (
+                      <a
+                        href={String(item.pdfUrl || item.downloadUrl)}
+                        download
+                        className={styles.actionButton}
+                      >
+                        <DownloadIcon /> Download
+                      </a>
+                    )}
+                    {item.buyUrl && (
+                      <a
+                        href={String(item.buyUrl)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.actionButton} ${styles.buyButton}`}
+                      >
+                        <ShoppingCartIcon /> Buy Now
+                      </a>
+                    )}
+                    {!item.buyUrl && (item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
+                      <button
+                        className={`${styles.actionButton} ${styles.comingSoonButton}`}
+                        disabled
+                        title="Coming soon"
+                      >
+                        <VisibilityOffIcon /> Coming Soon
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -439,7 +492,7 @@ export default function ItemDetail({
           {/* Content Section */}
           <article className={styles.contentSection}>
             {/* Title */}
-            <h1 className={styles.mainTitle}>{item.title}</h1>
+            {/* <h1 className={styles.mainTitle}>{item.title}</h1> */}
 
             {/* Details Sections */}
             <div className={styles.sectionsContainer}>
@@ -522,9 +575,9 @@ export default function ItemDetail({
                   <div className={styles.sectionContent}>
                     <div className={styles.citationBox}>
                       <code className={styles.citationText}>
-                          {(item.authors as string) || 'Unknown Author'} ({item.year || 'N/A'}). {item.title}
-                          {item.journal && `. ${item.journal}`}
-                          {item.publisher && `. ${item.publisher}`}
+                        {(item.authors as string) || 'Unknown Author'} ({item.year || 'N/A'}). {item.title}
+                        {item.journal && `. ${item.journal}`}
+                        {item.publisher && `. ${item.publisher}`}
                       </code>
                     </div>
                     <button
@@ -538,30 +591,7 @@ export default function ItemDetail({
               )}
             </div>
 
-            {/* Action Buttons */}
-            {(item.url || item.pdfUrl || item.downloadUrl) && (
-              <div className={styles.actionsBar}>
-                {item.url && (
-                  <a
-                    href={String(item.url)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.actionButton}
-                  >
-                    <OpenNewIcon /> View Online
-                  </a>
-                )}
-                {(item.pdfUrl || item.downloadUrl) && (
-                  <a
-                    href={String(item.pdfUrl || item.downloadUrl)}
-                    download
-                    className={styles.actionButton}
-                  >
-                    <DownloadIcon /> Download
-                  </a>
-                )}
-              </div>
-            )}
+           
           </article>
         </main>
       </div>

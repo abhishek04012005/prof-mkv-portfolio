@@ -1,0 +1,506 @@
+.adminNavbar {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  gap: 1.5rem;
+}
+
+.logoSection {
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logoIcon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logoText {
+  display: none;
+  flex-direction: column;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .logoText {
+    display: flex;
+  }
+}
+
+.logoPrimary {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.logoSecondary {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
+}
+
+.navLinks {
+  display: block;
+  list-style: none;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .navLinks {
+    display: flex;
+  }
+}
+
+.navItem {
+  position: relative;
+  list-style: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  color: var(--color-primary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(--transition-fast);
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.15);
+  /* color: white; */
+}
+
+.navIcon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navLabel {
+  display: inline;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* Profile Dropdown */
+.profileDropdown {
+  position: relative;
+}
+
+.profileButton {
+  display: none;
+  align-items: center;
+  gap: 0.625rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  .profileButton {
+    display: flex;
+  }
+}
+
+.profileButton:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.userName {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arrowIcon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.arrowIcon.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  min-width: 240px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  animation: slideDown 0.3s ease-out;
+  z-index: 1001;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownHeader {
+  padding: 1rem;
+  background: var(--color-primary);
+  color: white;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+}
+
+.userAvatarLarge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+
+.userNameLarge {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.logoutDropdownBtn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  transition: all 0.3s ease;
+}
+
+.logoutDropdownBtn:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+.logoutDropdownBtn svg {
+  font-size: 18px;
+}
+
+/* Mobile Menu Toggle */
+.mobileMenuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobileMenuToggle:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.mobileMenuToggle svg {
+  font-size: 24px;
+}
+
+@media (min-width: 1024px) {
+  .mobileMenuToggle {
+    display: none;
+  }
+
+  .navLinks {
+    display: flex;
+  }
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  animation: slideDown 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileMenu.open {
+  max-height: 100vh;
+  overflow: visible;
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileNavItem {
+  list-style: none;
+}
+
+.mobileNavLink {
+  padding: 14px 20px;
+  color: var(--color-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition-fast);
+  font-weight: 500;
+}
+
+.mobileNavLink:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.mobileNavIcon {
+  font-size: 20px;
+}
+
+.mobileDivider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 0.5rem 0;
+}
+
+.mobileLogoutBtn {
+  width: 100%;
+  padding: 14px 20px;
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition-fast);
+}
+
+.mobileLogoutBtn:hover {
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.mobileLogoutBtn svg {
+  font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navContainer {
+    height: 64px;
+    padding: 0 1rem;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    gap: 0.5rem;
+  }
+
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logoPrimary {
+    font-size: 0.85rem;
+  }
+
+  .logoSecondary {
+    font-size: 0.65rem;
+  }
+
+  .rightSection {
+    gap: 0.75rem;
+  }
+
+  .profileButton {
+    display: none;
+  }
+
+  .navLinks {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navContainer {
+    height: 65px;
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 0.75rem;
+    flex: 0.8;
+  }
+
+  .navLink {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .navLink {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navContainer {
+    padding: 0 2rem;
+  }
+
+  .navLinks {
+    gap: 1rem;
+  }
+
+  .navLink {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navContainer {
+    height: 56px;
+    padding: 0 12px;
+  }
+
+  .logoText {
+    display: none;
+  }
+
+  .userName {
+    display: none;
+  }
+
+  .navLabel {
+    display: none;
+  }
+
+  .mobileMenuToggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobileMenuToggle svg {
+    font-size: 20px;
+  }
+}

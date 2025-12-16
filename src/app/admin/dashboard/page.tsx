@@ -11,6 +11,7 @@ import {
   ContactMessage,
 } from '@/utils/auth';
 import styles from './dashboard.module.css';
+import { Phone, Close as CloseIcon, Visibility as ViewIcon, UsbRounded, Person, Search } from '@mui/icons-material';
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -21,6 +22,7 @@ export default function DashboardPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [deleting, setDeleting] = useState<number | null>(null);
   const [sortBy, setSortBy] = useState<'date' | 'name' | 'email'>('date');
+  const [selectedMessage, setSelectedMessage] = useState<ContactMessage | null>(null);
 
   // Load user and messages on mount
   useEffect(() => {
@@ -64,7 +66,7 @@ export default function DashboardPage() {
     }
   };
 
-  const handleSort = (key: 'date' | 'name' | 'email') => {
+  const handleSort = (key: 'date' | 'name') => {
     setSortBy(key);
     const sorted = [...filteredMessages];
 
@@ -75,8 +77,6 @@ export default function DashboardPage() {
       );
     } else if (key === 'name') {
       sorted.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (key === 'email') {
-      sorted.sort((a, b) => a.email.localeCompare(b.email));
     }
 
     setFilteredMessages(sorted);
@@ -133,13 +133,7 @@ export default function DashboardPage() {
         <div className={styles.headerContent}>
           <div className={styles.titleSection}>
             <h1 className={styles.title}>Contact Messages</h1>
-            <p className={styles.subtitle}>Admin Dashboard</p>
-          </div>
-          <div className={styles.userSection}>
-            <span className={styles.userName}>Welcome, {user.name || user.email}</span>
-            <button onClick={handleLogout} className={styles.logoutButton}>
-              Logout
-            </button>
+            <p className={styles.subtitle}>Manage all incoming messages</p>
           </div>
         </div>
       </header>
@@ -163,18 +157,20 @@ export default function DashboardPage() {
           </div>
           <div className={styles.statCard}>
             <div className={styles.statValue}>
-              {new Set(messages.map((msg) => msg.email)).size}
+              {new Set(messages.map((msg) => msg.phone)).size}
             </div>
             <div className={styles.statLabel}>Unique Contacts</div>
           </div>
         </div>
 
-        {/* Search Bar */}
+
+
         <div className={styles.searchSection}>
           <div className={styles.searchBox}>
+            <Search className={styles.searchIconLeft} />
             <input
               type="text"
-              placeholder="Search by name, email, or subject..."
+              placeholder="Search by name or phone..."
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
               className={styles.searchInput}
@@ -211,15 +207,10 @@ export default function DashboardPage() {
                   >
                     Name
                   </th>
+                  <th className={styles.th}>Phone</th>
+
                   <th
-                    className={`${styles.th} ${sortBy === 'email' ? styles.active : ''}`}
-                    onClick={() => handleSort('email')}
-                  >
-                    Email
-                  </th>
-                  <th className={styles.th}>Subject</th>
-                  <th
-                    className={`${styles.th} ${sortBy === 'date' ? styles.active : ''}`}
+                    className={`${styles.th}`}
                     onClick={() => handleSort('date')}
                   >
                     Date
@@ -232,12 +223,15 @@ export default function DashboardPage() {
                 {filteredMessages.map((message) => (
                   <tr key={message.id} className={styles.tr}>
                     <td className={styles.td}>{message.name}</td>
-                    <td className={styles.td}>
-                      <a href={`mailto:${message.email}`} className={styles.emailLink}>
-                        {message.email}
+                    <td className={styles.td}>{message.phone}
+                      <a
+                        href={`tel:${message.phone}`}
+                        className={styles.phoneLink}
+                        aria-label={`Call ${message.phone}`}
+                      >
+                        <Phone />
                       </a>
                     </td>
-                    <td className={styles.td}>{message.subject}</td>
                     <td className={styles.td}>{formatDate(message.created_at)}</td>
                     <td className={`${styles.td} ${styles.messageCol}`}>
                       <div className={styles.messagePreview}>
@@ -245,14 +239,23 @@ export default function DashboardPage() {
                       </div>
                     </td>
                     <td className={styles.td}>
-                      <button
-                        onClick={() => handleDelete(message.id)}
-                        disabled={deleting === message.id}
-                        className={styles.deleteBtn}
-                        title="Delete message"
-                      >
-                        {deleting === message.id ? '...' : '✕'}
-                      </button>
+                      <div className={styles.actionButtons}>
+                        <button
+                          onClick={() => setSelectedMessage(message)}
+                          className={styles.viewBtn}
+                          title="View details"
+                        >
+                          <ViewIcon />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(message.id)}
+                          disabled={deleting === message.id}
+                          className={styles.deleteBtn}
+                          title="Delete message"
+                        >
+                          {deleting === message.id ? '...' : '✕'}
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -261,6 +264,100 @@ export default function DashboardPage() {
           )}
         </div>
       </main>
+
+      {/* Details Modal */}
+      {selectedMessage && (
+        <div className={styles.modalOverlay} onClick={() => setSelectedMessage(null)}>
+          <div className={styles.modalNew} onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setSelectedMessage(null)}
+              className={styles.modalCloseIconBtn}
+              aria-label="Close modal"
+            >
+              <CloseIcon />
+            </button>
+
+            <div className={styles.modalContentWrapper}>
+              <div className={styles.modalTitleSection}>
+                <div className={styles.modalTitleBadge}>Message</div>
+                <h2 className={styles.modalNewTitle}>Contact Details</h2>
+              </div>
+
+              <div className={styles.modalDetailsGrid}>
+
+                <div className={styles.detailCardName}>
+                  <div className={styles.detailCardHeader}>
+                    <div className={styles.detailCardIcon}>
+                      <Person />
+                    </div>
+                    <span className={styles.detailCardLabel}>Full Name</span>
+                  </div>
+                  <p className={styles.detailCardValue}>{selectedMessage.name}</p>
+                </div>
+
+                <div className={styles.detailCard}>
+                  <div className={styles.detailCardHeader}>
+                    <div className={styles.detailCardIcon}>
+                      <Phone style={{ fontSize: '20px' }} />
+                    </div>
+                    <span className={styles.detailCardLabel}>Phone Number</span>
+                  </div>
+                  <p className={styles.detailCardValue}>
+                    <a href={`tel:${selectedMessage.phone}`} className={styles.phoneCallLink}>
+                      {selectedMessage.phone}
+                    </a>
+                  </p>
+                </div>
+
+                <div className={styles.detailCard}>
+                  <div className={styles.detailCardHeader}>
+                    <div className={styles.detailCardIcon}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                    </div>
+                    <span className={styles.detailCardLabel}>Date & Time</span>
+                  </div>
+                  <p className={styles.detailCardValue}>{formatDate(selectedMessage.created_at)}</p>
+                </div>
+
+
+              </div>
+
+              <div className={styles.messageSection}>
+                <div className={styles.messageSectionHeader}>
+                  <h3 className={styles.messageSectionTitle}>Message</h3>
+                  <div className={styles.messageLengthBadge}>{selectedMessage.message.length} characters</div>
+                </div>
+                <div className={styles.messageContentBox}>
+                  {selectedMessage.message}
+                </div>
+              </div>
+
+              <div className={styles.modalActionButtons}>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(selectedMessage.phone);
+                  }}
+                  className={styles.actionBtnSecondary}
+                  title="Copy phone number"
+                >
+                  Copy Phone
+                </button>
+                <button
+                  onClick={() => setSelectedMessage(null)}
+                  className={styles.actionBtnPrimary}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

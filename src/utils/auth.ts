@@ -18,7 +18,7 @@ export interface AuthResponse {
 export interface ContactMessage {
   id: number;
   name: string;
-  email: string;
+  phone: string;
   subject: string;
   message: string;
   created_at: string;
@@ -298,7 +298,7 @@ export async function deleteContactMessage(id: number): Promise<boolean> {
 }
 
 /**
- * Search contact messages by name, email, or subject
+ * Search contact messages by name, phone, or subject
  */
 export async function searchContactMessages(
   query: string
@@ -308,20 +308,32 @@ export async function searchContactMessages(
       return [];
     }
 
+    // Fetch all messages first
     const { data, error } = await supabase
       .from('contact_messages')
       .select('*')
-      .or(
-        `name.ilike.%${query}%,email.ilike.%${query}%,subject.ilike.%${query}%`
-      )
       .order('created_at', { ascending: false });
 
     if (error) {
-      console.error('Error searching messages:', error);
+      console.error('Error fetching messages:', error);
       return [];
     }
 
-    return data || [];
+    if (!data) {
+      return [];
+    }
+
+    // Client-side filtering by name, phone, or subject
+    const lowerQuery = query.toLowerCase().trim();
+    const filtered = data.filter((message) => {
+      return (
+        message.name.toLowerCase().includes(lowerQuery) ||
+        message.phone.toLowerCase().includes(lowerQuery) ||
+        (message.subject && message.subject.toLowerCase().includes(lowerQuery))
+      );
+    });
+
+    return filtered;
   } catch (error) {
     console.error('Error searching messages:', error);
     return [];

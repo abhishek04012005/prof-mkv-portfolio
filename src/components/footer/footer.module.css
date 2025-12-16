@@ -150,7 +150,29 @@
   transition: transform 0.3s ease;
 }
 
+.socialIcon {
+  font-size: 1.3rem !important;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  color: var(--color-primary);
+}
+
+.currentPage {
+  color: var(--color-text-light);
+  cursor: default;
+  font-size: 0.9rem;
+}
+
+.currentPage a {
+  text-decoration: underline;
+}
+
 .socialLink:hover .socialSymbol {
+  transform: scale(1.15);
+}
+
+.socialLink:hover .socialIcon {
   transform: scale(1.15);
 }
 
@@ -379,6 +401,10 @@
 
   .socialSymbol {
     font-size: 1.1rem;
+  }
+
+  .socialIcon {
+    font-size: 1.1rem !important;
   }
 
   .sectionTitle {

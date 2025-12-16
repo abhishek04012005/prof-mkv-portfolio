@@ -2,6 +2,19 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styles from './footer.module.css';
+import {
+  LinkedIn as LinkedInIcon,
+  Twitter as TwitterIcon,
+  Email as EmailIcon,
+  GitHub as GitHubIcon,
+  School as SchoolIcon,
+  Public as PublicIcon,
+  X as XIcon,
+  YouTube as YouTubeIcon,
+  Facebook
+} from '@mui/icons-material';
+
+
 
 export default function Footer() {
   const pathname = usePathname();
@@ -76,12 +89,11 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { symbol: '💼', label: 'LinkedIn', href: 'https://linkedin.com', icon: 'linkedin' },
-    { symbol: '𝕏', label: 'Twitter', href: 'https://twitter.com', icon: 'twitter' },
-    { symbol: '📊', label: 'Research Gate', href: 'https://researchgate.net', icon: 'research' },
-    { symbol: '🎓', label: 'Google Scholar', href: 'https://scholar.google.com', icon: 'scholar' },
-    { symbol: '🔗', label: 'GitHub', href: 'https://github.com', icon: 'github' },
-    { symbol: '✉️', label: 'Email', href: 'mailto:contact@example.com', icon: 'email' },
+    { icon: LinkedInIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/manish-kumar-verma-418a892a4/', id: 'linkedin' },
+    { icon: XIcon, label: 'X', href: 'https://twitter.com', id: 'twitter' },
+    { icon: YouTubeIcon, label: 'YouTube', href: 'https://researchgate.net', id: 'research' },
+    { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/manish.k.verma.712/', id: 'facebook' },
+
   ];
 
   return (
@@ -94,7 +106,7 @@ export default function Footer() {
         <div className={styles.brandColumn}>
           <div className={styles.brandContent}>
             <h3 className={styles.brandName}>Prof. Manish K. Verma</h3>
-            <p className={styles.brandSubtitle}>Computer Science & Engineering</p>
+            <p className={styles.brandSubtitle}>Sociology</p>
             <p className={styles.brandDesc}>
               Advancing technology through research, innovation, and education
             </p>
@@ -103,19 +115,22 @@ export default function Footer() {
           {/* Social Links */}
           <div className={styles.socialContainer}>
             <div className={styles.socialLinks}>
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  title={social.label}
-                  className={styles.socialLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${social.label}`}
-                >
-                  <span className={styles.socialSymbol}>{social.symbol}</span>
-                </a>
-              ))}
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.id}
+                    href={social.href}
+                    title={social.label}
+                    className={styles.socialLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${social.label}`}
+                  >
+                    <IconComponent className={styles.socialIcon} />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -130,9 +145,8 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className={`${styles.footerNavLink} ${
-                        isLinkActive(link.href) ? styles.active : ''
-                      }`}
+                      className={`${styles.footerNavLink} ${isLinkActive(link.href) ? styles.active : ''
+                        }`}
                     >
                       {link.label}
                     </Link>
@@ -150,6 +164,12 @@ export default function Footer() {
           <div className={styles.copyrightSection}>
             <p className={styles.copyright}>
               © {currentYear} Prof. Manish K. Verma. All rights reserved.
+            </p>
+          </div>
+
+          <div>
+            <p className={styles.currentPage}>
+              Powered by <a target='_blank' href="https://technologies.ditvi.org/">Ditvi Technologies</a>
             </p>
           </div>
 

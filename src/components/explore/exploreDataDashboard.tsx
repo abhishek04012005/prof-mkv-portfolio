@@ -13,8 +13,12 @@ import {
   Download as DownloadIcon,
   OpenInNew as OpenNewIcon,
   ExpandMore as ChevronDownIcon,
+  ShoppingCart as ShoppingCartIcon,
+  VisibilityOff as VisibilityOffIcon,
+  RemoveRedEye,
+  RemoveShoppingCart
 } from '@mui/icons-material';
-import bookImage from '../../../public/assets/about.png';
+import bookImage from '../../../public/assets/book-published/book1.png';
 
 export interface ExploreItem {
   id: string;
@@ -123,7 +127,7 @@ export default function ExploreDataDashboard({
       {/* Hero Header */}
       <div className={styles.heroHeader}>
         <div className={styles.heroBackdrop}></div>
-        
+
         <div className={styles.heroContent}>
           <button
             className={styles.backBtn}
@@ -138,7 +142,7 @@ export default function ExploreDataDashboard({
             <p className={styles.heroDescription}>{data.description}</p>
           </div>
 
-          
+
         </div>
       </div>
 
@@ -166,26 +170,7 @@ export default function ExploreDataDashboard({
           </div>
         </div>
 
-        <div className={styles.viewToggle}>
-          <button
-            className={`${styles.viewToggleBtn} ${viewMode === 'table' ? styles.active : ''}`}
-            onClick={() => setViewMode('table')}
-            title="Table view"
-            aria-label="Switch to table view"
-          >
-            <ViewListIcon />
-            <span>Table</span>
-          </button>
-          <button
-            className={`${styles.viewToggleBtn} ${viewMode === 'grid' ? styles.active : ''}`}
-            onClick={() => setViewMode('grid')}
-            title="Grid view"
-            aria-label="Switch to grid view"
-          >
-            <GridViewIcon />
-            <span>Grid</span>
-          </button>
-        </div>
+
       </div>
 
       {/* Content Section */}
@@ -197,7 +182,7 @@ export default function ExploreDataDashboard({
               <table className={styles.table}>
                 <thead>
                   <tr>
-                    <th className={styles.colImage}></th>
+                    <th className={styles.colImage}>Preview</th>
                     <th
                       className={styles.colTitle}
                       onClick={() => handleSort('title')}
@@ -219,7 +204,8 @@ export default function ExploreDataDashboard({
                     ) : data.id.includes('research-projects') ? (
                       <>
                         <th className={styles.colIsbn}>Funding Agency</th>
-                        <th className={styles.colAuthor}>Amount / Status</th>
+                        <th className={styles.colAuthor}>Amount</th>
+                        <th className={styles.colAuthor}>Status</th>
                       </>
                     ) : data.id === 'research-interests' || data.id === 'research-outputs' ? (
                       <>
@@ -233,7 +219,7 @@ export default function ExploreDataDashboard({
                       </>
                     ) : (
                       <>
-                        <th className={styles.colIsbn}>ISBN / Journal</th>
+                        <th className={styles.colIsbn}>ISBN</th>
                         <th className={styles.colAuthor}>Author</th>
                       </>
                     )}
@@ -250,7 +236,11 @@ export default function ExploreDataDashboard({
                         )}
                       </div>
                     </th>
-                    <th className={styles.colActions}>Action</th>
+
+                    <th className={styles.colActions}> Details</th>
+                    {(data.id === 'books-published' || data.id === 'books-edited') && (
+                      <th className={styles.colBuy}>Buy</th>
+                    )}
                   </tr>
                 </thead>
                 <tbody>
@@ -286,7 +276,14 @@ export default function ExploreDataDashboard({
                             <td className={styles.colAuthor}>
                               <span className={styles.authorText}>
                                 {item.fundingAmount && item.status
-                                  ? `${item.fundingAmount} / ${item.status}`
+                                  ? `${item.fundingAmount}`
+                                  : item.fundingAmount || item.status || 'N/A'}
+                              </span>
+                            </td>
+                            <td className={styles.colAuthor}>
+                              <span className={styles.authorText}>
+                                {item.fundingAmount && item.status
+                                  ? `${item.status}`
                                   : item.fundingAmount || item.status || 'N/A'}
                               </span>
                             </td>
@@ -341,11 +338,35 @@ export default function ExploreDataDashboard({
                               onClick={() => handleViewDetails(item)}
                               title="View full details page"
                             >
-                              <InfoIcon />
-                              <span>Details</span>
+                              {/* <InfoIcon /> */}
+                              <RemoveRedEye />
                             </button>
                           </div>
                         </td>
+
+                        {(data.id === 'books-published' || data.id === 'books-edited') && (
+                          <td className={styles.colBuy}>
+                            {item.buyUrl ? (
+                              <a
+                                href={item.buyUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`${styles.buyBtnSmall} ${styles.buyBtnActive}`}
+                                title="Buy Now"
+                              >
+                                <ShoppingCartIcon />
+                              </a>
+                            ) : (
+                              <button
+                                className={`${styles.buyBtnSmall} ${styles.comingSoonBtnSmall}`}
+                                disabled
+                                title="Coming soon"
+                              >
+                                <RemoveShoppingCart />
+                              </button>
+                            )}
+                          </td>
+                        )}
                       </tr>
                     </React.Fragment>
                   ))}
@@ -408,6 +429,26 @@ export default function ExploreDataDashboard({
                         >
                           <DownloadIcon />
                         </a>
+                      )}
+                      {item.buyUrl && (
+                        <a
+                          href={item.buyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`${styles.cardIcon} ${styles.buyIcon}`}
+                          title="Buy Now"
+                        >
+                          <ShoppingCartIcon />
+                        </a>
+                      )}
+                      {!item.buyUrl && (item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
+                        <button
+                          className={`${styles.cardIcon} ${styles.comingSoonIcon}`}
+                          disabled
+                          title="Coming soon"
+                        >
+                          <VisibilityOffIcon />
+                        </button>
                       )}
                     </div>
                   </div>
@@ -482,6 +523,27 @@ export default function ExploreDataDashboard({
                     <DownloadIcon />
                     Download
                   </a>
+                )}
+                {selectedItem.buyUrl && (
+                  <a
+                    href={selectedItem.buyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.modalBtn} ${styles.buyBtn}`}
+                  >
+                    <ShoppingCartIcon />
+                    Buy Now
+                  </a>
+                )}
+                {!selectedItem.buyUrl && (selectedItem.id.startsWith('book-pub-') || selectedItem.id.startsWith('book-edit-')) && (
+                  <button
+                    className={`${styles.modalBtn} ${styles.comingSoonBtn}`}
+                    disabled
+                    title="Coming soon"
+                  >
+                    <VisibilityOffIcon />
+                    Coming Soon
+                  </button>
                 )}
                 <button
                   className={styles.modalBtnClose}

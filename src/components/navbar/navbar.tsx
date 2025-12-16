@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { professorDetails } from '@/data/professorDetails';
@@ -19,9 +20,15 @@ interface NavLink {
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+
+  // Hide navbar on admin routes (including /admin/login)
+  if (pathname.startsWith('/admin')) {
+    return null;
+  }
 
   const navLinks: NavLink[] = [
     { label: 'Home', href: '/' },
@@ -38,17 +45,17 @@ export default function Navbar() {
     {
       label: 'Research',
       dropdown: [
-        { label: 'Completed Projects', href: '/research/completed-projects' },
-        { label: 'Ongoing Projects', href: '/research/ongoing-projects' },
-        { label: 'Research Interests', href: '/research/interests' },
-        { label: 'Research Outputs', href: '/research/outputs' },
+        { label: 'Completed Projects', href: '/research/research-projects-completed' },
+        // { label: 'Ongoing Projects', href: '/research/ongoing-projects' },
+        { label: 'Research Interests', href: '/research/research-interests' },
+        { label: 'Research Outputs', href: '/research/research-outputs' },
       ],
     },
     {
       label: 'Supervision',
       dropdown: [
-        { label: 'PhD Supervision', href: '/supervision/phd' },
-        { label: 'MPhil Supervision', href: '/supervision/mphil' },
+        { label: 'PhD Supervision', href: '/supervision/phd-supervision' },
+        { label: 'MPhil Supervision', href: '/supervision/mphil-supervision' },
         { label: 'PG Dissertation', href: '/supervision/pg-dissertation' },
         { label: 'Organizing Roles', href: '/supervision/organizing-roles' },
         { label: 'Session Chairing', href: '/supervision/session-chairing' },
@@ -166,9 +173,8 @@ export default function Navbar() {
           {/* Desktop Actions */}
           <div className={styles.desktopActions}>
             <a
-              href={professorDetails.resources.cv}
+              href="/contact"
               className={styles.contactBtn}
-              download
             >
               Contact
             </a>

@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { signIn } from '@/utils/auth';
 import styles from './login.module.css';
+import Image from 'next/image';
+import { professorDetails } from '@/data/professorDetails';
+
 
 export default function LoginPage() {
   const router = useRouter();
@@ -17,6 +20,8 @@ export default function LoginPage() {
   const isEmailValid = email.includes('@') && email.includes('.');
   const isPasswordValid = password.length >= 6;
   const isFormValid = isEmailValid && isPasswordValid;
+  const { logo } = professorDetails.profileImages;
+
 
   const handleBlur = (field: 'email' | 'password') => {
     setTouched((prev) => ({ ...prev, [field]: true }));
@@ -52,9 +57,18 @@ export default function LoginPage() {
     <div className={styles.loginContainer}>
       <div className={styles.loginContent}>
         <div className={styles.loginCard}>
+          <div className={styles.logoIcon}>
+            <Image
+              src={logo.url}
+              alt={logo.alt}
+              width={logo.width}
+              height={logo.height}
+              priority
+              className={styles.logoImage}
+            />
+          </div>
           <div className={styles.header}>
-            <h1 className={styles.title}>Admin Portal</h1>
-            <p className={styles.subtitle}>Professor Manish K Verma</p>
+            <h1 className={styles.title}>Admin Login</h1>
           </div>
 
           <form onSubmit={handleSubmit} className={styles.form}>
@@ -71,9 +85,8 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 onBlur={() => handleBlur('email')}
                 placeholder="Enter your email"
-                className={`${styles.input} ${
-                  touched.email && !isEmailValid ? styles.inputError : ''
-                }`}
+                className={`${styles.input} ${touched.email && !isEmailValid ? styles.inputError : ''
+                  }`}
                 disabled={loading}
               />
               {touched.email && !isEmailValid && (
@@ -92,9 +105,8 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 onBlur={() => handleBlur('password')}
                 placeholder="Enter your password"
-                className={`${styles.input} ${
-                  touched.password && !isPasswordValid ? styles.inputError : ''
-                }`}
+                className={`${styles.input} ${touched.password && !isPasswordValid ? styles.inputError : ''
+                  }`}
                 disabled={loading}
               />
               {touched.password && !isPasswordValid && (
@@ -115,7 +127,7 @@ export default function LoginPage() {
                   Logging in...
                 </>
               ) : (
-                'Sign In'
+                'Log In'
               )}
             </button>
           </form>
