@@ -3,20 +3,25 @@ export interface EventItem {
   title: string;
   eventName?: string;
   organizerName?: string;
-  year: number;
+  year?: number;
   startYear?: number;
   endYear?: number;
   startDate?: string;
   endDate?: string;
+  start_date?: string;
+  end_date?: string;
   status?: 'completed' | 'ongoing' | 'planned';
   eventType?: string;
+  event_type?: string;
   location?: string;
+  venue?: string;
   institution?: string;
   department?: string;
   audience?: string;
   participantCount?: number;
   abstract?: string;
   description?: string;
+  theme?: string;
   keywords?: string[];
   outcomes?: string[];
   speakers?: string[];
@@ -24,7 +29,11 @@ export interface EventItem {
   url?: string;
   downloadUrl?: string;
   doi?: string;
-  [key: string]: string | number | string[] | boolean | undefined;
+  role?: string;
+  sponsorship?: string;
+  organized_by?: string;
+  notes?: string;
+  [key: string]: string | number | string[] | boolean | undefined | null;
 }
 
 export interface EventCategory {
@@ -36,134 +45,7 @@ export interface EventCategory {
 }
 
 export const eventsData: EventCategory[] = [
-  {
-    id: 'international-summer-school',
-    title: 'International Summer School (ISS)',
-    icon: '🌍',
-    description: 'International summer school programs and training initiatives',
-    events: [
-      {
-        id: 'iss-1',
-        title: 'International Summer School on Cloud Computing',
-        eventName: 'ISS Cloud Computing 2024',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startDate: '2024-06-01',
-        endDate: '2024-06-21',
-        status: 'completed',
-        eventType: 'International Summer School',
-        location: 'XYZ University, India',
-        institution: 'XYZ University',
-        department: 'Department of Computer Science',
-        audience: 'Graduate Students, Industry Professionals, Academic Researchers',
-        participantCount: 150,
-        abstract: 'Three-week intensive international summer school on modern cloud computing technologies, microservices architecture, containerization, and serverless computing.',
-        description: 'Three-week intensive international summer school on modern cloud computing technologies, microservices architecture, containerization, and serverless computing.',
-        keywords: ['Cloud Computing', 'Microservices', 'Kubernetes', 'Docker', 'Serverless'],
-        topics: [
-          'Cloud Architecture Fundamentals',
-          'Microservices Design Patterns',
-          'Containerization with Docker',
-          'Kubernetes Orchestration',
-          'Serverless Computing',
-          'Cloud Security',
-        ],
-        speakers: [
-          'Prof. Manish K. Verma',
-          'Dr. Neha Gupta',
-          'Industry Expert from AWS',
-          'Industry Expert from Google Cloud',
-        ],
-        outcomes: [
-          'Trained 150 international participants',
-          'Provided hands-on lab sessions',
-          'Issued certificates to all participants',
-          'Established partnerships with 5 international universities',
-          'Published course materials online',
-        ],
-        url: 'https://example.com/iss-cloud-2024',
-      },
-      {
-        id: 'iss-2',
-        title: 'International Summer School on AI and Machine Learning',
-        eventName: 'ISS AI/ML 2023',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2023,
-        startDate: '2023-07-01',
-        endDate: '2023-07-20',
-        status: 'completed',
-        eventType: 'International Summer School',
-        location: 'XYZ University, India',
-        institution: 'XYZ University',
-        department: 'Department of Computer Science',
-        audience: 'Students, Researchers, Industry Professionals',
-        participantCount: 200,
-        abstract: 'Comprehensive three-week program covering AI fundamentals, deep learning, neural networks, reinforcement learning, and practical applications.',
-        description: 'Comprehensive three-week program covering AI fundamentals, deep learning, neural networks, reinforcement learning, and practical applications.',
-        keywords: ['AI', 'Machine Learning', 'Deep Learning', 'Neural Networks', 'Python'],
-        topics: [
-          'AI Fundamentals',
-          'Machine Learning Algorithms',
-          'Deep Learning Frameworks',
-          'Neural Network Design',
-          'Reinforcement Learning',
-          'Computer Vision',
-          'NLP Basics',
-        ],
-        speakers: [
-          'Prof. Manish K. Verma',
-          'Dr. Rajesh Kumar',
-          'Industry Expert from Google AI',
-          'Academic Researcher from MIT',
-        ],
-        outcomes: [
-          'Trained 200+ international students',
-          'Conducted 25+ hands-on lab sessions',
-          'Distributed 200 completion certificates',
-          'Generated 5 research collaborations',
-          'Published tutorial papers',
-        ],
-        url: 'https://example.com/iss-aiml-2023',
-      },
-      {
-        id: 'iss-3',
-        title: 'International Summer School on IoT and Edge Computing',
-        eventName: 'ISS IoT/Edge 2024',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startDate: '2024-05-15',
-        endDate: '2024-06-05',
-        status: 'completed',
-        eventType: 'International Summer School',
-        location: 'XYZ University, India',
-        institution: 'XYZ University',
-        audience: 'Engineers, Researchers, Students',
-        participantCount: 120,
-        abstract: 'Two-week intensive program on IoT systems, edge computing, sensor networks, and smart city applications with practical demonstrations.',
-        description: 'Two-week intensive program on IoT systems, edge computing, sensor networks, and smart city applications with practical demonstrations.',
-        keywords: ['IoT', 'Edge Computing', 'Sensor Networks', 'Smart Cities', 'Embedded Systems'],
-        topics: [
-          'IoT Architecture',
-          'Edge Computing Frameworks',
-          'Sensor Network Design',
-          'Smart City Applications',
-          'Real-time Data Processing',
-        ],
-        speakers: [
-          'Prof. Manish K. Verma',
-          'Dr. Priya Sharma',
-          'Industry Expert from Intel IoT',
-        ],
-        outcomes: [
-          'Trained 120 participants',
-          'Hands-on IoT projects with hardware',
-          'Certificates issued to all participants',
-          'Established collaboration with industry partners',
-        ],
-        url: 'https://example.com/iss-iot-2024',
-      },
-    ],
-  },
+
   {
     id: 'workshops',
     title: 'Workshops',
@@ -575,298 +457,240 @@ export const eventsData: EventCategory[] = [
       },
     ],
   },
-  {
-    id: 'chairing',
-    title: 'Chairing',
-    icon: '🎯',
-    description: 'Conference sessions and panels chaired',
-    events: [
-      {
-        id: 'chair-1',
-        title: 'Session: Machine Learning Applications in Industry',
-        eventName: 'AI Conference 2024',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startDate: '2024-08-15',
-        status: 'completed',
-        eventType: 'Session Chairing',
-        location: 'New York, USA',
-        institution: 'AI Conference 2024',
-        audience: 'ML Researchers, Industry Professionals',
-        participantCount: 300,
-        abstract: 'Chaired session on practical machine learning applications with 10 paper presentations.',
-        description: 'Chaired session on practical machine learning applications with 10 paper presentations.',
-        keywords: ['Session Chair', 'Machine Learning', 'Applications', 'Industry'],
-        topics: [
-          'ML in Healthcare',
-          'ML in Finance',
-          'ML in Manufacturing',
-          'ML in Retail',
-        ],
-        outcomes: [
-          'Successfully moderated 10 presentations',
-          'Facilitated discussions',
-          'Selected outstanding papers',
-          'Networking facilitation',
-        ],
-      },
-      {
-        id: 'chair-2',
-        title: 'Session: Cloud Architecture and Design',
-        eventName: 'Cloud Summit 2023',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2023,
-        startDate: '2023-09-20',
-        status: 'completed',
-        eventType: 'Session Chairing',
-        location: 'London, UK',
-        institution: 'Cloud Summit 2023',
-        audience: 'Cloud Architects, DevOps Engineers',
-        participantCount: 250,
-        abstract: 'Chaired technical session with 8 presentations on cloud architecture design patterns and best practices.',
-        description: 'Chaired technical session with 8 presentations on cloud architecture design patterns and best practices.',
-        keywords: ['Session Chair', 'Cloud', 'Architecture', 'Design'],
-        topics: [
-          'Microservices',
-          'Serverless',
-          'Multi-cloud',
-          'Cost Optimization',
-        ],
-        outcomes: [
-          'Managed 8 presentations',
-          'Engaged 250+ audience members',
-          'Facilitated Q&A sessions',
-        ],
-      },
-      {
-        id: 'chair-3',
-        title: 'Panel: Future of AI and Ethics',
-        eventName: 'Technology Summit 2024',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startDate: '2024-04-10',
-        status: 'completed',
-        eventType: 'Panel Chairing',
-        location: 'Mumbai, India',
-        institution: 'Tech Summit 2024',
-        audience: 'Industry Leaders, Policymakers, Academics',
-        participantCount: 400,
-        abstract: 'Chaired panel discussion on future of AI, ethical considerations, and regulatory frameworks.',
-        description: 'Chaired panel discussion on future of AI, ethical considerations, and regulatory frameworks.',
-        keywords: ['Panel Chair', 'AI', 'Ethics', 'Future'],
-        topics: [
-          'AI Regulation',
-          'Ethical AI Development',
-          'Industry Trends',
-          'Skills Gap',
-        ],
-        speakers: [
-          'Prof. Manish K. Verma',
-          'AI Ethics Officer from Tech Company',
-          'Policy Advisor from Government',
-          'Industry Leader from Fortune 500',
-          'Academic Researcher',
-        ],
-        outcomes: [
-          'Moderated 5-member expert panel',
-          'Engaged 400+ audience members',
-          'Facilitated policy discussions',
-          'Generated media coverage',
-        ],
-      },
-      {
-        id: 'chair-4',
-        title: 'Session: Cybersecurity and Privacy',
-        eventName: 'Security Conference 2024',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startDate: '2024-06-12',
-        status: 'completed',
-        eventType: 'Session Chairing',
-        location: 'Amsterdam, Netherlands',
-        institution: 'Security Conf 2024',
-        audience: 'Security Professionals, CISOs',
-        participantCount: 200,
-        abstract: 'Chaired session on emerging cybersecurity threats and privacy protection mechanisms.',
-        description: 'Chaired session on emerging cybersecurity threats and privacy protection mechanisms.',
-        keywords: ['Session Chair', 'Cybersecurity', 'Privacy', 'Threats'],
-        topics: [
-          'Zero Trust Security',
-          'Data Privacy',
-          'Incident Response',
-          'Compliance',
-        ],
-        outcomes: [
-          'Moderated 7 presentations',
-          'Engaged 200 security professionals',
-          'Discussed latest threats',
-          'Shared best practices',
-        ],
-      },
-      {
-        id: 'chair-5',
-        title: 'Panel: IoT and Smart Cities',
-        eventName: 'Smart Cities Conference 2023',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2023,
-        startDate: '2023-11-08',
-        status: 'completed',
-        eventType: 'Panel Chairing',
-        location: 'Dubai, UAE',
-        institution: 'Smart Cities Conf 2023',
-        audience: 'City Planners, IoT Engineers, Government',
-        participantCount: 350,
-        abstract: 'Chaired panel on IoT integration in smart cities and sustainable urban development.',
-        description: 'Chaired panel on IoT integration in smart cities and sustainable urban development.',
-        keywords: ['Panel Chair', 'IoT', 'Smart Cities', 'Sustainability'],
-        topics: [
-          'Smart Infrastructure',
-          'IoT Deployment',
-          'Sustainability',
-          'Government Initiatives',
-        ],
-        speakers: [
-          'Prof. Manish K. Verma',
-          'City Mayor/Planner',
-          'IoT Solution Provider',
-          'Government Official',
-        ],
-        outcomes: [
-          'Moderated diverse panel',
-          'Engaged 350 participants',
-          'Generated policy discussions',
-          'Published recommendations',
-        ],
-      },
-    ],
-  },
-  {
-    id: 'organized-events',
-    title: 'Organized Events',
-    icon: '🌍',
-    description: 'International summer school programs and training initiatives',
-    events: [
-      {
-        id: 'iss-1',
-        title: 'International Summer School on Cloud Computing',
-        eventName: 'ISS Cloud Computing 2024',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startDate: '2024-06-01',
-        endDate: '2024-06-21',
-        status: 'completed',
-        eventType: 'International Summer School',
-        location: 'XYZ University, India',
-        institution: 'XYZ University',
-        department: 'Department of Computer Science',
-        audience: 'Graduate Students, Industry Professionals, Academic Researchers',
-        participantCount: 150,
-        abstract: 'Three-week intensive international summer school on modern cloud computing technologies, microservices architecture, containerization, and serverless computing.',
-        description: 'Three-week intensive international summer school on modern cloud computing technologies, microservices architecture, containerization, and serverless computing.',
-        keywords: ['Cloud Computing', 'Microservices', 'Kubernetes', 'Docker', 'Serverless'],
-        topics: [
-          'Cloud Architecture Fundamentals',
-          'Microservices Design Patterns',
-          'Containerization with Docker',
-          'Kubernetes Orchestration',
-          'Serverless Computing',
-          'Cloud Security',
-        ],
-        speakers: [
-          'Prof. Manish K. Verma',
-          'Dr. Neha Gupta',
-          'Industry Expert from AWS',
-          'Industry Expert from Google Cloud',
-        ],
-        outcomes: [
-          'Trained 150 international participants',
-          'Provided hands-on lab sessions',
-          'Issued certificates to all participants',
-          'Established partnerships with 5 international universities',
-          'Published course materials online',
-        ],
-        url: 'https://example.com/iss-cloud-2024',
-      },
-      {
-        id: 'iss-2',
-        title: 'International Summer School on AI and Machine Learning',
-        eventName: 'ISS AI/ML 2023',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2023,
-        startDate: '2023-07-01',
-        endDate: '2023-07-20',
-        status: 'completed',
-        eventType: 'International Summer School',
-        location: 'XYZ University, India',
-        institution: 'XYZ University',
-        department: 'Department of Computer Science',
-        audience: 'Students, Researchers, Industry Professionals',
-        participantCount: 200,
-        abstract: 'Comprehensive three-week program covering AI fundamentals, deep learning, neural networks, reinforcement learning, and practical applications.',
-        description: 'Comprehensive three-week program covering AI fundamentals, deep learning, neural networks, reinforcement learning, and practical applications.',
-        keywords: ['AI', 'Machine Learning', 'Deep Learning', 'Neural Networks', 'Python'],
-        topics: [
-          'AI Fundamentals',
-          'Machine Learning Algorithms',
-          'Deep Learning Frameworks',
-          'Neural Network Design',
-          'Reinforcement Learning',
-          'Computer Vision',
-          'NLP Basics',
-        ],
-        speakers: [
-          'Prof. Manish K. Verma',
-          'Dr. Rajesh Kumar',
-          'Industry Expert from Google AI',
-          'Academic Researcher from MIT',
-        ],
-        outcomes: [
-          'Trained 200+ international students',
-          'Conducted 25+ hands-on lab sessions',
-          'Distributed 200 completion certificates',
-          'Generated 5 research collaborations',
-          'Published tutorial papers',
-        ],
-        url: 'https://example.com/iss-aiml-2023',
-      },
-      {
-        id: 'iss-3',
-        title: 'International Summer School on IoT and Edge Computing',
-        eventName: 'ISS IoT/Edge 2024',
-        organizerName: 'Prof. Manish K. Verma',
-        year: 2024,
-        startDate: '2024-05-15',
-        endDate: '2024-06-05',
-        status: 'completed',
-        eventType: 'International Summer School',
-        location: 'XYZ University, India',
-        institution: 'XYZ University',
-        audience: 'Engineers, Researchers, Students',
-        participantCount: 120,
-        abstract: 'Two-week intensive program on IoT systems, edge computing, sensor networks, and smart city applications with practical demonstrations.',
-        description: 'Two-week intensive program on IoT systems, edge computing, sensor networks, and smart city applications with practical demonstrations.',
-        keywords: ['IoT', 'Edge Computing', 'Sensor Networks', 'Smart Cities', 'Embedded Systems'],
-        topics: [
-          'IoT Architecture',
-          'Edge Computing Frameworks',
-          'Sensor Network Design',
-          'Smart City Applications',
-          'Real-time Data Processing',
-        ],
-        speakers: [
-          'Prof. Manish K. Verma',
-          'Dr. Priya Sharma',
-          'Industry Expert from Intel IoT',
-        ],
-        outcomes: [
-          'Trained 120 participants',
-          'Hands-on IoT projects with hardware',
-          'Certificates issued to all participants',
-          'Established collaboration with industry partners',
-        ],
-        url: 'https://example.com/iss-iot-2024',
-      },
-    ],
-  },
+{
+  "id": "organized-events",
+  "title": "Organized Events",
+  "icon": "Event",
+  "description": "Seminars, conferences, workshops, capacity-building programs, and university events organized or coordinated.",
+  "events": [
+    {
+      "id": "national-seminar-nep2020-sdgs-2023",
+      "title": "National Seminar: National Education Policy 2020, SDGs and Nation Building",
+      "event_type": "National Seminar",
+      "theme": "National Education Policy 2020, Sustainable Development Goals and Nation Building: Perspectives, Issues, Concerns and Challenges",
+      "start_date": "2023-11-03",
+      "end_date": "2023-11-04",
+      "venue": "Department of Sociology, Babasaheb Bhimrao Ambedkar University",
+      "location": "Lucknow, Uttar Pradesh, India",
+      "organized_by": "Department of Sociology, Babasaheb Bhimrao Ambedkar University",
+      "role": "Organizer",
+      "audience": "Academics; Faculty; Researchers; Postgraduate students; Policy practitioners",
+      "keywords": [
+        "NEP 2020",
+        "Sustainable Development Goals",
+        "Nation Building",
+        "Higher Education"
+      ],
+      "status": "completed"
+    },
+    {
+      "id": "icssr-capacity-environment-2018",
+      "title": "ICSSR Sponsored Capacity Building Program: Environment and Sustainable Development",
+      "event_type": "Capacity Building Program",
+      "theme": "Environment and Sustainable Development",
+      "start_date": "2018-11-27",
+      "end_date": "2018-12-08",
+      "venue": "Department of Sociology, Babasaheb Bhimrao Ambedkar University",
+      "location": "Lucknow, Uttar Pradesh, India",
+      "organized_by": "Department of Sociology, Babasaheb Bhimrao Ambedkar University",
+      "sponsorship": "Indian Council of Social Science Research (ICSSR)",
+      "role": "Organizer",
+      "audience": "University faculty; Early-career researchers",
+      "keywords": [
+        "Capacity Building",
+        "Environment",
+        "Sustainable Development",
+        "Faculty Development"
+      ],
+      "status": "completed",
+      "notes": "Two-week faculty development programme"
+    },
+    {
+      "id": "international-seminar-globalisation-environment-2016",
+      "title": "International Seminar: Globalisation, Environment and Social Justice",
+      "event_type": "International Seminar",
+      "theme": "Globalisation, Environment and Social Justice: Perspectives, Issues and Concerns",
+      "start_date": "2016-02-15",
+      "end_date": "2016-02-16",
+      "venue": "Department of Sociology, Babasaheb Bhimrao Ambedkar University",
+      "location": "Lucknow, Uttar Pradesh, India",
+      "organized_by": "Department of Sociology, Babasaheb Bhimrao Ambedkar University",
+      "role": "Organizer",
+      "audience": "Scholars; International and national researchers; Postgraduate students",
+      "keywords": [
+        "Globalisation",
+        "Environment",
+        "Social Justice",
+        "International Seminar"
+      ],
+      "status": "completed"
+    },
+    {
+      "id": "university-annual-sports-2014",
+      "title": "University Annual Sports-2014",
+      "event_type": "University Event",
+      "theme": "Annual Sports",
+      "start_date": "2014-03-12",
+      "end_date": "2014-03-13",
+      "venue": "Babasaheb Bhimrao Ambedkar Central University",
+      "location": "Lucknow, Uttar Pradesh, India",
+      "organized_by": "University Sports Committee",
+      "role": "Organizer",
+      "audience": "Students; University staff",
+      "keywords": [
+        "Sports",
+        "University Event",
+        "Student Activities"
+      ],
+      "status": "completed",
+      "notes": "University annual sports meet"
+    },
+    {
+      "id": "ucl-2015-university-cricket-league",
+      "title": "University Cricket League Tournament (UCL 2015)",
+      "event_type": "State Level Tournament",
+      "theme": "University Cricket League Tournament",
+      "start_date": "2015-03-10",
+      "end_date": "2015-03-13",
+      "venue": "Babasaheb Bhimrao Ambedkar Central University",
+      "location": "Lucknow, Uttar Pradesh, India",
+      "organized_by": "University Sports Committee",
+      "role": "Organizer",
+      "audience": "Students; University teams; State-level participants",
+      "keywords": [
+        "Cricket",
+        "Tournament",
+        "University Sports",
+        "UCL 2015"
+      ],
+      "status": "completed",
+      "notes": "State-level university cricket league"
+    },
+    {
+      "id": "all-india-sociological-conference-48th-2023",
+      "title": "48th All India Sociological Conference",
+      "event_type": "National Conference",
+      "theme": "Crisis of the 21st Century and the Way Forward",
+      "start_date": "2023-12-28",
+      "end_date": "2023-12-30",
+      "venue": "Vellore Institute of Technology (VIT)",
+      "location": "Vellore, Tamil Nadu, India",
+      "organized_by": "Vellore Institute of Technology (VIT) in collaboration with Indian Sociological Society (ISS)",
+      "role": "Collaborator",
+      "audience": "Sociologists; Researchers; Policy makers; Graduate students",
+      "keywords": [
+        "Sociology",
+        "Crisis",
+        "National Conference",
+        "ISS"
+      ],
+      "status": "completed",
+      "notes": "48th All India Sociological Conference"
+    },
+    {
+      "id": "young-researcher-workshop-vit-2023",
+      "title": "Young Researcher’s Workshop (VIT)",
+      "event_type": "Workshop",
+      "theme": "Young Researcher’s Workshop",
+      "start_date": "2023-12-26",
+      "end_date": "2023-12-27",
+      "venue": "Vellore Institute of Technology (VIT)",
+      "location": "Vellore, Tamil Nadu, India",
+      "organized_by": "Vellore Institute of Technology (VIT) in collaboration with Indian Sociological Society (ISS)",
+      "role": "Collaborator",
+      "audience": "Early-career researchers; PhD scholars; Postgraduate students",
+      "keywords": [
+        "Young Researchers",
+        "Workshop",
+        "Research Skills",
+        "ISS"
+      ],
+      "status": "completed"
+    },
+    {
+      "id": "midterm-iss-international-conference-regions-2023",
+      "title": "Mid-Term ISS International Conference: Sociology Of and In Regions",
+      "event_type": "International Conference",
+      "theme": "Sociology Of and In Regions: Pedagogy, Practices and Possibilities",
+      "start_date": "2023-04-28",
+      "end_date": "2023-04-30",
+      "venue": "Department of Sociology (Centennial Celebration)",
+      "location": "Lucknow, Uttar Pradesh, India",
+      "organized_by": "Department of Sociology in collaboration with Indian Sociological Society (ISS), E.F.C.S., Lucknow and G.I.D.S., Lucknow",
+      "role": "Collaborator",
+      "audience": "Academics; Regional sociologists; Graduate students",
+      "keywords": [
+        "Regional Sociology",
+        "Pedagogy",
+        "International Conference",
+        "ISS"
+      ],
+      "status": "completed",
+      "notes": "Centennial celebration event"
+    },
+    {
+      "id": "all-india-sociological-conference-47th-2022",
+      "title": "47th All India Sociological Conference",
+      "event_type": "National Conference",
+      "theme": "Hundred Years of Sociology in India: Exploring Trajectories for the Future",
+      "start_date": "2022-12-20",
+      "end_date": "2022-12-22",
+      "venue": "University of Science and Technology Meghalaya (USTM)",
+      "location": "Meghalaya, India",
+      "organized_by": "University of Science and Technology Meghalaya (USTM) in collaboration with Indian Sociological Society (ISS)",
+      "role": "Collaborator",
+      "audience": "Sociologists; Researchers; Students",
+      "keywords": [
+        "History of Sociology",
+        "Future Trajectories",
+        "National Conference",
+        "ISS"
+      ],
+      "status": "completed",
+      "notes": "47th All India Sociological Conference"
+    },
+    {
+      "id": "young-researcher-workshop-iit-guwahati-2022",
+      "title": "Young Researcher’s Workshop (IIT Guwahati)",
+      "event_type": "Workshop",
+      "theme": "Young Researcher’s Workshop",
+      "start_date": "2022-12-18",
+      "end_date": "2022-12-19",
+      "venue": "Indian Institute of Technology, Guwahati",
+      "location": "Guwahati, Assam, India",
+      "organized_by": "IIT Guwahati in collaboration with Indian Sociological Society (ISS)",
+      "role": "Collaborator",
+      "audience": "Early-career researchers; PhD scholars; Postgraduate students",
+      "keywords": [
+        "Young Researchers",
+        "Workshop",
+        "Research Training",
+        "ISS"
+      ],
+      "status": "completed"
+    },
+    {
+      "id": "midterm-iss-society-culture-kashmir-2022",
+      "title": "Mid-Term ISS International Conference: Society, Culture and Social Change",
+      "event_type": "International Conference",
+      "theme": "Society, Culture and Social Change: Kashmir and Beyond",
+      "start_date": "2022-09-06",
+      "end_date": "2022-09-07",
+      "venue": "Islamic University of Science and Technology (IUST)",
+      "location": "Awantipora, Kashmir, India",
+      "organized_by": "Islamic University of Science and Technology (IUST) in collaboration with Indian Sociological Society (ISS)",
+      "role": "Collaborator",
+      "audience": "Academics; Regional experts; Graduate students",
+      "keywords": [
+        "Society",
+        "Culture",
+        "Social Change",
+        "Kashmir"
+      ],
+      "status": "completed"
+    }
+  ]
+}
+
 ];
 

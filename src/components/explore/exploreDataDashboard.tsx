@@ -23,7 +23,7 @@ import bookImage from '../../../public/assets/book-published/book1.png';
 export interface ExploreItem {
   id: string;
   title: string;
-  year: number;
+  year?: number;
   image?: string;
   thumbnail?: string;
   [key: string]: any;
@@ -220,6 +220,11 @@ export default function ExploreDataDashboard({
                         <th className={styles.colIsbn}>Student Name</th>
                         <th className={styles.colAuthor}>Research Area</th>
                       </>
+                    ) : data.id === 'organized-events' ? (
+                      <>
+                        <th className={styles.colIsbn}>Venue/Location</th>
+                        <th className={styles.colAuthor}>Event Type</th>
+                      </>
                     ) : (
                       <>
                         <th className={styles.colIsbn}>ISBN</th>
@@ -324,6 +329,19 @@ export default function ExploreDataDashboard({
                                   ? item.researchArea.substring(0, 50) + '...'
                                   : item.researchArea || 'N/A'}
                               </span>
+                            </td>
+                          </>
+                        ) : data.id === 'organized-events' ? (
+                          <>
+                            <td className={styles.colIsbn}>
+                              <span className={styles.isbnText}>
+                                {item.venue && item.location
+                                  ? `${item.venue}, ${item.location}`
+                                  : item.venue || item.location || 'N/A'}
+                              </span>
+                            </td>
+                            <td className={styles.colAuthor}>
+                              <span className={styles.authorText}>{item.event_type || item.eventType || 'N/A'}</span>
                             </td>
                           </>
                         ) : (

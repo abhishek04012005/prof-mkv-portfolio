@@ -56,19 +56,15 @@ export default function Navbar() {
         { label: 'PhD Supervision', href: '/supervision/phd-supervision' },
         { label: 'MPhil Supervision', href: '/supervision/mphil-supervision' },
         { label: 'Post Doctorate (PDF)', href: '/supervision/post-doctorate-supervision' },
-        { label: 'Organizing Roles', href: '/supervision/organizing-roles' },
-        { label: 'Session Chairing', href: '/supervision/session-chairing' },
       ],
     },
     {
       label: 'Events',
       dropdown: [
-        { label: 'Organized Events', href: '/outreach/organized' },
-        { label: 'ISS Events', href: '/outreach/iss' },
+        { label: 'Organized Events', href: '/events/organized-events'},
         { label: 'Workshops', href: '/outreach/workshops' },
         { label: 'Lectures', href: '/outreach/lectures' },
         { label: 'Presentations', href: '/outreach/presentations' },
-        { label: 'Chairing', href: '/outreach/chairing' },
       ],
     },
     // {

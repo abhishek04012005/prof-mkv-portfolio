@@ -51,7 +51,7 @@ export interface DetailItem {
   thesisTitle?: string;
   image?: string;
   buyUrl?: string;
-  [key: string]: string | number | string[] | boolean | undefined;
+  [key: string]: string | number | string[] | boolean | undefined | null;
 }
 
 interface DetailField {
