@@ -193,7 +193,7 @@ export const professorDetails: ProfessorDetailsType = {
         lastName: 'Verma',
         middleInitial: 'K',
         title: 'Prof.',
-        designation: 'Professor & Head, Department of Sociology',
+        designation: 'Dean, Professor & Head, Department of Sociology',
         department: 'Department of Sociology',
         university: 'Babasaheb Bhimrao Ambedkar University',
         email: 'contact@manishkverma.in',

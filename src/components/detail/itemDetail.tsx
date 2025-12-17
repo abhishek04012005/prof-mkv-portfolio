@@ -63,6 +63,7 @@ interface DetailField {
 interface ItemDetailProps {
   item: DetailItem;
   categoryTitle: string;
+  categoryId?: string;
   onBack?: () => void;
   renderDetailFields?: (item: DetailItem) => DetailField[];
 }
@@ -70,11 +71,15 @@ interface ItemDetailProps {
 export default function ItemDetail({
   item,
   categoryTitle,
+  categoryId,
   onBack,
   renderDetailFields,
 }: ItemDetailProps) {
   const router = useRouter();
   const [copied, setCopied] = useState(false);
+
+  // Check if this is a book category
+  const isBookCategory = categoryId && (categoryId === 'books-published' || categoryId === 'books-edited');
 
   const handleBack = () => {
     if (onBack) {
@@ -393,101 +398,103 @@ export default function ItemDetail({
         </header>
 
         <main className={styles.mainContent}>
-          {/* Image Section with Details */}
-          <div className={styles.imageSection}>
-            <div className={styles.imageContainer}>
-              <Image
-                src={getImageSource()}
-                alt={String(item.title)}
-                width={500}
-                height={500}
-                className={styles.heroImage}
-                priority
-              />
-            </div>
+          {/* Image Section with Details - Only for Books */}
+          {isBookCategory && (
+            <div className={styles.imageSection}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={getImageSource()}
+                  alt={String(item.title)}
+                  width={500}
+                  height={500}
+                  className={styles.heroImage}
+                  priority
+                />
+              </div>
 
-            {/* Quick Details Overlay */}
-            {(item.authors || item.year || item.journal) && (
-              <div className={styles.imageDetailsPanel}>
-                <div className={styles.detailsPanelContent}>
-                  {item.authors && (
-                    <div className={styles.detailItem}>
-                      <span className={styles.detailItemLabel}>Author: </span>
-                      <span className={styles.detailItemValue}>{item.authors}</span>
-                    </div>
-                  )}
-                  {item.year && (
-                    <div className={styles.detailItem}>
-                      <span className={styles.detailItemLabel}>Year: </span>
-                      <span className={styles.detailItemValue}>{item.year}</span>
-                    </div>
-                  )}
-                  {item.journal && (
-                    <div className={styles.detailItem}>
-                      <span className={styles.detailItemLabel}>Journal/Publisher: </span>
-                      <span className={styles.detailItemValue}>{item.journal}</span>
-                    </div>
-                  )}
-                  {item.publisher && (
-                    <div className={styles.detailItem}>
-                      <span className={styles.detailItemLabel}>Publisher: </span>
-                      <span className={styles.detailItemValue}>{item.publisher}</span>
-                    </div>
-                  )}
-                  {item.type && (
-                    <div className={styles.detailItem}>
-                      <span className={styles.detailItemLabel}>Type: </span>
-                      <span className={styles.detailItemValue}>{item.type}</span>
+              {/* Quick Details Overlay */}
+              {(item.authors || item.year || item.journal) && (
+                <div className={styles.imageDetailsPanel}>
+                  <div className={styles.detailsPanelContent}>
+                    {item.authors && (
+                      <div className={styles.detailItem}>
+                        <span className={styles.detailItemLabel}>Author: </span>
+                        <span className={styles.detailItemValue}>{item.authors}</span>
+                      </div>
+                    )}
+                    {item.year && (
+                      <div className={styles.detailItem}>
+                        <span className={styles.detailItemLabel}>Year: </span>
+                        <span className={styles.detailItemValue}>{item.year}</span>
+                      </div>
+                    )}
+                    {item.journal && (
+                      <div className={styles.detailItem}>
+                        <span className={styles.detailItemLabel}>Journal/Publisher: </span>
+                        <span className={styles.detailItemValue}>{item.journal}</span>
+                      </div>
+                    )}
+                    {item.publisher && (
+                      <div className={styles.detailItem}>
+                        <span className={styles.detailItemLabel}>Publisher: </span>
+                        <span className={styles.detailItemValue}>{item.publisher}</span>
+                      </div>
+                    )}
+                    {item.type && (
+                      <div className={styles.detailItem}>
+                        <span className={styles.detailItemLabel}>Type: </span>
+                        <span className={styles.detailItemValue}>{item.type}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Action Buttons */}
+                  {(item.url || item.pdfUrl || item.downloadUrl || item.buyUrl || item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
+                    <div className={styles.actionsBar}>
+                      {item.url && (
+                        <a
+                          href={String(item.url)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.actionButton}
+                        >
+                          <OpenNewIcon /> View Online
+                        </a>
+                      )}
+                      {(item.pdfUrl || item.downloadUrl) && (
+                        <a
+                          href={String(item.pdfUrl || item.downloadUrl)}
+                          download
+                          className={styles.actionButton}
+                        >
+                          <DownloadIcon /> Download
+                        </a>
+                      )}
+                      {item.buyUrl && (
+                        <a
+                          href={String(item.buyUrl)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`${styles.actionButton} ${styles.buyButton}`}
+                        >
+                          <ShoppingCartIcon /> Buy Now
+                        </a>
+                      )}
+                      {!item.buyUrl && (item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
+                        <button
+                          className={`${styles.actionButton} ${styles.comingSoonButton}`}
+                          disabled
+                          title="Coming soon"
+                        >
+                          <VisibilityOffIcon /> Coming Soon
+                        </button>
+                      )}
                     </div>
                   )}
                 </div>
-
-                {/* Action Buttons */}
-                {(item.url || item.pdfUrl || item.downloadUrl || item.buyUrl || item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
-                  <div className={styles.actionsBar}>
-                    {item.url && (
-                      <a
-                        href={String(item.url)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.actionButton}
-                      >
-                        <OpenNewIcon /> View Online
-                      </a>
-                    )}
-                    {(item.pdfUrl || item.downloadUrl) && (
-                      <a
-                        href={String(item.pdfUrl || item.downloadUrl)}
-                        download
-                        className={styles.actionButton}
-                      >
-                        <DownloadIcon /> Download
-                      </a>
-                    )}
-                    {item.buyUrl && (
-                      <a
-                        href={String(item.buyUrl)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.actionButton} ${styles.buyButton}`}
-                      >
-                        <ShoppingCartIcon /> Buy Now
-                      </a>
-                    )}
-                    {!item.buyUrl && (item.id.startsWith('book-pub-') || item.id.startsWith('book-edit-')) && (
-                      <button
-                        className={`${styles.actionButton} ${styles.comingSoonButton}`}
-                        disabled
-                        title="Coming soon"
-                      >
-                        <VisibilityOffIcon /> Coming Soon
-                      </button>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
 
           {/* Content Section */}
           <article className={styles.contentSection}>

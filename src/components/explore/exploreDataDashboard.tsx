@@ -182,7 +182,10 @@ export default function ExploreDataDashboard({
               <table className={styles.table}>
                 <thead>
                   <tr>
-                    <th className={styles.colImage}>Preview</th>
+                    <th className={styles.colNumber}>#</th>
+                    {(data.id === 'books-published' || data.id === 'books-edited') && (
+                      <th className={styles.colImage}>Preview</th>
+                    )}
                     <th
                       className={styles.colTitle}
                       onClick={() => handleSort('title')}
@@ -244,16 +247,21 @@ export default function ExploreDataDashboard({
                   </tr>
                 </thead>
                 <tbody>
-                  {sortedItems.map((item) => (
+                  {sortedItems.map((item, index) => (
                     <React.Fragment key={item.id}>
                       <tr className={styles.tableRow}>
-                        <td className={styles.colImage}>
-                          <img
-                            src={getImageSource(item)}
-                            alt={item.title}
-                            className={styles.rowImage}
-                          />
+                        <td className={styles.colNumber}>
+                          <span className={styles.numberBadge}>{index + 1}</span>
                         </td>
+                        {(data.id === 'books-published' || data.id === 'books-edited') && (
+                          <td className={styles.colImage}>
+                            <img
+                              src={getImageSource(item)}
+                              alt={item.title}
+                              className={styles.rowImage}
+                            />
+                          </td>
+                        )}
                         <td className={styles.colTitle}>
                           <div className={styles.titleContent}>
                             <span className={styles.itemTitle}>{item.title}</span>
@@ -386,16 +394,24 @@ export default function ExploreDataDashboard({
         <div className={styles.gridSection}>
           {sortedItems.length > 0 ? (
             <div className={styles.gridContainer}>
-              {sortedItems.map((item) => (
+              {sortedItems.map((item, index) => (
                 <div key={item.id} className={styles.gridCard}>
-                  <div className={styles.cardImageWrapper}>
-                    <img
-                      src={getImageSource(item)}
-                      alt={item.title}
-                      className={styles.cardImage}
-                    />
-                    <span className={styles.cardYear}>{item.year}</span>
-                  </div>
+                  <div className={styles.cardNumber}>{index + 1}</div>
+                  {(data.id === 'books-published' || data.id === 'books-edited') && (
+                    <div className={styles.cardImageWrapper}>
+                      <img
+                        src={getImageSource(item)}
+                        alt={item.title}
+                        className={styles.cardImage}
+                      />
+                      <span className={styles.cardYear}>{item.year}</span>
+                    </div>
+                  )}
+                  {!(data.id === 'books-published' || data.id === 'books-edited') && (
+                    <div className={styles.cardYearBadgeOnly}>
+                      <span className={styles.cardYear}>{item.year}</span>
+                    </div>
+                  )}
                   <div className={styles.cardBody}>
                     <h3 className={styles.cardTitle}>{item.title}</h3>
                   </div>

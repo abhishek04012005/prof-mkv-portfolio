@@ -71,6 +71,7 @@ export default async function SupervisionItemDetail({ params }: Props) {
     <ItemDetail
       item={item}
       categoryTitle={category.title}
+      categoryId={categoryId}
     />
   );
 }
