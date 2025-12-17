@@ -1371,6 +1371,114 @@ export const publicationData: PublicationCategory[] = [
           "Socio-Economic Study"
         ],
         "citations": 0
+      },
+      {
+        "id": "social-structure-and-function-2",
+        "title": "Social Structure & Function",
+        "authors": "Prof. Manish K. Verma",
+        "year": 2008,
+        "journal_or_book": "Course material for Vardhman Mahavir Kota Open University, Kota",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "doi": "",
+        "isbn": "",
+        "url": "",
+        "pdfUrl": "",
+        "type": "Course material",
+        "abstract": "",
+        "keywords": [
+          "Social Structure",
+          "Function",
+          "Course Material"
+        ],
+        "citations": 0
+      },
+      {
+        "id": "rethinking-modernity-a-sociological-engagement-with-gandhi-2",
+        "title": "Rethinking Modernity: A Sociological Engagement with Gandhi",
+        "authors": "Prof. Manish K. Verma",
+        "year": 2007,
+        "journal_or_book": "Gandhi Marg, Gandhi Peace Foundation, Delhi",
+        "volume": "",
+        "issue": "Apr-Jun 2007",
+        "pages": "",
+        "doi": "",
+        "isbn": "0016-4437",
+        "url": "",
+        "pdfUrl": "",
+        "type": "Article",
+        "abstract": "",
+        "keywords": [
+          "Gandhi",
+          "Modernity",
+          "Sociology"
+        ],
+        "citations": 0
+      },
+      {
+        "id": "do-we-really-need-development-some-empirical-probing-2",
+        "title": "Do We Really Need Development: Some Empirical Probing",
+        "authors": "Prof. Manish K. Verma",
+        "year": 2007,
+        "journal_or_book": "Chapter in R.K. Saxena (ed.) volume published from Agra",
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "doi": "",
+        "isbn": "81-88805-67-X",
+        "url": "",
+        "pdfUrl": "",
+        "type": "Book chapter",
+        "abstract": "",
+        "keywords": [
+          "Development",
+          "Empirical Study"
+        ],
+        "citations": 0
+      },
+      {
+        "id": "social-cost-of-development-deconstructing-some-hidden-realities-2",
+        "title": "Social Cost of Development: Deconstructing Some Hidden Realities",
+        "authors": "Prof. Manish K. Verma",
+        "year": 2005,
+        "journal_or_book": "SHODHAK, B-424, Malviya Nagar, Jaipur",
+        "volume": "",
+        "issue": "May-Aug 2005",
+        "pages": "",
+        "doi": "",
+        "isbn": "0302-9832",
+        "url": "",
+        "pdfUrl": "",
+        "type": "Article",
+        "abstract": "",
+        "keywords": [
+          "Social Cost",
+          "Development"
+        ],
+        "citations": 0
+      },
+      {
+        "id": "development-induced-displacement-thermal-power-projects-2004",
+        "title": "Development Induced Displacement: A Socio-Economic Study of Thermal Power Projects",
+        "authors": "Prof. Manish K. Verma",
+        "year": 2004,
+        "journal_or_book": "Man in India Journal, Church Road, Ranchi (Jharkhand)",
+        "volume": "",
+        "issue": "July-Dec 2004",
+        "pages": "",
+        "doi": "",
+        "isbn": "0025-1569",
+        "url": "",
+        "pdfUrl": "",
+        "type": "Article",
+        "abstract": "",
+        "keywords": [
+          "Development Induced Displacement",
+          "Thermal Power Projects",
+          "Socio-Economic Study"
+        ],
+        "citations": 0
       }
     ]
   } ,

@@ -46,7 +46,6 @@ export default function Navbar() {
       label: 'Research',
       dropdown: [
         { label: 'Completed Projects', href: '/research/research-projects-completed' },
-        // { label: 'Ongoing Projects', href: '/research/ongoing-projects' },
         { label: 'Research Interests', href: '/research/research-interests' },
         { label: 'Research Outputs', href: '/research/research-outputs' },
       ],
@@ -56,7 +55,7 @@ export default function Navbar() {
       dropdown: [
         { label: 'PhD Supervision', href: '/supervision/phd-supervision' },
         { label: 'MPhil Supervision', href: '/supervision/mphil-supervision' },
-        { label: 'PG Dissertation', href: '/supervision/pg-dissertation' },
+        { label: 'Post Doctorate (PDF)', href: '/supervision/post-doctorate-supervision' },
         { label: 'Organizing Roles', href: '/supervision/organizing-roles' },
         { label: 'Session Chairing', href: '/supervision/session-chairing' },
       ],
