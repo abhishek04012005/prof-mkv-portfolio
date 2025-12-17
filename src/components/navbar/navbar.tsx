@@ -72,17 +72,19 @@ export default function Navbar() {
         { label: 'Chairing', href: '/outreach/chairing' },
       ],
     },
-    {
-      label: 'Media',
-      dropdown: [
-        { label: 'Books', href: '/media/books' },
-        { label: 'Edited', href: '/media/edited' },
-        { label: 'Articles', href: '/media/articles' },
-        { label: 'Projects', href: '/media/projects' },
-        { label: 'Events', href: '/media/events' },
-        { label: 'Presentations', href: '/media/presentations' },
-      ],
-    },
+    // {
+    //   label: 'Media',
+    //   dropdown: [
+    //     { label: 'Books', href: '/media/books' },
+    //     { label: 'Edited', href: '/media/edited' },
+    //     { label: 'Articles', href: '/media/articles' },
+    //     { label: 'Projects', href: '/media/projects' },
+    //     { label: 'Events', href: '/media/events' },
+    //     { label: 'Presentations', href: '/media/presentations' },
+    //   ],
+    // },
+    { label: 'Gallery', href: '/gallery' },
+
   ];
 
   const { logo } = professorDetails.profileImages;
@@ -260,7 +262,7 @@ export default function Navbar() {
 
       {/* WhatsApp Button */}
       <a
-        href={`https://wa.me/${professorDetails.personalInfo.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hello, *Prof. Manish K. Verma*.\n\nI wish to connect with you.")}`}
+        href={`https://wa.me/${professorDetails.personalInfo.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hello, *Prof. Manish K. Verma*\n\nI wish to connect with you.")}`}
         className={styles.whatsappBtn}
         target="_blank"
         rel="noopener noreferrer"

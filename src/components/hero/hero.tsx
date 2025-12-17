@@ -18,7 +18,6 @@ export default function Hero() {
     const { profilePhoto } = professorDetails.profileImages;
     const publicationStats = getPublicationStats();
     const totalExperience = getTotalExperience();
-    const currentExperience = getCurrentExperience();
     
     // Use data from professorDetails
     const presentations = publicationStats.presentations;
@@ -66,29 +65,14 @@ export default function Hero() {
 
                     {/* CTA Buttons */}
                     <div className={styles.ctaButtons}>
-                        <Link href="/research" className={styles.primaryBtn}>
+                        <Link href="/know-more" className={styles.primaryBtn}>
                             <span>Know More</span>
                             <span className={styles.btnIcon}>→</span>
                         </Link>
-                        {/* <a href={`mailto:${email}`} className={styles.secondaryBtn}>
-              <span className={styles.btnIcon}>✉️</span>
-              <span>Get in Touch</span>
-            </a> */}
+                    
                     </div>
 
-                    {/* Contact Info */}
-                    {/* <div className={styles.contactInfo}>
-            <p className={styles.contactLabel}>Connect:</p>
-            <div className={styles.contactLinks}>
-              <a href={`mailto:${email}`} className={styles.contactLink} title="Email">
-                {email}
-              </a>
-              <span className={styles.contactDivider}>•</span>
-              <a href={`tel:${phone}`} className={styles.contactLink} title="Phone">
-                {phone}
-              </a>
-            </div>
-          </div> */}
+                    
                 </div>
 
                 {/* Right Image */}
@@ -103,22 +87,6 @@ export default function Hero() {
                             className={styles.profileImage}
                         />
                     </div>
-
-                    {/* Floating Cards */}
-                    {/* <div className={`${styles.floatingCard} ${styles.cardOne}`}>
-            <div className={styles.cardIcon}>🚀</div>
-            <div className={styles.cardText}>Research Innovator</div>
-          </div>
-
-          <div className={`${styles.floatingCard} ${styles.cardTwo}`}>
-            <div className={styles.cardIcon}>📚</div>
-            <div className={styles.cardText}>Dedicated Mentor</div>
-          </div>
-
-          <div className={`${styles.floatingCard} ${styles.cardThree}`}>
-            <div className={styles.cardIcon}>🌟</div>
-            <div className={styles.cardText}>Industry Expert</div>
-          </div> */}
 
                     {/* Decorative Elements */}
                     <div className={styles.decorativeBlob}></div>
