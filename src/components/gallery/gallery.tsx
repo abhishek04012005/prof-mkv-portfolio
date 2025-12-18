@@ -378,9 +378,7 @@ export default function Gallery() {
                         alt={image.alt}
                         fill
                         className={styles.image}
-                        sizes="(max-width: 640px) 100vw,
-                               (max-width: 1023px) 50vw,
-                               33vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
                       />
                       <div className={styles.imageOverlay}>
                         <div className={styles.overlayContent}>

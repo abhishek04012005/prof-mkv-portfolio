@@ -8,7 +8,6 @@ import Hero from "@/components/hero/hero";
 import Publication from "@/components/publication/publication";
 import Research from "@/components/research/research";
 import SupervisionPage from "@/components/supervision/supervision";
-import MediaPage from "@/components/media/media";
 
 export const metadata: Metadata = {
   title: "Prof. Manish K. Verma | Sociology Researcher & Academic Leader",
@@ -169,7 +168,7 @@ export default function Home() {
       <Research />
       <SupervisionPage />
       <EventsPage />
-      <MediaPage />
+      <Gallery />
       <Contact />
     </>
   );
