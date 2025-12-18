@@ -17,17 +17,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!category || !item) {
     return {
-      title: 'Research Item Not Found | Prof. Manish K. Verma',
+      title: 'Research Item Not Found | Prof. (Dr.) Manish K. Verma',
       description: 'The requested research item could not be found.',
     };
   }
 
   const baseUrl = 'https://prof-manish-k-verma.com';
   const description = item.abstract || item.description || item.title;
-  const keywords = item.keywords || [item.title, 'Prof. Manish K. Verma', 'research'];
+  const keywords = item.keywords || [item.title, 'Prof. (Dr.) Manish K. Verma', 'research'];
 
   return {
-    title: `${item.title} | Prof. Manish K. Verma`,
+    title: `${item.title} | Prof. (Dr.) Manish K. Verma`,
     description: description.substring(0, 160),
     keywords: [...keywords, category.title],
     openGraph: {
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: description.substring(0, 160),
       url: `${baseUrl}/research/${categoryId}/${itemId}`,
       type: 'article',
-      siteName: 'Prof. Manish K. Verma',
+      siteName: 'Prof. (Dr.) Manish K. Verma',
       publishedTime: `${item.year}-01-01`,
     },
     twitter: {

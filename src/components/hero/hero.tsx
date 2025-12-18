@@ -65,7 +65,7 @@ export default function Hero() {
 
                     {/* CTA Buttons */}
                     <div className={styles.ctaButtons}>
-                        <Link href="/know-more" className={styles.primaryBtn}>
+                        <Link href="/about" className={styles.primaryBtn}>
                             <span>Know More</span>
                             <span className={styles.btnIcon}>→</span>
                         </Link>

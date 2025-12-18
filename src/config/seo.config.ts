@@ -1,12 +1,12 @@
 // SEO Configuration and Analytics Setup Guide
-// This file documents the comprehensive SEO implementation for Prof. Manish K. Verma's portfolio
+// This file documents the comprehensive SEO implementation for Prof. (Dr.) Manish K. Verma's portfolio
 
 export const SEO_CONFIG = {
   // Site-wide SEO configuration
   site: {
-    name: 'Prof. Manish K. Verma - Academic Portfolio',
+    name: 'Prof. (Dr.) Manish K. Verma - Academic Portfolio',
     url: 'https://prof-manish-k-verma.com',
-    author: 'Prof. Manish K. Verma',
+    author: 'Prof. (Dr.) Manish K. Verma',
     description: 'Distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change. PhD advisor, published researcher, and thought leader.',
     locale: 'en_IN',
     language: 'en',
@@ -15,7 +15,7 @@ export const SEO_CONFIG = {
   // Primary Keywords
   keywords: {
     primary: [
-      'Prof. Manish K. Verma',
+      'Prof. (Dr.) Manish K. Verma',
       'Sociology',
       'Environmental Sociology',
       'Sustainable Development',
@@ -37,33 +37,33 @@ export const SEO_CONFIG = {
   // Category-specific SEO
   categories: {
     publications: {
-      title: 'Publications | Prof. Manish K. Verma',
-      description: 'Browse published books, edited volumes, articles, and book reviews by Prof. Manish K. Verma on environmental sociology and sustainable development.',
-      keywords: ['publications', 'books', 'research articles', 'scholarly work', 'Prof. Manish K. Verma'],
+      title: 'Publications | Prof. (Dr.) Manish K. Verma',
+      description: 'Browse published books, edited volumes, articles, and book reviews by Prof. (Dr.) Manish K. Verma on environmental sociology and sustainable development.',
+      keywords: ['publications', 'books', 'research articles', 'scholarly work', 'Prof. (Dr.) Manish K. Verma'],
       schema: 'ScholarlyArticle',
     },
     research: {
-      title: 'Research Projects & Interests | Prof. Manish K. Verma',
+      title: 'Research Projects & Interests | Prof. (Dr.) Manish K. Verma',
       description: 'Explore completed and ongoing research projects, research interests, and research outputs in environmental sociology and sustainable development.',
-      keywords: ['research', 'research projects', 'research interests', 'research outputs', 'Prof. Manish K. Verma'],
+      keywords: ['research', 'research projects', 'research interests', 'research outputs', 'Prof. (Dr.) Manish K. Verma'],
       schema: 'ResearchProject',
     },
     supervision: {
-      title: 'PhD & Student Supervision | Prof. Manish K. Verma',
-      description: 'Details about PhD students supervised, dissertation guidance, and academic mentoring by Prof. Manish K. Verma.',
-      keywords: ['supervision', 'PhD students', 'academic mentoring', 'dissertation', 'Prof. Manish K. Verma'],
+      title: 'PhD & Student Supervision | Prof. (Dr.) Manish K. Verma',
+      description: 'Details about PhD students supervised, dissertation guidance, and academic mentoring by Prof. (Dr.) Manish K. Verma.',
+      keywords: ['supervision', 'PhD students', 'academic mentoring', 'dissertation', 'Prof. (Dr.) Manish K. Verma'],
       schema: 'EducationalOccupationalCredential',
     },
     events: {
-      title: 'Events & Workshops | Prof. Manish K. Verma',
-      description: 'Conferences, workshops, seminars, and public engagement events organized or coordinated by Prof. Manish K. Verma.',
-      keywords: ['events', 'conferences', 'workshops', 'seminars', 'Prof. Manish K. Verma'],
+      title: 'Events & Workshops | Prof. (Dr.) Manish K. Verma',
+      description: 'Conferences, workshops, seminars, and public engagement events organized or coordinated by Prof. (Dr.) Manish K. Verma.',
+      keywords: ['events', 'conferences', 'workshops', 'seminars', 'Prof. (Dr.) Manish K. Verma'],
       schema: 'Event',
     },
     media: {
-      title: 'Media & Publications Hub | Prof. Manish K. Verma',
-      description: 'Comprehensive media collection including books, articles, projects, presentations, and events from Prof. Manish K. Verma.',
-      keywords: ['media', 'publications', 'presentations', 'projects', 'Prof. Manish K. Verma'],
+      title: 'Media & Publications Hub | Prof. (Dr.) Manish K. Verma',
+      description: 'Comprehensive media collection including books, articles, projects, presentations, and events from Prof. (Dr.) Manish K. Verma.',
+      keywords: ['media', 'publications', 'presentations', 'projects', 'Prof. (Dr.) Manish K. Verma'],
       schema: 'CreativeWork',
     },
   },
@@ -72,7 +72,7 @@ export const SEO_CONFIG = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    siteTitle: 'Prof. Manish K. Verma - Academic Portfolio',
+    siteTitle: 'Prof. (Dr.) Manish K. Verma - Academic Portfolio',
     imageUrl: 'https://prof-manish-k-verma.com/assets/professor.png',
     imageWidth: 1200,
     imageHeight: 630,
@@ -90,7 +90,7 @@ export const SEO_CONFIG = {
     organization: {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'Prof. Manish K. Verma',
+      name: 'Prof. (Dr.) Manish K. Verma',
       url: 'https://prof-manish-k-verma.com',
       logo: 'https://prof-manish-k-verma.com/assets/logo.png',
       sameAs: [
@@ -116,7 +116,7 @@ export const SEO_CONFIG = {
     person: {
       '@context': 'https://schema.org',
       '@type': 'Person',
-      name: 'Prof. Manish K. Verma',
+      name: 'Prof. (Dr.) Manish K. Verma',
       jobTitle: 'Professor of Sociology',
       email: 'manish@iitd.ac.in',
       worksFor: {
@@ -218,7 +218,7 @@ export const RICH_SNIPPETS = {
     headline: 'Article Title',
     author: {
       '@type': 'Person',
-      name: 'Prof. Manish K. Verma',
+      name: 'Prof. (Dr.) Manish K. Verma',
     },
     datePublished: '2024-01-01',
     description: 'Article description',
@@ -243,7 +243,7 @@ export const RICH_SNIPPETS = {
     description: 'Event description',
     organizer: {
       '@type': 'Person',
-      name: 'Prof. Manish K. Verma',
+      name: 'Prof. (Dr.) Manish K. Verma',
     },
   },
 

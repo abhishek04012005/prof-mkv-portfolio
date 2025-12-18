@@ -104,7 +104,7 @@ export default function Footer() {
         {/* Brand & Social Section */}
         <div className={styles.brandColumn}>
           <div className={styles.brandContent}>
-            <h3 className={styles.brandName}>Prof. Manish K. Verma</h3>
+            <h3 className={styles.brandName}>Prof. (Dr.) Manish K. Verma</h3>
             <p className={styles.brandSubtitle}>Sociology</p>
             <p className={styles.brandDesc}>
               Strengthening sociology through analysis, collaboration, and awareness
@@ -162,7 +162,7 @@ export default function Footer() {
         <div className={styles.bottomContainer}>
           <div className={styles.copyrightSection}>
             <p className={styles.copyright}>
-              © {currentYear} Prof. Manish K. Verma. All rights reserved.
+              © {currentYear} Prof. (Dr.) Manish K. Verma. All rights reserved.
             </p>
           </div>
 

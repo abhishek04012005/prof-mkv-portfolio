@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!category) {
     return {
-      title: 'Category Not Found | Prof. Manish K. Verma',
+      title: 'Category Not Found | Prof. (Dr.) Manish K. Verma',
       description: 'The requested events category could not be found.',
     };
   }
@@ -22,15 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const baseUrl = 'https://prof-manish-k-verma.com';
 
   return {
-    title: `${category.title} | Prof. Manish K. Verma`,
-    description: `${category.description} View ${category.events.length} events organized or coordinated by Prof. Manish K. Verma.`,
-    keywords: [category.title, 'events', 'conferences', 'workshops', 'Prof. Manish K. Verma', 'academic events'],
+    title: `${category.title} | Prof. (Dr.) Manish K. Verma`,
+    description: `${category.description} View ${category.events.length} events organized or coordinated by Prof. (Dr.) Manish K. Verma.`,
+    keywords: [category.title, 'events', 'conferences', 'workshops', 'Prof. (Dr.) Manish K. Verma', 'academic events'],
     openGraph: {
       title: category.title,
       description: category.description,
       url: `${baseUrl}/events/${categoryId}`,
       type: 'website',
-      siteName: 'Prof. Manish K. Verma',
+      siteName: 'Prof. (Dr.) Manish K. Verma',
     },
     twitter: {
       card: 'summary_large_image',

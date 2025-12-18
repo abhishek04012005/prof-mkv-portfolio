@@ -205,13 +205,13 @@ export const professorDetails: ProfessorDetailsType = {
     profileImages: {
         logo: {
             url: Logo,
-            alt: 'Prof. Manish K. Verma Logo',
+            alt: 'Prof. (Dr.) Manish K. Verma Logo',
             width: 48,
             height: 48,
         },
         profilePhoto: {
             url: ProfessorImage,
-            alt: 'Prof. Manish K. Verma',
+            alt: 'Prof. (Dr.) Manish K. Verma',
             width: 400,
             height: 500,
             formats: {
@@ -234,7 +234,7 @@ export const professorDetails: ProfessorDetailsType = {
             shortBio:
                 "Dean, Ambedkar School of Social Sciences & Dean, School of Vocational & Futuristic Studies; Professor & Head, Department of Sociology at Babasaheb Bhimrao Ambedkar University, Lucknow. Council Member, Indian Council of Social Science Research (ICSSR), Ministry of Education, Government of India (2024-2026); Former Chief Vigilance Officer; Former Controller of Examinations; Former Secretary, Indian Sociological Society (2022-2023); Former Managing Committee Member, Indian Sociological Society (2017-2022).",
             longBio:
-                `Prof. Manish K. Verma is a distinguished academic with over ${getTotalExperience()} years of teaching experience in Sociology. He has served in multiple prestigious administrative roles including Dean of two major schools at BBAU, Head of Department, Controller of Examinations, and Chief Vigilance Officer. A Council Member of ICSSR under the Ministry of Education, Government of India, he has contributed significantly to academic and social science research through publications, research projects, and mentorship of numerous doctoral and postgraduate students.`,
+                `Prof. (Dr.) Manish K. Verma is a distinguished academic with over ${getTotalExperience()} years of teaching experience in Sociology. He has served in multiple prestigious administrative roles including Dean of two major schools at BBAU, Head of Department, Controller of Examinations, and Chief Vigilance Officer. A Council Member of ICSSR under the Ministry of Education, Government of India, he has contributed significantly to academic and social science research through publications, research projects, and mentorship of numerous doctoral and postgraduate students.`,
             funFact: 'With deep expertise in Sociology and social sciences, Prof. Verma has been instrumental in shaping academic policy and institutional governance at both national and university levels.',
         },
 

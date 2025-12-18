@@ -17,14 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!category || !item) {
     return {
-      title: 'Publication Not Found | Prof. Manish K. Verma',
+      title: 'Publication Not Found | Prof. (Dr.) Manish K. Verma',
       description: 'The requested publication could not be found.',
     };
   }
 
   const baseUrl = 'https://prof-manish-k-verma.com';
   const abstract = item.abstract || item.title;
-  const keywords = item.keywords || [item.title, 'Prof. Manish K. Verma'];
+  const keywords = item.keywords || [item.title, 'Prof. (Dr.) Manish K. Verma'];
 
   const schema = {
     '@context': 'https://schema.org',
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     headline: item.title,
     author: {
       '@type': 'Person',
-      name: item.authors || 'Prof. Manish K. Verma',
+      name: item.authors || 'Prof. (Dr.) Manish K. Verma',
     },
     datePublished: `${item.year}-01-01`,
     description: abstract,
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   return {
-    title: `${item.title} | Prof. Manish K. Verma`,
+    title: `${item.title} | Prof. (Dr.) Manish K. Verma`,
     description: abstract.substring(0, 160),
     keywords: [...keywords, category.title],
     openGraph: {
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: abstract.substring(0, 160),
       url: `${baseUrl}/publications/${categoryId}/${itemId}`,
       type: 'article',
-      siteName: 'Prof. Manish K. Verma',
+      siteName: 'Prof. (Dr.) Manish K. Verma',
       publishedTime: `${item.year}-01-01`,
     },
     twitter: {

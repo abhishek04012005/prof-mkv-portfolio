@@ -10,10 +10,10 @@ import Research from "@/components/research/research";
 import SupervisionPage from "@/components/supervision/supervision";
 
 export const metadata: Metadata = {
-  title: "Prof. Manish K. Verma | Sociology Researcher & Academic Leader",
-  description: "Welcome to the academic portfolio of Prof. Manish K. Verma - Distinguished sociologist with 25+ years of expertise in environmental sociology, sustainable development, policy research, and academic leadership. Explore publications, research projects, and student supervision achievements.",
+  title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher & Academic Leader",
+  description: "Welcome to the academic portfolio of Prof. (Dr.) Manish K. Verma - Distinguished sociologist with 25+ years of expertise in environmental sociology, sustainable development, policy research, and academic leadership. Explore publications, research projects, and student supervision achievements.",
   keywords: [
-    "Prof. Manish K. Verma",
+    "Prof. (Dr.) Manish K. Verma",
     "Sociology",
     "Environmental Sociology",
     "Sustainable Development",
@@ -25,25 +25,25 @@ export const metadata: Metadata = {
     "Policy Research",
   ],
   openGraph: {
-    title: "Prof. Manish K. Verma | Sociology Researcher & Academic Leader",
+    title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher & Academic Leader",
     description: "Distinguished sociologist with 25+ years of research expertise in environmental sociology and sustainable development. Explore publications, research, and academic leadership.",
     url: "https://prof-manish-k-verma.com",
     type: "website",
     locale: "en_IN",
-    siteName: "Prof. Manish K. Verma - Academic Portfolio",
+    siteName: "Prof. (Dr.) Manish K. Verma - Academic Portfolio",
     images: [
       {
         url: "https://prof-manish-k-verma.com/assets/hero.png",
         width: 1200,
         height: 630,
-        alt: "Prof. Manish K. Verma - Sociology Researcher",
+        alt: "Prof. (Dr.) Manish K. Verma - Sociology Researcher",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prof. Manish K. Verma | Sociology Researcher",
+    title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher",
     description: "Distinguished sociologist with expertise in environmental sociology and sustainable development.",
     images: ["https://prof-manish-k-verma.com/assets/hero.png"],
   },
@@ -63,10 +63,10 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Prof. Manish K. Verma's Academic Portfolio",
+              name: "Prof. (Dr.) Manish K. Verma's Academic Portfolio",
               url: "https://prof-manish-k-verma.com",
               logo: "https://prof-manish-k-verma.com/assets/logo.png",
-              description: "Academic portfolio of Prof. Manish K. Verma - Distinguished sociologist with expertise in environmental sociology and sustainable development",
+              description: "Academic portfolio of Prof. (Dr.) Manish K. Verma - Distinguished sociologist with expertise in environmental sociology and sustainable development",
               sameAs: [
                 "https://scholar.google.com",
                 "https://linkedin.com/in/prof-manish-k-verma",
@@ -94,7 +94,7 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Prof. Manish K. Verma",
+              name: "Prof. (Dr.) Manish K. Verma",
               jobTitle: "Professor of Sociology",
               url: "https://prof-manish-k-verma.com",
               description: "Distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change",
@@ -128,7 +128,7 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Prof. Manish K. Verma - Academic Portfolio",
+              name: "Prof. (Dr.) Manish K. Verma - Academic Portfolio",
               url: "https://prof-manish-k-verma.com",
               description: "Comprehensive academic portfolio showcasing publications, research projects, student supervision, and professional achievements",
               potentialAction: {

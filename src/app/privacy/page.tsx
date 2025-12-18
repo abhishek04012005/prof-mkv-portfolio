@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
     {
       id: 'introduction',
       title: 'Introduction',
-      content: `This Privacy Policy ("Policy") describes how Prof. Manish K. Verma's academic portfolio website (the "Site") collects, uses, and protects your personal information. We are committed to maintaining the privacy and security of your data in accordance with applicable privacy laws and regulations.`,
+      content: `This Privacy Policy ("Policy") describes how Prof. (Dr.) Manish K. Verma's academic portfolio website (the "Site") collects, uses, and protects your personal information. We are committed to maintaining the privacy and security of your data in accordance with applicable privacy laws and regulations.`,
     },
     {
       id: 'information-collection',

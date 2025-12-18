@@ -124,8 +124,8 @@ xml += `
     <loc>${baseUrl}/</loc>
     <image:image>
       <image:loc>${baseUrl}/assets/professor.png</image:loc>
-      <image:title>Prof. Manish K. Verma</image:title>
-      <image:caption>Portrait of Prof. Manish K. Verma, Sociologist</image:caption>
+      <image:title>Prof. (Dr.) Manish K. Verma</image:title>
+      <image:caption>Portrait of Prof. (Dr.) Manish K. Verma, Sociologist</image:caption>
     </image:image>
   </url>
 </urlset>

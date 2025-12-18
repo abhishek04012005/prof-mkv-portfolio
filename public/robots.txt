@@ -1,4 +1,4 @@
-# robots.txt for Prof. Manish K. Verma's Academic Portfolio
+# robots.txt for Prof. (Dr.) Manish K. Verma's Academic Portfolio
 # Last updated: 2025-12-14
 
 # Allow all crawlers

@@ -47,7 +47,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-1',
         title: 'New Education Policy, Sustainable Development and Nation Building: Perspectives, Issues and Challenges',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
         publisher: 'Routledge, Taylor & Francis Group, UK',
         isbn: '978-1-03-299641-7',
@@ -59,7 +59,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-2',
         title: 'Education and Sustainable Development: Challenges, Opportunities & Future Prospects',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
         publisher: 'Rawat Publications, Jaipur & New Delhi',
         isbn: '978-81-316-1432-7',
@@ -71,7 +71,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-3',
         title: 'A Roadmap for Inclusive Development: National Education Policy (2020), Sustainable Development Goals and Policy Integration',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
         publisher: 'Rawat Publications, Jaipur & New Delhi',
         isbn: '978-81-316-1460-0',
@@ -83,7 +83,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-4',
         title: 'Nai Shikhsha Niti Evam Bharat Ka Samaveshi Vikas: Sambhavnain, Chunautiyan Evam Navinikaran',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
         publisher: 'Rawat Publications, Jaipur & New Delhi',
         isbn: '978-81-316-1468-6',
@@ -93,7 +93,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-5',
         title: 'National Education Policy and Sustainable Development Goals',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
         publisher: 'Rawat Publications, Jaipur & New Delhi',
         isbn: '978-81-316-1471-6',
@@ -105,7 +105,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-6',
         title: 'Environment and Sustainable Development: Perspectives and Issues',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2022,
         publisher: 'Routledge, Taylor & Francis Group, UK',
         isbn: '978-0-367-54182-8',
@@ -117,7 +117,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-7',
         title: 'Environment, Development and Sustainability in India: Perspectives, Issues and Alternatives',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2021,
         publisher: 'Springer Nature, Germany/Singapore',
         isbn: '978-981-33-6248-2',
@@ -129,7 +129,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-8',
         title: 'Globalization, Environment and Social Justice: Perspectives, Issues and Concerns',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2019,
         publisher: 'Routledge, Taylor & Francis Group, UK',
         isbn: '978-1-138-36377-9',
@@ -141,7 +141,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-9',
         title: 'Globalization, Social Justice and Sustainable Development in India',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2017,
         publisher: 'Gyan Publication House, New Delhi',
         isbn: '978-81-212-1415-5',
@@ -153,7 +153,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-10',
         title: 'Peri-Urban Environment',
-        authors: 'Prof. Manish K. Verma',
+        authors: 'Prof. (Dr.) Manish K. Verma',
         year: 2017,
         publisher: 'Windshield Press, Delhi',
         isbn: '978-81-930703-1-4',
@@ -163,7 +163,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-11',
         title: 'Globalization and Environment: Discourse, Policies and Practices',
-        authors: 'Edited by Prof. Manish K. Verma',
+        authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2015,
         publisher: 'Rawat Publications, Jaipur & New Delhi',
         isbn: '978-81-316-0709-1',
@@ -175,7 +175,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-12',
         title: 'Development, Displacement and Resettlement',
-        authors: 'Prof. Manish K. Verma',
+        authors: 'Prof. (Dr.) Manish K. Verma',
         year: 2004,
         publisher: 'Rawat Publications, Jaipur & New Delhi',
         isbn: '81-7033-845-X',
@@ -185,7 +185,7 @@ export const publicationData: PublicationCategory[] = [
       {
         id: 'book-pub-13',
         title: 'Prarambhik Samajshastra',
-        authors: 'Prof. Manish K. Verma',
+        authors: 'Prof. (Dr.) Manish K. Verma',
         year: 2005,
         publisher: 'Board of Secondary Education, Rajasthan, Ajmer',
         abstract: 'Book on introductory sociology published by the Board of Secondary Education, Rajasthan.',
@@ -202,7 +202,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "book-edit-1",
         "title": "Sociological Theories",
-        "authors": "Edited/Peer Reviewed by Prof. Manish K. Verma",
+        "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2013,
         "publisher": "Vikas Publishing House Pvt. Ltd., Noida",
         "isbn": "978-93-259-6446-4",
@@ -213,7 +213,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "book-edit-2",
         "title": "Social Demography",
-        "authors": "Edited/Peer Reviewed by Prof. Manish K. Verma",
+        "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2013,
         "publisher": "Vikas Publishing House Pvt. Ltd., Noida",
         "isbn": "978-93-259-6826-4",
@@ -224,7 +224,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "book-edit-3",
         "title": "Political Sociology",
-        "authors": "Edited/Peer Reviewed by Prof. Manish K. Verma",
+        "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2013,
         "publisher": "Vikas Publishing House Pvt. Ltd., Noida",
         "isbn": "978-93-5119-164-3",
@@ -235,7 +235,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "book-edit-4",
         "title": "Social Movements in India",
-        "authors": "Edited/Peer Reviewed by Prof. Manish K. Verma",
+        "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2013,
         "publisher": "Vikas Publishing House Pvt. Ltd., Noida",
         "isbn": "978-93-259-6029-9",
@@ -246,7 +246,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "book-edit-5",
         "title": "Social Change and Social Problems in India",
-        "authors": "Edited/Peer Reviewed by Prof. Manish K. Verma",
+        "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2006,
         "publisher": "Board of Secondary Education, Rajasthan, Ajmer",
         "abstract": "Edited course material addressing social change, development challenges and social problems tailored for secondary education syllabi.",
@@ -264,7 +264,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "religious-practices-of-the-third-gender-in-lucknow-city-of-uttar-radesh",
         "title": "Religious Practices of the Third Gender in Lucknow City of Uttar Pradesh, India",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2025,
         "journal_or_book": "The Eastern Anthropologists",
         "volume": "78",
@@ -287,7 +287,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "new-education-policy-sustainable-development-and-nation-building-historical-moorings-contemporary-discourse-and-future-prospects",
         "title": "New Education Policy, Sustainable Development and Nation Building: Historical Moorings, Contemporary Discourse and Future Prospects",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2025,
         "journal_or_book": "Chapter in New Education Policy, Sustainable Development and Nation Building: Perspectives, Issues and Challenges (Routledge, ed. Manish K. Verma)",
         "volume": "",
@@ -309,7 +309,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "education-and-sustainable-development-challenges-opportunities-and-future-prospects",
         "title": "Education and Sustainable Development: Challenges, Opportunities and Future Prospects",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2025,
         "journal_or_book": "Chapter in Education and Sustainable Development: Challenges, Opportunities & Future Prospects (Rawat Publications, ed. Manish K. Verma)",
         "volume": "",
@@ -331,7 +331,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "transforming-india-towards-nation-building-through-the-lens-of-national-education-policy-and-sustainable-development-goals",
         "title": "Transforming India towards Nation Building: Through the Lens of National Education Policy and Sustainable Development Goals",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2025,
         "journal_or_book": "Chapter in National Education Policy and Sustainable Development Goals (Rawat Publications, ed. Manish K. Verma)",
         "volume": "",
@@ -353,7 +353,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "a-roadmap-for-inclusive-development-national-education-policy-2020-sustainable-development-goals-and-policy-integration",
         "title": "A Roadmap for Inclusive Development: National Education Policy (2020), Sustainable Development Goals and Policy Integration",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2025,
         "journal_or_book": "Chapter in A Roadmap for Inclusive Development: National Education Policy (2020), Sustainable Development Goals and Policy Integration (Rawat Publications, ed. Manish K. Verma)",
         "volume": "",
@@ -375,7 +375,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "nai-shikhsha-niti-evam-bharat-ka-samaveshi-vikas-sambhavnain-chunautiyan-evam-navinikaran",
         "title": "Nai Shikhsha Niti Evam Bharat Ka Samaveshi Vikas: Sambhavnain, Chunautiyan Evam Navinikaran",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2025,
         "journal_or_book": "Chapter in Nai Shikhsha Niti Evam Bharat Ka Samaveshi Vikas: Sambhavnain, Chunautiyan Evam Navinikaran (Rawat Publications, ed. Manish K. Verma)",
         "volume": "",
@@ -397,7 +397,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "the-dynamics-of-clean-fuel-usage-in-peri-urban-areas-of-uttar-pradesh-womens-perspectives",
         "title": "The Dynamics of Clean Fuel Usage in Peri-urban Areas of Uttar Pradesh: Women's Perspectives",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2025,
         "journal_or_book": "Indian Journal of Gender Studies (Sage Publications)",
         "volume": "",
@@ -420,7 +420,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "education-and-sustainable-development-challenges-opportunities-and-future-prospects-duplicate",
         "title": "Education and Sustainable Development: Challenges, Opportunities & Future Prospects",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2025,
         "journal_or_book": "Chapter in Education and Sustainable Development: Challenges, Opportunities & Future Prospects (Rawat Publications, ed. Manish K. Verma)",
         "volume": "",
@@ -441,7 +441,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "sociology-of-india-need-for-indigenisation-of-sociology-for-india",
         "title": "Sociology of India: Need for Indigenisation of Sociology for India",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 0,
         "journal_or_book": "Paper in NEP 2020: Insights for Curriculum and Content in Sociology (Vidya Bharti Uchcha Siksha Sansthan, Research India Press)",
         "volume": "",
@@ -463,7 +463,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "issues-and-concerns-of-elderly-women-in-india-a-sociological-analysis",
         "title": "Issues and Concerns of Elderly Women in India: A Sociological Analysis",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2024,
         "journal_or_book": "Gyanshauryam, International Scientific Referred Research Journal",
         "volume": "Vol. 7",
@@ -485,7 +485,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "fuelling-women-lives-with-lpg-a-sociological-study-of-fuel-use-pattern-amidst-policy-intervention-in-peri-urban-areas-of-uttar-pradesh",
         "title": "Fuelling Women Lives with LPG: A Sociological Study of Fuel Use Pattern Amidst Policy Intervention in Peri-Urban Areas of Uttar Pradesh",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2024,
         "journal_or_book": "Chapter in Sustainability: Science, Policy and Practice in India - Challenges & Opportunities (Springer Nature, eds. Venkatesh Dutta & Priyanka Ghosh)",
         "volume": "",
@@ -507,7 +507,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "economic-inclusion-of-transgender-community",
         "title": "Economic Inclusion of Transgender Community",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2023,
         "journal_or_book": "Journal Shodh Disha, Bijnor, U.P.",
         "volume": "",
@@ -528,7 +528,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "women-an-explorations-of-womens-coping-mechanism",
         "title": "Women: An Explorations of Women's Coping Mechanism",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2023,
         "journal_or_book": "Journal Shodh Disha, Bijnor, U.P.",
         "volume": "",
@@ -549,7 +549,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "the-prevalence-of-elderly-abuse-in-india-a-sociological-analysis",
         "title": "The Prevalence of Elderly Abuse in India: A Sociological Analysis",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2023,
         "journal_or_book": "Journal Shodh Disha, Bijnor, U.P.",
         "volume": "",
@@ -570,7 +570,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "environmental-change-and-forced-displacement-understanding-the-phenomenon-through-sociological-lenses",
         "title": "Environmental Change and Forced Displacement: Understanding the Phenomenon Through Sociological Lenses",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2023,
         "journal_or_book": "Madhya Pradesh Journal of Social Sciences (MP Institute of Social Science Research, Ujjain)",
         "volume": "Vol No. 28",
@@ -591,7 +591,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "work-from-home-and-associated-cyber-vulnerabilities-in-metropolitan-cities",
         "title": "Work from Home and Associated Cyber Vulnerabilities in Metropolitan Cities",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2023,
         "journal_or_book": "Journal Shodhsamhita, Nagpur, Maharashtra",
         "volume": "Vol X",
@@ -613,7 +613,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "mapping-environmental-sociology-in-india",
         "title": "Mapping Environmental Sociology in India",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2023,
         "journal_or_book": "Journal Shodh Disha, Bijnor, U.P.",
         "volume": "",
@@ -634,7 +634,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "foreword-cancer-pandemic-charting-social-alleways",
         "title": "Foreword (Cancer Pandemic: Charting Social Alleways)",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2022,
         "journal_or_book": "Foreword in Cancer Pandemic: Charting Social Alleways (Sourav Madhur Dey, ed.; Samasamayik Prokashan)",
         "volume": "",
@@ -655,7 +655,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "socio-cultural-environment-reproductive-health-and-surrogacy-a-sociological-analysis",
         "title": "Socio-cultural Environment, Reproductive Health and Surrogacy: A Sociological Analysis",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2022,
         "journal_or_book": "Chapter in Surrogacy: A Socio-cultural and Legal Perspective in India (Prashant Tripathi, ed.; Aryan Publications)",
         "volume": "",
@@ -677,7 +677,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "introduction-environment-and-sustainable-development-perspectives-and-issues",
         "title": "Introduction (Environment and Sustainable Development: Perspectives and Issues)",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2022,
         "journal_or_book": "Introduction chapter in Environment and Sustainable Development: Perspectives and Issues (Routledge, ed. Manish K. Verma)",
         "volume": "",
@@ -699,7 +699,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "examining-inter-linkages-between-water-scarcity-and-human-security-a-case-study-of-bundelkhand-region-of-uttar-pradesh-india",
         "title": "Examining Inter-linkages between Water Scarcity and Human Security: A Case Study of Bundelkhand Region of Uttar Pradesh, India",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2021,
         "journal_or_book": "Chapter in Water Conflicts and Resistance: Issues and Challenges in South Asia (Routledge, ed. Venkatesh Dutta)",
         "volume": "",
@@ -721,7 +721,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "social-structure-and-change-among-tribals-in-india",
         "title": "Social Structure and Change Among Tribals in India",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2021,
         "journal_or_book": "International Journal Shodh Sarita, Lucknow, U.P.",
         "volume": "",
@@ -742,7 +742,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "introduction-environment-development-and-sustainability-in-india-perspectives-issues-and-alternatives",
         "title": "Introduction (Environment, Development and Sustainability in India: Perspectives, Issues and Alternatives)",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2021,
         "journal_or_book": "Introduction chapter in Environment, Development and Sustainability in India (Springer Nature, ed. Manish K. Verma)",
         "volume": "",
@@ -764,7 +764,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "impact-of-poverty-and-exclusion-an-empirical-analysis",
         "title": "Impact of Poverty and Exclusion: An Empirical Analysis",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2020,
         "journal_or_book": "Chapter in The Routledge Handbook of Inequality, Exclusion and Stigma in India (Routledge, eds. NMP Verma & Alpana Shrivastava)",
         "volume": "",
@@ -786,7 +786,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "introduction-globalization-environment-and-social-justice-perspectives-issues-and-concerns",
         "title": "Introduction (Globalization, Environment and Social Justice: Perspectives, Issues and Concerns)",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2019,
         "journal_or_book": "Introduction chapter in Globalization, Environment and Social Justice (Routledge, ed. Manish K. Verma)",
         "volume": "",
@@ -808,7 +808,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "urban-sanitation-in-uttar-pradesh-status-policy-perspective-and-need-for-a-faecal-sludge-management",
         "title": "Urban Sanitation in Uttar Pradesh: Status, Policy, Perspective and Need for a Faecal Sludge Management",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2019,
         "journal_or_book": "Social Science and Development Policy (International Journal), Lucknow",
         "volume": "Vol. 5",
@@ -830,7 +830,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "issues-of-poverty-and-development-in-bundelkhand-region-of-uttar-pradesh-an-empirical-analysis",
         "title": "Issues of Poverty and Development in Bundelkhand Region of Uttar Pradesh: An Empirical Analysis",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2017,
         "journal_or_book": "International Journal Research Process, Aurangabad, Maharashtra",
         "volume": "",
@@ -852,7 +852,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "introduction-globalization-social-justice-and-sustainable-development-in-india",
         "title": "Introduction (Globalization, Social Justice and Sustainable Development in India)",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2017,
         "journal_or_book": "Introduction chapter in Globalization, Social Justice and Sustainable Development in India (Gyan Publication House, ed. Manish K. Verma)",
         "volume": "",
@@ -873,7 +873,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "development-induced-displacement-sezs-and-the-state-of-farmers-in-india-some-insights-from-the-recent-experiences",
         "title": "Development Induced Displacement, SEZs and the State of Farmers in India: Some Insights from the recent Experiences",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2016,
         "journal_or_book": "Journal of the Human Rights Commission, India",
         "volume": "",
@@ -896,7 +896,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "gandhi-and-modernity-an-inquest-in-the-21st-century",
         "title": "Gandhi and Modernity: An Inquest in the 21st Century",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2016,
         "journal_or_book": "Chapter in Gandhian Way in the Era of Globalization (Prof. Anand Kumar, ed.; Winshield Press)",
         "volume": "",
@@ -917,7 +917,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "development-food-insecurity-and-health-predicaments-a-study-of-bundelkhand-region-of-uttar-pradesh",
         "title": "Development, Food Insecurity and Health Predicaments: A Study of Bundelkhand Region of Uttar Pradesh",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2016,
         "journal_or_book": "Chapter in Communities and Social Development in India (Rabindra Garada, ed.; Avon Publications)",
         "volume": "",
@@ -939,7 +939,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "environmental-catastrophe-human-rights-and-governance-a-sociological-insight-in-the-sorrow-of-bihar",
         "title": "Environmental Catastrophe, Human Rights and Governance: A Sociological Insight in the 'Sorrow of Bihar'",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2015,
         "journal_or_book": "International Journal Research Process, Aurangabad, Maharashtra",
         "volume": "",
@@ -962,7 +962,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "development-dilemma-the-paradoxes-of-scientific-advancement-and-ingrained-social-accountability",
         "title": "Development Dilemma: The Paradoxes of Scientific Advancement and Ingrained Social Accountability",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2015,
         "journal_or_book": "Social Science and Development Policy (International Journal), Lucknow",
         "volume": "Vol. 1",
@@ -984,7 +984,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "development-induced-displacement-policy-information-awareness-and-tribulations",
         "title": "Development Induced Displacement: Policy, Information, Awareness and Tribulations",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2015,
         "journal_or_book": "Chapter in Globalization and Environment: Discourse, Policies and Practices (Rawat Publications, ed. Manish K. Verma)",
         "volume": "",
@@ -1006,7 +1006,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "introduction-globalization-and-environment-discourse-policies-and-practices",
         "title": "Introduction (Globalization and Environment: Discourse, Policies and Practices)",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2015,
         "journal_or_book": "Introduction chapter in Globalization and Environment: Discourse, Policies and Practices (Rawat Publications, ed. Manish K. Verma)",
         "volume": "",
@@ -1027,7 +1027,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "social-exclusion-and-health-predicaments-a-study-of-bundelkhand",
         "title": "Social Exclusion and Health Predicaments: A Study of Bundelkhand",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2015,
         "journal_or_book": "Golden Research Thoughts (International Multidisciplinary Journal), Solapur",
         "volume": "",
@@ -1049,7 +1049,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "health-tradition-and-awareness-a-perspective-on-the-tribal-health-care-practices",
         "title": "Health, Tradition and Awareness: A Perspective on the Tribal Health Care Practices",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2014,
         "journal_or_book": "International Journal Research Process, Aurangabad, Maharashtra",
         "volume": "",
@@ -1071,7 +1071,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "environmental-health-of-the-communities-of-fringe-areas-a-study-of-lucknow-city",
         "title": "Environmental Health of the Communities of Fringe Areas: A Study of Lucknow City",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2014,
         "journal_or_book": "Indian Streams Research Journal (International Multidisciplinary Research Journal)",
         "volume": "",
@@ -1093,7 +1093,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "relevance-of-gandhian-modernity-in-the-contemporary-era",
         "title": "Relevance of Gandhian Modernity in the Contemporary Era",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2014,
         "journal_or_book": "Research Process, International Journal of Social Research Foundation, Aurangabad",
         "volume": "",
@@ -1114,7 +1114,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "food-security-existing-policies-and-challenges-with-reference-to-bundelkhand-region-of-uttar-pradesh",
         "title": "Food Security: Existing Policies and Challenges with reference to Bundelkhand Region of Uttar Pradesh",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2014,
         "journal_or_book": "Vikash International Journal of Management, Science and Technology, Delhi",
         "volume": "",
@@ -1136,7 +1136,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "tribes-of-india-retrograde-development-and-state-policies",
         "title": "Tribes of India: Retrograde Development and State Policies",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2014,
         "journal_or_book": "Chapter in Social Development in India (Manvendra Pratap Singh, ed.; Bharat Book Centre)",
         "volume": "",
@@ -1158,7 +1158,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "modernization-of-indian-tradition-introspecting-equitable-development-paradigm",
         "title": "Modernization of Indian Tradition: Introspecting Equitable Development Paradigm",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2014,
         "journal_or_book": "Chapter in Polity, Civil Society and Development (I. P. Modi, ed.; Rawat Publications)",
         "volume": "",
@@ -1180,7 +1180,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "policy-planning-in-development-projects-process-and-limitations",
         "title": "Policy Planning in Development Projects: Process and Limitations",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2012,
         "journal_or_book": "Chapter in Interrogating Development (Prof. Vishwajit Ghosh, ed.; Rawat Publications)",
         "volume": "",
@@ -1201,7 +1201,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "plaguing-democracy-paradigm-for-an-alternative-political-culture",
         "title": "Plaguing Democracy: Paradigm for an Alternative Political Culture",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2010,
         "journal_or_book": "Chapter in Quest for Participatory Democracy (Prof. Anand Kumar & Dr. Manish Tiwari, eds.; Rawat Publications)",
         "volume": "",
@@ -1223,7 +1223,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "social-structure-and-social-problems-theory-and-interrelations",
         "title": "Social Structure and Social Problems: Theory and Interrelations",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2008,
         "journal_or_book": "Course material for Vardhman Mahavir Kota Open University, Kota",
         "volume": "",
@@ -1245,7 +1245,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "social-action-meaning-definition-and-theories",
         "title": "Social Action: Meaning, Definition and Theories",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2008,
         "journal_or_book": "Course material for Vardhman Mahavir Kota Open University, Kota",
         "volume": "",
@@ -1267,7 +1267,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "social-structure-and-function",
         "title": "Social Structure & Function",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2008,
         "journal_or_book": "Course material for Vardhman Mahavir Kota Open University, Kota",
         "volume": "",
@@ -1289,7 +1289,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "rethinking-modernity-a-sociological-engagement-with-gandhi",
         "title": "Rethinking Modernity: A Sociological Engagement with Gandhi",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2007,
         "journal_or_book": "Gandhi Marg, Gandhi Peace Foundation, Delhi",
         "volume": "",
@@ -1311,7 +1311,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "do-we-really-need-development-some-empirical-probing",
         "title": "Do We Really Need Development: Some Empirical Probing",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2007,
         "journal_or_book": "Chapter in edited volume published from Agra (R.K. Saxena, ed.)",
         "volume": "",
@@ -1332,7 +1332,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "social-cost-of-development-deconstructing-some-hidden-realities",
         "title": "Social Cost of Development: Deconstructing Some Hidden Realities",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2005,
         "journal_or_book": "SHODHAK (journal), Malviya Nagar, Jaipur",
         "volume": "",
@@ -1353,7 +1353,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "development-induced-displacement-a-socio-economic-study-of-thermal-power-projects",
         "title": "Development Induced Displacement: A Socio-Economic Study of Thermal Power Projects",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2004,
         "journal_or_book": "Man in India Journal, Church Road, Ranchi (Jharkhand)",
         "volume": "",
@@ -1375,7 +1375,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "social-structure-and-function-2",
         "title": "Social Structure & Function",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2008,
         "journal_or_book": "Course material for Vardhman Mahavir Kota Open University, Kota",
         "volume": "",
@@ -1397,7 +1397,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "rethinking-modernity-a-sociological-engagement-with-gandhi-2",
         "title": "Rethinking Modernity: A Sociological Engagement with Gandhi",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2007,
         "journal_or_book": "Gandhi Marg, Gandhi Peace Foundation, Delhi",
         "volume": "",
@@ -1419,7 +1419,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "do-we-really-need-development-some-empirical-probing-2",
         "title": "Do We Really Need Development: Some Empirical Probing",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2007,
         "journal_or_book": "Chapter in R.K. Saxena (ed.) volume published from Agra",
         "volume": "",
@@ -1440,7 +1440,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "social-cost-of-development-deconstructing-some-hidden-realities-2",
         "title": "Social Cost of Development: Deconstructing Some Hidden Realities",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2005,
         "journal_or_book": "SHODHAK, B-424, Malviya Nagar, Jaipur",
         "volume": "",
@@ -1461,7 +1461,7 @@ export const publicationData: PublicationCategory[] = [
       {
         "id": "development-induced-displacement-thermal-power-projects-2004",
         "title": "Development Induced Displacement: A Socio-Economic Study of Thermal Power Projects",
-        "authors": "Prof. Manish K. Verma",
+        "authors": "Prof. (Dr.) Manish K. Verma",
         "year": 2004,
         "journal_or_book": "Man in India Journal, Church Road, Ranchi (Jharkhand)",
         "volume": "",
@@ -1491,7 +1491,7 @@ export const publicationData: PublicationCategory[] = [
     {
       "id": "review-betwixt-development-and-discontent-dalit-adivasis-on-the-south-eastern-margins-of-uttar-pradesh",
       "title": "Review: \"Betwixt Development and Discontent: Dalit Adivasis on the South-Eastern Margins of Uttar Pradesh\" by Lalta Prasad",
-      "reviewer": "Prof. Manish K. Verma",
+      "reviewer": "Prof. (Dr.) Manish K. Verma",
       "year": 2020,
       "journal": "Sociological Bulletin",
       "volume": "Vol 69",
@@ -1516,7 +1516,7 @@ export const publicationData: PublicationCategory[] = [
     {
       "id": "review-living-with-violence-anthropology-of-events-and-everyday-life",
       "title": "Review: \"Living with Violence: Anthropology of Events and Everyday Life\" edited by Roma Chatterji and Deepak Mehta",
-      "reviewer": "Prof. Manish K. Verma",
+      "reviewer": "Prof. (Dr.) Manish K. Verma",
       "year": 2012,
       "journal": "International Sociology Review of Books (ISRB)",
       "volume": "27",
@@ -1540,7 +1540,7 @@ export const publicationData: PublicationCategory[] = [
     {
       "id": "review-beyond-relocation-the-imperative-of-sustainable-resettlement",
       "title": "Review: \"Beyond Relocation: The Imperative of Sustainable Resettlement\" edited by Renu Modi",
-      "reviewer": "Prof. Manish K. Verma",
+      "reviewer": "Prof. (Dr.) Manish K. Verma",
       "year": 2010,
       "journal": "Sociological Bulletin",
       "volume": "Vol. 59",

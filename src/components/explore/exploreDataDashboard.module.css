@@ -336,8 +336,7 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: white;
+  color: var(--color-primary);
   border-radius: 50%;
   font-weight: 600;
   font-size: 0.85rem;

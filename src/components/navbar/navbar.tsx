@@ -247,7 +247,7 @@ export default function Navbar() {
 
       {/* WhatsApp Button */}
       <a
-        href={`https://wa.me/${professorDetails.personalInfo.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hello, *Prof. Manish K. Verma*\n\nI wish to connect with you.")}`}
+        href={`https://wa.me/${professorDetails.personalInfo.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hello, *Prof. (Dr.) Manish K. Verma*\n\nI wish to connect with you.")}`}
         className={styles.whatsappBtn}
         target="_blank"
         rel="noopener noreferrer"

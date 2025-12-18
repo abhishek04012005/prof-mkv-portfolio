@@ -183,7 +183,7 @@ export default function ExploreDataDashboard({
                 <thead>
                   <tr>
                     <th className={styles.colNumber}>#</th>
-                    {(data.id === 'books-published' || data.id === 'books-edited') && (
+                    {data.id === 'books-published' && (
                       <th className={styles.colImage}>Preview</th>
                     )}
                     <th
@@ -225,6 +225,11 @@ export default function ExploreDataDashboard({
                         <th className={styles.colIsbn}>Venue/Location</th>
                         <th className={styles.colAuthor}>Event Type</th>
                       </>
+                    ) : data.id === 'presentations' ? (
+                      <>
+                        <th className={styles.colIsbn}>Venue/Theme</th>
+                        <th className={styles.colAuthor}>Role</th>
+                      </>
                     ) : (
                       <>
                         <th className={styles.colIsbn}>ISBN</th>
@@ -258,7 +263,7 @@ export default function ExploreDataDashboard({
                         <td className={styles.colNumber}>
                           <span className={styles.numberBadge}>{index + 1}</span>
                         </td>
-                        {(data.id === 'books-published' || data.id === 'books-edited') && (
+                        {data.id === 'books-published' && (
                           <td className={styles.colImage}>
                             <img
                               src={getImageSource(item)}
@@ -342,6 +347,17 @@ export default function ExploreDataDashboard({
                             </td>
                             <td className={styles.colAuthor}>
                               <span className={styles.authorText}>{item.event_type || item.eventType || 'N/A'}</span>
+                            </td>
+                          </>
+                        ) : data.id === 'presentations' ? (
+                          <>
+                            <td className={styles.colIsbn}>
+                              <span className={styles.isbnText}>
+                                {item.venue || item.theme || 'N/A'}
+                              </span>
+                            </td>
+                            <td className={styles.colAuthor}>
+                              <span className={styles.authorText}>{item.role || 'N/A'}</span>
                             </td>
                           </>
                         ) : (

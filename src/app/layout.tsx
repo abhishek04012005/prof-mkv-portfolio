@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Prof. Manish K. Verma | Sociology Researcher, Academic Excellence",
-  description: "Explore the academic portfolio of Prof. Manish K. Verma - distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change. PhD advisor, published researcher, and thought leader.",
+  title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher, Academic Excellence",
+  description: "Explore the academic portfolio of Prof. (Dr.) Manish K. Verma - distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change. PhD advisor, published researcher, and thought leader.",
   keywords: [
-    "Prof. Manish K. Verma",
+    "Prof. (Dr.) Manish K. Verma",
     "Sociology",
     "Environmental Sociology",
     "Sustainable Development",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     "Social Justice",
     "Policy Research",
   ],
-  authors: [{ name: "Prof. Manish K. Verma" }],
-  creator: "Prof. Manish K. Verma",
-  publisher: "Prof. Manish K. Verma",
+  authors: [{ name: "Prof. (Dr.) Manish K. Verma" }],
+  creator: "Prof. (Dr.) Manish K. Verma",
+  publisher: "Prof. (Dr.) Manish K. Verma",
   robots: {
     index: true,
     follow: true,
@@ -43,22 +43,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://prof-manish-k-verma.com",
-    siteName: "Prof. Manish K. Verma - Academic Portfolio",
-    title: "Prof. Manish K. Verma | Sociology Researcher",
+    siteName: "Prof. (Dr.) Manish K. Verma - Academic Portfolio",
+    title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher",
     description: "Distinguished sociologist with expertise in environmental sociology, sustainable development, and social policy research.",
     images: [
       {
         url: "https://prof-manish-k-verma.com/assets/professor.png",
         width: 1200,
         height: 630,
-        alt: "Prof. Manish K. Verma",
+        alt: "Prof. (Dr.) Manish K. Verma",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prof. Manish K. Verma | Sociology Researcher",
+    title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher",
     description: "Distinguished sociologist with expertise in environmental sociology and sustainable development.",
     images: ["https://prof-manish-k-verma.com/assets/professor.png"],
   },
@@ -96,7 +96,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Prof. Manish K. Verma",
+              name: "Prof. (Dr.) Manish K. Verma",
               jobTitle: "Professor of Sociology",
               affiliation: {
                 "@type": "Organization",

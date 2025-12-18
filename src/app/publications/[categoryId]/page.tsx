@@ -14,43 +14,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!category) {
     return {
-      title: 'Category Not Found | Prof. Manish K. Verma',
+      title: 'Category Not Found | Prof. (Dr.) Manish K. Verma',
       description: 'The requested publication category could not be found.',
     };
   }
 
   const categoryNames: Record<string, string> = {
-    'books-published': 'Books Published by Prof. Manish K. Verma',
-    'books-edited': 'Books Edited and Peer-Reviewed by Prof. Manish K. Verma',
-    'articles': 'Research Articles and Book Chapters by Prof. Manish K. Verma',
-    'book-reviews': 'Book Reviews by Prof. Manish K. Verma',
+    'books-published': 'Books Published by Prof. (Dr.) Manish K. Verma',
+    'books-edited': 'Books Edited and Peer-Reviewed by Prof. (Dr.) Manish K. Verma',
+    'articles': 'Research Articles and Book Chapters by Prof. (Dr.) Manish K. Verma',
+    'book-reviews': 'Book Reviews by Prof. (Dr.) Manish K. Verma',
   };
 
   const categoryDescriptions: Record<string, string> = {
-    'books-published': `Browse ${category.publications.length} authored and edited books by Prof. Manish K. Verma covering sociology, environment, education, and sustainable development.`,
-    'books-edited': `Explore ${category.publications.length} edited volumes and peer-reviewed textbooks by Prof. Manish K. Verma on social sciences and development studies.`,
-    'articles': `Read ${category.publications.length} research articles, book chapters and course materials by Prof. Manish K. Verma on sociology and social development.`,
-    'book-reviews': `Browse ${category.publications.length} professional book reviews by Prof. Manish K. Verma on sociology, development, and related topics.`,
+    'books-published': `Browse ${category.publications.length} authored and edited books by Prof. (Dr.) Manish K. Verma covering sociology, environment, education, and sustainable development.`,
+    'books-edited': `Explore ${category.publications.length} edited volumes and peer-reviewed textbooks by Prof. (Dr.) Manish K. Verma on social sciences and development studies.`,
+    'articles': `Read ${category.publications.length} research articles, book chapters and course materials by Prof. (Dr.) Manish K. Verma on sociology and social development.`,
+    'book-reviews': `Browse ${category.publications.length} professional book reviews by Prof. (Dr.) Manish K. Verma on sociology, development, and related topics.`,
   };
 
   const baseUrl = 'https://prof-manish-k-verma.com';
   const categoryKeywords: Record<string, string[]> = {
-    'books-published': ['books', 'authored books', 'sociology', 'education', 'sustainable development', 'Prof. Manish K. Verma'],
-    'books-edited': ['edited books', 'textbooks', 'sociology', 'social sciences', 'peer review', 'Prof. Manish K. Verma'],
-    'articles': ['research articles', 'journal articles', 'book chapters', 'sociology', 'social research', 'Prof. Manish K. Verma'],
-    'book-reviews': ['book reviews', 'sociology', 'development studies', 'academic reviews', 'Prof. Manish K. Verma'],
+    'books-published': ['books', 'authored books', 'sociology', 'education', 'sustainable development', 'Prof. (Dr.) Manish K. Verma'],
+    'books-edited': ['edited books', 'textbooks', 'sociology', 'social sciences', 'peer review', 'Prof. (Dr.) Manish K. Verma'],
+    'articles': ['research articles', 'journal articles', 'book chapters', 'sociology', 'social research', 'Prof. (Dr.) Manish K. Verma'],
+    'book-reviews': ['book reviews', 'sociology', 'development studies', 'academic reviews', 'Prof. (Dr.) Manish K. Verma'],
   };
 
   return {
-    title: categoryNames[categoryId] || `${category.title} | Prof. Manish K. Verma`,
+    title: categoryNames[categoryId] || `${category.title} | Prof. (Dr.) Manish K. Verma`,
     description: categoryDescriptions[categoryId] || category.description,
-    keywords: categoryKeywords[categoryId] || [category.title, 'Prof. Manish K. Verma', 'sociology'],
+    keywords: categoryKeywords[categoryId] || [category.title, 'Prof. (Dr.) Manish K. Verma', 'sociology'],
     openGraph: {
       title: categoryNames[categoryId] || category.title,
       description: categoryDescriptions[categoryId] || category.description,
       url: `${baseUrl}/publications/${categoryId}`,
       type: 'website',
-      siteName: 'Prof. Manish K. Verma',
+      siteName: 'Prof. (Dr.) Manish K. Verma',
     },
     twitter: {
       card: 'summary_large_image',

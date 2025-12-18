@@ -102,21 +102,7 @@ export default function About() {
                       </div>
                     </div>
 
-                    {/* Quick Stats */}
-                    {/* <div className={styles.statsGrid}>
-                      <div className={styles.statCard}>
-                        <div className={styles.statNumber}>{totalExperience}+</div>
-                        <div className={styles.statName}>Years Experience</div>
-                      </div>
-                      <div className={styles.statCard}>
-                        <div className={styles.statNumber}>{totalPhDSupervisions}+</div>
-                        <div className={styles.statName}>PhD Supervisions</div>
-                      </div>
-                      <div className={styles.statCard}>
-                        <div className={styles.statNumber}>{totalResearchProjects}+</div>
-                        <div className={styles.statName}>Research Projects</div>
-                      </div>
-                    </div> */}
+                   
                   </div>
                 </div>
               )}

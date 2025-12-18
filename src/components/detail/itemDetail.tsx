@@ -79,7 +79,7 @@ export default function ItemDetail({
   const [copied, setCopied] = useState(false);
 
   // Check if this is a book category
-  const isBookCategory = categoryId && (categoryId === 'books-published' || categoryId === 'books-edited');
+  const isBookCategory = categoryId && categoryId === 'books-published';
 
   const handleBack = () => {
     if (onBack) {
@@ -344,6 +344,87 @@ export default function ItemDetail({
       });
     }
 
+    // Presentation-specific fields
+    if (item.event_type || item.eventType) {
+      fields.push({
+        label: 'Event Type',
+        value: item.event_type || item.eventType,
+        icon: '🎤',
+      });
+    }
+
+    if (item.theme) {
+      fields.push({
+        label: 'Theme',
+        value: item.theme,
+        icon: '📌',
+      });
+    }
+
+    if (item.start_date || item.startDate) {
+      fields.push({
+        label: 'Start Date',
+        value: item.start_date || item.startDate,
+        icon: '📅',
+      });
+    }
+
+    if (item.end_date || item.endDate) {
+      fields.push({
+        label: 'End Date',
+        value: item.end_date || item.endDate,
+        icon: '📅',
+      });
+    }
+
+    if (item.venue) {
+      fields.push({
+        label: 'Venue',
+        value: item.venue,
+        icon: '📍',
+      });
+    }
+
+    if (item.location) {
+      fields.push({
+        label: 'Location',
+        value: item.location,
+        icon: '🌍',
+      });
+    }
+
+    if (item.organized_by) {
+      fields.push({
+        label: 'Organized By',
+        value: item.organized_by,
+        icon: '🏢',
+      });
+    }
+
+    if (item.role) {
+      fields.push({
+        label: 'Role',
+        value: item.role,
+        icon: '👤',
+      });
+    }
+
+    if (item.audience) {
+      fields.push({
+        label: 'Audience',
+        value: item.audience,
+        icon: '👥',
+      });
+    }
+
+    if (item.notes) {
+      fields.push({
+        label: 'Notes',
+        value: item.notes,
+        icon: '📝',
+      });
+    }
+
     return fields;
   };
 
@@ -379,14 +460,14 @@ export default function ItemDetail({
   return (
     <>
       <Head>
-        <title>{item.title} | {categoryTitle} - Prof. Manish K. Verma</title>
+        <title>{item.title} | {categoryTitle} - Prof. (Dr.) Manish K. Verma</title>
         <meta name="description" content={seoDescription} />
         <meta name="keywords" content={item.keywords ? (item.keywords as string[]).join(', ') : categoryTitle} />
         <meta property="og:title" content={String(item.title)} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:image" content={getImageSource()} />
         <meta property="og:type" content="article" />
-        <meta name="author" content={(item.authors as string) || 'Prof. Manish K. Verma'} />
+        <meta name="author" content={(item.authors as string) || 'Prof. (Dr.) Manish K. Verma'} />
         <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
       </Head>
 
