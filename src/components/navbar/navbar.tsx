@@ -67,17 +67,7 @@ export default function Navbar() {
         { label: 'Presentations', href: '/outreach/presentations' },
       ],
     },
-    // {
-    //   label: 'Media',
-    //   dropdown: [
-    //     { label: 'Books', href: '/media/books' },
-    //     { label: 'Edited', href: '/media/edited' },
-    //     { label: 'Articles', href: '/media/articles' },
-    //     { label: 'Projects', href: '/media/projects' },
-    //     { label: 'Events', href: '/media/events' },
-    //     { label: 'Presentations', href: '/media/presentations' },
-    //   ],
-    // },
+  
     { label: 'Gallery', href: '/gallery' },
 
   ];
@@ -117,7 +107,7 @@ export default function Navbar() {
               </div>
 
               <div className={styles.logoText}>
-                <div className={styles.logoPrimary}>Prof. {firstName}</div>
+                <div className={styles.logoPrimary}>{professorDetails.personalInfo.title} {firstName}</div>
                 <div className={styles.logoSecondary}>
                   {middleInitial}. {lastName}
                 </div>
