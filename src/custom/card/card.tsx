@@ -161,7 +161,7 @@ export default function CardPreview({
             </div>
           ))}
         </div>
-
+{/* 
         <div className={styles.statsSection}>
           <div className={styles.statItem}>
             <div className={styles.statNumber}>{totalPublications}+</div>
@@ -188,7 +188,7 @@ export default function CardPreview({
             <div className={styles.statNumber}>{cardData.length}</div>
             <div className={styles.statText}>Categories</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

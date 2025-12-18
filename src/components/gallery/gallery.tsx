@@ -41,54 +41,6 @@ export default function Gallery() {
       alt: 'Best Teacher Award 2024',
       title: 'Best Teacher Award 2024',
     },
-    {
-      id: '5',
-      src: '/images/gallery/research-presentation.jpg',
-      alt: 'Research findings presentation',
-      title: 'Research Presentation',
-    },
-    {
-      id: '6',
-      src: '/images/gallery/international-workshop.jpg',
-      alt: 'International workshop facilitation',
-      title: 'International Workshop on IoT Security',
-    },
-    {
-      id: '7',
-      src: '/images/gallery/team-collaboration.jpg',
-      alt: 'Team working on research project',
-      title: 'Team Collaboration Session',
-    },
-    {
-      id: '8',
-      src: '/images/gallery/conference-panel-discussion.jpg',
-      alt: 'Panel discussion at international conference',
-      title: 'Panel Discussion - Future of AI',
-    },
-    {
-      id: '9',
-      src: '/images/gallery/mentee-success.jpg',
-      alt: 'Mentee research achievement celebration',
-      title: 'Mentee Research Achievement',
-    },
-    {
-      id: '10',
-      src: '/images/gallery/innovation-award.jpg',
-      alt: 'Innovation in Technology Award',
-      title: 'Innovation in Technology Award',
-    },
-    {
-      id: '11',
-      src: '/images/gallery/research-lab-setup.jpg',
-      alt: 'State-of-the-art research lab',
-      title: 'Research Lab Setup',
-    },
-    {
-      id: '12',
-      src: '/images/gallery/hackathon-mentoring.jpg',
-      alt: 'Mentoring students at hackathon',
-      title: 'Hackathon Mentoring',
-    },
   ];
 
   return (
