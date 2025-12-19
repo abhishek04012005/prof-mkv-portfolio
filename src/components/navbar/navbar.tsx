@@ -64,7 +64,7 @@ export default function Navbar() {
         { label: 'Organized Events', href: '/events/organized-events'},
         // { label: 'Workshops', href: '/outreach/workshops' },
         // { label: 'Lectures', href: '/outreach/lectures' },
-        { label: 'Presentations', href: '/outreach/presentations' },
+        { label: 'Presentations', href: '/events/presentations' },
       ],
     },
   

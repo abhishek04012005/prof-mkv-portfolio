@@ -183,7 +183,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '81-7033-845-X',
         abstract: 'Book addressing issues of development, displacement, and resettlement.',
         keywords: ['Development', 'Displacement', 'Resettlement', 'Social Impact'],
-        image: '/assets/book-published/book3.png',
+        image: '/assets/book-published/13.jpeg',
       },
       {
         id: 'book-pub-13',
