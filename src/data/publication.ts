@@ -45,7 +45,7 @@ export const publicationData: PublicationCategory[] = [
     description: 'Authored and edited books',
     publications: [
       {
-        id: 'book-pub-1',
+        id: 'new-education-policy-sustainable-development-and-nation-building-perspectives-issues-and-challenges',
         title: 'New Education Policy, Sustainable Development and Nation Building: Perspectives, Issues and Challenges',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
@@ -57,7 +57,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://www.routledge.com/New-Education-Policy-Sustainable-Development-and-Nation-Building-Perspectives-Issues-and-Challenges/Verma/p/book/9781032996417',
       },
       {
-        id: 'book-pub-2',
+        id: 'education-and-sustainable-development-challenges-opportunities-and-future-prospects',
         title: 'Education and Sustainable Development: Challenges, Opportunities & Future Prospects',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
@@ -69,7 +69,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://www.amazon.com/dp/8131614328/ref=olp-opf-redir?aod=1&condition=new',
       },
       {
-        id: 'book-pub-3',
+        id: 'a-roadmap-for-inclusive-development-national-education-policy-2020-sustainable-development-goals-and-policy-integration',
         title: 'A Roadmap for Inclusive Development: National Education Policy (2020), Sustainable Development Goals and Policy Integration',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
@@ -81,7 +81,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://www.directtextbook.com/isbn/9788131614600-roadmap-for-inclusive-development',
       },
       {
-        id: 'book-pub-4',
+        id: 'nai-shikhsha-niti-evam-bharat-ka-samaveshi-vikas-sambhavnain-chunautiyan-evam-navinikaran',
         title: 'Nai Shikhsha Niti Evam Bharat Ka Samaveshi Vikas: Sambhavnain, Chunautiyan Evam Navinikaran',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
@@ -92,7 +92,7 @@ export const publicationData: PublicationCategory[] = [
         image: '/assets/book-published/9.jpeg',
       },
       {
-        id: 'book-pub-5',
+        id: 'national-education-policy-and-sustainable-development-goals',
         title: 'National Education Policy and Sustainable Development Goals',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2025,
@@ -104,7 +104,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://www.directtextbook.com/isbn/9788131614716-national-education-policy-and-sustainable-development-goals',
       },
       {
-        id: 'book-pub-6',
+        id: 'environment-and-sustainable-development-perspectives-and-issues',
         title: 'Environment and Sustainable Development: Perspectives and Issues',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2022,
@@ -116,7 +116,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://www.campusbooks.com/search/9788131614716?buysellrent=buy&popup',
       },
       {
-        id: 'book-pub-7',
+        id: 'environment-development-and-sustainability-in-india-perspectives-issues-and-alternatives',
         title: 'Environment, Development and Sustainability in India: Perspectives, Issues and Alternatives',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2021,
@@ -128,7 +128,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://isbnsearch.org/isbn/9789813362482',
       },
       {
-        id: 'book-pub-8',
+        id: 'globalization-environment-and-social-justice-perspectives-issues-and-concerns',
         title: 'Globalization, Environment and Social Justice: Perspectives, Issues and Concerns',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2019,
@@ -140,7 +140,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://www.amazon.com/dp/1138363774/ref=olp-opf-redir?aod=1&condition=new',
       },
       {
-        id: 'book-pub-9',
+        id: 'globalization-social-justice-and-sustainable-development-in-india',
         title: 'Globalization, Social Justice and Sustainable Development in India',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2017,
@@ -152,7 +152,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://www.directtextbook.com/isbn/9788121214155-globalisation-social-justice-and-sustainable-development-in-india',
       },
       {
-        id: 'book-pub-10',
+        id: 'peri-urban-environment',
         title: 'Peri-Urban Environment',
         authors: 'Prof. (Dr.) Manish K. Verma',
         year: 2017,
@@ -163,7 +163,7 @@ export const publicationData: PublicationCategory[] = [
         image: '/assets/book-published/12.jpeg',
       },
       {
-        id: 'book-pub-11',
+        id: 'globalization-and-environment-discourse-policies-and-practices',
         title: 'Globalization and Environment: Discourse, Policies and Practices',
         authors: 'Edited by Prof. (Dr.) Manish K. Verma',
         year: 2015,
@@ -175,7 +175,7 @@ export const publicationData: PublicationCategory[] = [
         buyUrl: 'https://www.alibris.com/cart.view?siteID=aG0YMzso4D0-G7C79OMQ11GmxzhwEhwrMg',
       },
       {
-        id: 'book-pub-12',
+        id: 'development-displacement-and-resettlement',
         title: 'Development, Displacement and Resettlement',
         authors: 'Prof. (Dr.) Manish K. Verma',
         year: 2004,
@@ -186,7 +186,7 @@ export const publicationData: PublicationCategory[] = [
         image: '/assets/book-published/13.jpeg',
       },
       {
-        id: 'book-pub-13',
+        id: 'prarambhik-samajshastra',
         title: 'Prarambhik Samajshastra',
         authors: 'Prof. (Dr.) Manish K. Verma',
         year: 2005,
@@ -203,7 +203,7 @@ export const publicationData: PublicationCategory[] = [
     "description": "Edited volumes, peer‑reviewed textbooks and translated works",
     "publications": [
       {
-        "id": "book-edit-1",
+        "id": "sociological-theories",
         "title": "Sociological Theories",
         "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2013,
@@ -214,7 +214,7 @@ export const publicationData: PublicationCategory[] = [
         "citations": 0
       },
       {
-        "id": "book-edit-2",
+        "id": "social-demography",
         "title": "Social Demography",
         "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2013,
@@ -225,7 +225,7 @@ export const publicationData: PublicationCategory[] = [
         "citations": 0
       },
       {
-        "id": "book-edit-3",
+        "id": "political-sociology",
         "title": "Political Sociology",
         "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2013,
@@ -236,7 +236,7 @@ export const publicationData: PublicationCategory[] = [
         "citations": 0
       },
       {
-        "id": "book-edit-4",
+        "id": "social-movements-in-india",
         "title": "Social Movements in India",
         "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2013,
@@ -247,7 +247,7 @@ export const publicationData: PublicationCategory[] = [
         "citations": 0
       },
       {
-        "id": "book-edit-5",
+        "id": "social-change-and-social-problems-in-india",
         "title": "Social Change and Social Problems in India",
         "authors": "Edited/Peer Reviewed by Prof. (Dr.) Manish K. Verma",
         "year": 2006,
