@@ -62,8 +62,8 @@ export default function Navbar() {
       label: 'Events',
       dropdown: [
         { label: 'Organized Events', href: '/events/organized-events'},
-        { label: 'Workshops', href: '/outreach/workshops' },
-        { label: 'Lectures', href: '/outreach/lectures' },
+        // { label: 'Workshops', href: '/outreach/workshops' },
+        // { label: 'Lectures', href: '/outreach/lectures' },
         { label: 'Presentations', href: '/outreach/presentations' },
       ],
     },

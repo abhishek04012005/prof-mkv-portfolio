@@ -77,7 +77,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-316-1460-0',
         abstract: 'Edited book providing a roadmap for inclusive development through integration of NEP 2020 and SDGs.',
         keywords: ['Inclusive Development', 'National Education Policy', 'Sustainable Development Goals', 'Policy Integration'],
-        image: '/assets/book-published/book3.png',
+        image: '/assets/book-published/3.jpeg',
         buyUrl: 'https://www.directtextbook.com/isbn/9788131614600-roadmap-for-inclusive-development',
       },
       {
@@ -89,6 +89,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-316-1468-6',
         abstract: 'Edited book in Hindi discussing New Education Policy and inclusive development in India.',
         keywords: ['Education', 'Development', 'Hindi', 'Policy'],
+        image: '/assets/book-published/9.jpeg',
       },
       {
         id: 'book-pub-5',
@@ -99,7 +100,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-316-1471-6',
         abstract: 'Edited volume examining the relationship between National Education Policy and Sustainable Development Goals.',
         keywords: ['Education Policy', 'Sustainable Development', 'SDGs', 'Development'],
-        image: '/assets/book-published/book3.png',
+        image: '/assets/book-published/1.jpeg',
         buyUrl: 'https://www.directtextbook.com/isbn/9788131614716-national-education-policy-and-sustainable-development-goals',
       },
       {
@@ -111,7 +112,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-0-367-54182-8',
         abstract: 'Edited book exploring various perspectives and issues in environment and sustainable development.',
         keywords: ['Environment', 'Sustainable Development', 'Environmental Issues', 'Perspectives'],
-        image: '/assets/book-published/book3.png',
+        image: '/assets/book-published/6.jpeg',
         buyUrl: 'https://www.campusbooks.com/search/9788131614716?buysellrent=buy&popup',
       },
       {
@@ -135,7 +136,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-1-138-36377-9',
         abstract: 'Edited book addressing perspectives, issues, and concerns at the intersection of globalization, environment, and social justice.',
         keywords: ['Globalization', 'Environment', 'Social Justice', 'Environmental Justice'],
-        image: '/assets/book-published/book3.png',
+        image: '/assets/book-published/2.jpeg',
         buyUrl: 'https://www.amazon.com/dp/1138363774/ref=olp-opf-redir?aod=1&condition=new',
       },
       {
@@ -159,6 +160,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '978-81-930703-1-4',
         abstract: 'Book focusing on environmental issues and challenges in peri-urban areas.',
         keywords: ['Peri-Urban', 'Environment', 'Urban Development', 'Environmental Issues'],
+        image: '/assets/book-published/12.jpeg',
       },
       {
         id: 'book-pub-11',
@@ -181,6 +183,7 @@ export const publicationData: PublicationCategory[] = [
         isbn: '81-7033-845-X',
         abstract: 'Book addressing issues of development, displacement, and resettlement.',
         keywords: ['Development', 'Displacement', 'Resettlement', 'Social Impact'],
+        image: '/assets/book-published/book3.png',
       },
       {
         id: 'book-pub-13',
@@ -1481,87 +1484,87 @@ export const publicationData: PublicationCategory[] = [
         "citations": 0
       }
     ]
-  } ,
+  },
   {
-  "id": "book-reviews",
-  "title": "Book Reviews",
-  "icon": "Star",
-  "description": "Professional book reviews extracted from the provided document",
-  "publications": [
-    {
-      "id": "review-betwixt-development-and-discontent-dalit-adivasis-on-the-south-eastern-margins-of-uttar-pradesh",
-      "title": "Review: \"Betwixt Development and Discontent: Dalit Adivasis on the South-Eastern Margins of Uttar Pradesh\" by Lalta Prasad",
-      "reviewer": "Prof. (Dr.) Manish K. Verma",
-      "year": 2020,
-      "journal": "Sociological Bulletin",
-      "volume": "Vol 69",
-      "issue": "Issue 3 (Nov-Dec 2020)",
-      "pages": "",
-      "bookTitle": "Betwixt Development and Discontent: Dalit Adivasis on the South-Eastern Margins of Uttar Pradesh",
-      "bookAuthors": "Lalta Prasad",
-      "bookPublisher": "Concept Publishing Company Pvt. Ltd., Delhi",
-      "bookYear": 2017,
-      "doi": "",
-      "url": "",
-      "abstract": "",
-      "keywords": [
-        "Dalit",
-        "Adivasis",
-        "Development",
-        "Social Exclusion",
-        "Rural Studies"
-      ],
-      "citations": 0
-    },
-    {
-      "id": "review-living-with-violence-anthropology-of-events-and-everyday-life",
-      "title": "Review: \"Living with Violence: Anthropology of Events and Everyday Life\" edited by Roma Chatterji and Deepak Mehta",
-      "reviewer": "Prof. (Dr.) Manish K. Verma",
-      "year": 2012,
-      "journal": "International Sociology Review of Books (ISRB)",
-      "volume": "27",
-      "issue": "5 (Sept 2012)",
-      "pages": "635-637",
-      "bookTitle": "Living with Violence: Anthropology of Events and Everyday Life",
-      "bookAuthors": "Roma Chatterji; Deepak Mehta (eds.)",
-      "bookPublisher": "Routledge Taylor & Francis Group, New Delhi",
-      "bookYear": 2007,
-      "doi": "",
-      "url": "",
-      "abstract": "",
-      "keywords": [
-        "Violence",
-        "Anthropology",
-        "Everyday Life",
-        "Ethnography"
-      ],
-      "citations": 0
-    },
-    {
-      "id": "review-beyond-relocation-the-imperative-of-sustainable-resettlement",
-      "title": "Review: \"Beyond Relocation: The Imperative of Sustainable Resettlement\" edited by Renu Modi",
-      "reviewer": "Prof. (Dr.) Manish K. Verma",
-      "year": 2010,
-      "journal": "Sociological Bulletin",
-      "volume": "Vol. 59",
-      "issue": "No. 3 (Sept-Dec 2010)",
-      "pages": "",
-      "bookTitle": "Beyond Relocation: The Imperative of Sustainable Resettlement",
-      "bookAuthors": "Renu Modi (ed.)",
-      "bookPublisher": "SAGE Publications India, New Delhi",
-      "bookYear": 2009,
-      "doi": "",
-      "url": "",
-      "abstract": "",
-      "keywords": [
-        "Resettlement",
-        "Displacement",
-        "Sustainable Development",
-        "Policy"
-      ],
-      "citations": 0
-    }
-  ]
-}
+    "id": "book-reviews",
+    "title": "Book Reviews",
+    "icon": "Star",
+    "description": "Professional book reviews extracted from the provided document",
+    "publications": [
+      {
+        "id": "review-betwixt-development-and-discontent-dalit-adivasis-on-the-south-eastern-margins-of-uttar-pradesh",
+        "title": "Review: \"Betwixt Development and Discontent: Dalit Adivasis on the South-Eastern Margins of Uttar Pradesh\" by Lalta Prasad",
+        "reviewer": "Prof. (Dr.) Manish K. Verma",
+        "year": 2020,
+        "journal": "Sociological Bulletin",
+        "volume": "Vol 69",
+        "issue": "Issue 3 (Nov-Dec 2020)",
+        "pages": "",
+        "bookTitle": "Betwixt Development and Discontent: Dalit Adivasis on the South-Eastern Margins of Uttar Pradesh",
+        "bookAuthors": "Lalta Prasad",
+        "bookPublisher": "Concept Publishing Company Pvt. Ltd., Delhi",
+        "bookYear": 2017,
+        "doi": "",
+        "url": "",
+        "abstract": "",
+        "keywords": [
+          "Dalit",
+          "Adivasis",
+          "Development",
+          "Social Exclusion",
+          "Rural Studies"
+        ],
+        "citations": 0
+      },
+      {
+        "id": "review-living-with-violence-anthropology-of-events-and-everyday-life",
+        "title": "Review: \"Living with Violence: Anthropology of Events and Everyday Life\" edited by Roma Chatterji and Deepak Mehta",
+        "reviewer": "Prof. (Dr.) Manish K. Verma",
+        "year": 2012,
+        "journal": "International Sociology Review of Books (ISRB)",
+        "volume": "27",
+        "issue": "5 (Sept 2012)",
+        "pages": "635-637",
+        "bookTitle": "Living with Violence: Anthropology of Events and Everyday Life",
+        "bookAuthors": "Roma Chatterji; Deepak Mehta (eds.)",
+        "bookPublisher": "Routledge Taylor & Francis Group, New Delhi",
+        "bookYear": 2007,
+        "doi": "",
+        "url": "",
+        "abstract": "",
+        "keywords": [
+          "Violence",
+          "Anthropology",
+          "Everyday Life",
+          "Ethnography"
+        ],
+        "citations": 0
+      },
+      {
+        "id": "review-beyond-relocation-the-imperative-of-sustainable-resettlement",
+        "title": "Review: \"Beyond Relocation: The Imperative of Sustainable Resettlement\" edited by Renu Modi",
+        "reviewer": "Prof. (Dr.) Manish K. Verma",
+        "year": 2010,
+        "journal": "Sociological Bulletin",
+        "volume": "Vol. 59",
+        "issue": "No. 3 (Sept-Dec 2010)",
+        "pages": "",
+        "bookTitle": "Beyond Relocation: The Imperative of Sustainable Resettlement",
+        "bookAuthors": "Renu Modi (ed.)",
+        "bookPublisher": "SAGE Publications India, New Delhi",
+        "bookYear": 2009,
+        "doi": "",
+        "url": "",
+        "abstract": "",
+        "keywords": [
+          "Resettlement",
+          "Displacement",
+          "Sustainable Development",
+          "Policy"
+        ],
+        "citations": 0
+      }
+    ]
+  }
 
 ];
