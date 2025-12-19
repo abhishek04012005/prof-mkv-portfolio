@@ -19,25 +19,25 @@ export default function Gallery() {
   const galleryImages: GalleryImage[] = [
     {
       id: '1',
-      src: '/images/gallery/conference-keynote-2024.jpg',
+      src: '/assets/gallery/1.jpeg',
       alt: 'Keynote presentation at ICBD 2024',
       title: 'Keynote Presentation - ICBD 2024',
     },
     {
       id: '2',
-      src: '/images/gallery/research-lab-team.jpg',
+      src: '/assets/gallery/2.jpeg',
       alt: 'Research lab team collaboration',
       title: 'Research Lab Team',
     },
     {
       id: '3',
-      src: '/images/gallery/phd-graduation-ceremony.jpg',
+      src: '/assets/gallery/3.jpeg',
       alt: 'PhD student graduation celebration',
       title: 'PhD Graduation Ceremony',
     },
     {
       id: '4',
-      src: '/images/gallery/best-teacher-award.jpg',
+      src: '/assets/gallery/4.jpeg',
       alt: 'Best Teacher Award 2024',
       title: 'Best Teacher Award 2024',
     },
