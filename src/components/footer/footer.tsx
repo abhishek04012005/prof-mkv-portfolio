@@ -57,10 +57,9 @@ export default function Footer() {
     {
       title: 'Research',
       links: [
-        { label: 'Completed Projects', href: '/research/completed-projects' },
-        { label: 'Ongoing Projects', href: '/research/ongoing-projects' },
-        { label: 'Research Interests', href: '/research/interests' },
-        { label: 'Research Outputs', href: '/research/outputs' },
+        { label: 'Completed Projects', href: '/research/research-projects-completed' },
+        { label: 'Research Interests', href: '/research/research-interests' },
+        { label: 'Research Outputs', href: '/research/research-outputs' },
       ],
     },
     {
