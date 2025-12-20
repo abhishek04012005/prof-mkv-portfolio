@@ -45,7 +45,7 @@ export const supervisionData: SupervisionCategory[] = [
     "supervision": [
       {
         "id": "manisha-women-ageing-health-chapra-bihar-2025",
-        "title": "Manisha Women Ageing Health Chapra Bihar 2025",
+        "title": "Women Ageing Health Chapra Bihar 2025",
         "studentName": "Ms. Manisha",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -60,7 +60,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "pawan-kumar-river-bank-erosion-displacement-sharda-2023",
-        "title": "Pawan Kumar River Bank Erosion Displacement Sharda 2023",
+        "title": "River Bank Erosion Displacement Sharda 2023",
         "studentName": "Mr. Pawan Kumar",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -75,7 +75,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "khusboo-globalization-new-tourism-wellness-yoga-2023",
-        "title": "Khusboo Globalization New Tourism Wellness Yoga 2023",
+        "title": "Globalization New Tourism Wellness Yoga 2023",
         "studentName": "Dr. Khusboo",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -90,7 +90,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "moni-chandra-ujjawala-yojna-health-environment-peri-urban-up-2023",
-        "title": "Moni Chandra Ujjawala Yojna Health Environment Peri Urban Uttar Pradesh 2023",
+        "title": "Ujjawala Yojna Health Environment Peri Urban Uttar Pradesh 2023",
         "studentName": "Dr. Moni Chandra",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -105,7 +105,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "soniya-singh-sanitation-health-slums-allahabad-2022",
-        "title": "Soniya Singh Sanitation Health Slums Allahabad 2022",
+        "title": "Sanitation Health Slums Allahabad 2022",
         "studentName": "Dr. Soniya Singh",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -120,7 +120,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "arti-kureel-women-health-schemes-maternal-health-lucknow-2020",
-        "title": "Arti Kureel Women Health Schemes Maternal Health Lucknow 2020",
+        "title": "Women Health Schemes Maternal Health Lucknow 2020",
         "studentName": "Dr. Arti Kureel",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -135,7 +135,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "narendra-gupta-poverty-food-insecurity-health-bundelkhand-2017",
-        "title": "Narendra Gupta Poverty Food Insecurity Health Bundelkhand 2017",
+        "title": "Poverty Food Insecurity Health Bundelkhand 2017",
         "studentName": "Dr. Narendra Gupta",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -150,7 +150,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "alka-shah-development-ecological-changes-tribal-health-up-2015",
-        "title": "Alka Shah Development Ecological Changes Tribal Health Uttar Pradesh 2015",
+        "title": "Development Ecological Changes Tribal Health Uttar Pradesh 2015",
         "studentName": "Dr. Alka Shah",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -165,7 +165,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "sandeep-kumar-rural-urban-interface-peri-urban-lucknow-2015",
-        "title": "Sandeep Kumar Rural Urban Interface Peri Urban Lucknow 2015",
+        "title": "Rural Urban Interface Peri Urban Lucknow 2015",
         "studentName": "Dr. Sandeep Kumar",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -180,156 +180,154 @@ export const supervisionData: SupervisionCategory[] = [
       }
     ]
   }, {
-  "id": "mphil-supervision",
-  "title": "M.Phil Supervision",
-  "icon": "AutoStoriesOutlined",
-  "description": "M.Phil students supervised and guided; degrees awarded (extracted from provided document)",
-  "supervision": [
-    {
-      "id": "pooja-tripathi-urbanization-deforestation-society-2022",
-      "title": "Pooja Tripathi Urbanization Deforestation Society 2022",
-      "studentName": "Ms. Pooja Tripathi",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "M.Phil.",
-      "thesisTitle": "Urbanization, Deforestation and Society: A Sociological Study",
-      "researchArea": "Urbanization; Environmental Sociology; Deforestation",
-      "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
-      "department": "Department of Sociology",
-      "awardDate": "15 October 2022",
-      "year": 2022,
-      "status": "awarded",
-      "notes": ""
-    },
-    {
-      "id": "nitu-mishra-global-warming-impact-society-2018",
-      "title": "Nitu Mishra Global Warming Impact Society 2018",
-      "studentName": "Ms. Nitu Mishra",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "M.Phil.",
-      "thesisTitle": "Global Warming and its Impact on Society: A Sociological Study",
-      "researchArea": "Environmental Sociology; Climate Change and Society",
-      "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
-      "department": "Department of Sociology",
-      "awardDate": "20 June 2018",
-      "year": 2018,
-      "status": "awarded",
-      "notes": ""
-    },
-    {
-      "id": "khusboo-patients-without-boundaries-medical-tourism-2017",
-      "title": "Khusboo Patients Without Boundaries Medical Tourism 2017",
-      "studentName": "Ms. Khusboo",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "M.Phil.",
-      "thesisTitle": "Patients Without Boundaries: A Sociological Inquiry into Medical Tourism in India",
-      "researchArea": "Medical Sociology; Tourism Studies; Health and Mobility",
-      "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
-      "department": "Department of Sociology",
-      "awardDate": "22 June 2017",
-      "year": 2017,
-      "status": "awarded",
-      "notes": ""
-    },
-    {
-      "id": "rakhi-agrawal-panchayati-raj-adhiniyam-mahila-prastithi-2008",
-      "title": "Rakhi Agrawal Panchayati Raj Adhiniyam Mahila Prastithi 2008",
-      "studentName": "Ms. Rakhi Agrawal",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "M.Phil.",
-      "thesisTitle": "Panchayati Raj Adhiniyam Ka Mahila Prastithi Per Prabhav",
-      "researchArea": "Political Sociology; Gender and Local Governance",
-      "institution": "Kota University, Kota, Rajasthan",
-      "department": "Department of Sociology",
-      "awardDate": "30 September 2008",
-      "year": 2008,
-      "status": "awarded",
-      "notes": ""
-    },
-    {
-      "id": "badrilal-meena-panchayati-raj-gramin-janjatiye-samaj-2008",
-      "title": "Badrilal Meena Panchayati Raj Gramin Janjatiye Samaj 2008",
-      "studentName": "Mr. Badrilal Meena",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "M.Phil.",
-      "thesisTitle": "Panchayati raj Vyawastha Ka Gramin Janjatiye Samaj Per Prabhav",
-      "researchArea": "Rural Sociology; Tribal Studies; Local Governance",
-      "institution": "Kota University, Kota, Rajasthan",
-      "department": "Department of Sociology",
-      "awardDate": "22 October 2008",
-      "year": 2008,
-      "status": "awarded",
-      "notes": ""
-    },
-    {
-      "id": "sulekha-kataria-adhunikikaran-vikas-mahilaon-shiksha-2008",
-      "title": "Sulekha Kataria Adhunikikaran Vikas Mahilaon Shiksha 2008",
-      "studentName": "Mrs. Sulekha Kataria",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "M.Phil.",
-      "thesisTitle": "Adhunikikaran, Vikas Evam Mahilaon Main Sikcha Ka Prasar",
-      "researchArea": "Gender Studies; Education and Development",
-      "institution": "Kota University, Kota, Rajasthan",
-      "department": "Department of Sociology",
-      "awardDate": "22 October 2008",
-      "year": 2008,
-      "status": "awarded",
-      "notes": ""
-    },
-    {
-      "id": "bhuvanesh-kumar-gramin-vikas-karyakram-samajik-vikas-2008",
-      "title": "Bhuvanesh Kumar Gramin Vikas Karyakram Samajik Vikas 2008",
-      "studentName": "Mr. Bhuvanesh Kumar",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "M.Phil.",
-      "thesisTitle": "Gramin Vikas Karyakram Evam Samajik Vikas",
-      "researchArea": "Rural Development; Social Development Programs",
-      "institution": "Kota University, Kota, Rajasthan",
-      "department": "Department of Sociology",
-      "awardDate": "17 October 2008",
-      "year": 2008,
-      "status": "awarded",
-      "notes": ""
-    }
-  ]
-}, {
-  "id": "post-doctorate-supervision",
-  "title": "Postdoctoral Fellowship",
-  "icon": "School",
-  "description": "Postdoctoral Fellowship supervised and awarded (extracted from the provided document). Fields added where useful: researchArea, department, status, notes.",
-  "supervision": [
-    {
-      "id": "ishdeep-kaur-bhandari-identity-exclusion-third-gender-covid19-2024",
-      "title": "Ishdeep Kaur Bhandari Identity Exclusion Third Gender Covid19 2024",
-      "studentName": "Dr. Ishdeep Kaur Bhandari",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "Post‑Doctorate",
-      "thesisTitle": "Identity and Exclusion of Third Gender in the Age of Covid-19: A Study of Selective Cities of Uttar Pradesh",
-      "researchArea": "Gender Studies; Social Exclusion; Pandemic Sociology; Urban Sociology",
-      "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
-      "department": "Department of Sociology",
-      "awardDate": "18 April 2024",
-      "year": 2024,
-      "status": "awarded",
-      "notes": ""
-    },
-    {
-      "id": "amit-kumar-impact-swachh-bharat-abhiyan-ghats-temples-ganga-varanasi-2023",
-      "title": "Amit Kumar Impact Swachh Bharat Abhiyan Ghats Temples Ganga Varanasi 2023",
-      "studentName": "Dr. Amit Kumar",
-      "supervisorName": "Prof. (Dr.) Manish K. Verma",
-      "degreeAwarded": "Post‑Doctorate",
-      "thesisTitle": "Impact of Swachh Bharat Abhiyan on the Ghats and Temples Located at the Bank of River Ganga: A Sociological Study of Selected Ghats and Temples of Varanasi City",
-      "researchArea": "Environmental Sociology; Religious Spaces; Public Policy Evaluation; Urban Studies",
-      "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
-      "department": "Department of Sociology",
-      "awardDate": "May 2023",
-      "year": 2023,
-      "status": "awarded",
-      "notes": ""
-    }
-  ]
-},
- 
-  
+    "id": "mphil-supervision",
+    "title": "M.Phil Supervision",
+    "icon": "AutoStoriesOutlined",
+    "description": "M.Phil students supervised and guided; degrees awarded (extracted from provided document)",
+    "supervision": [
+      {
+        "id": "pooja-tripathi-urbanization-deforestation-society-2022",
+        "title": "Urbanization Deforestation Society 2022",
+        "studentName": "Ms. Pooja Tripathi",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "M.Phil.",
+        "thesisTitle": "Urbanization, Deforestation and Society: A Sociological Study",
+        "researchArea": "Urbanization; Environmental Sociology; Deforestation",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "15 October 2022",
+        "year": 2022,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "nitu-mishra-global-warming-impact-society-2018",
+        "title": "Global Warming Impact Society 2018",
+        "studentName": "Ms. Nitu Mishra",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "M.Phil.",
+        "thesisTitle": "Global Warming and its Impact on Society: A Sociological Study",
+        "researchArea": "Environmental Sociology; Climate Change and Society",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "20 June 2018",
+        "year": 2018,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "khusboo-patients-without-boundaries-medical-tourism-2017",
+        "title": "Patients Without Boundaries Medical Tourism 2017",
+        "studentName": "Ms. Khusboo",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "M.Phil.",
+        "thesisTitle": "Patients Without Boundaries: A Sociological Inquiry into Medical Tourism in India",
+        "researchArea": "Medical Sociology; Tourism Studies; Health and Mobility",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "22 June 2017",
+        "year": 2017,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "rakhi-agrawal-panchayati-raj-adhiniyam-mahila-prastithi-2008",
+        "title": "Panchayati Raj Adhiniyam Mahila Prastithi 2008",
+        "studentName": "Ms. Rakhi Agrawal",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "M.Phil.",
+        "thesisTitle": "Panchayati Raj Adhiniyam Ka Mahila Prastithi Per Prabhav",
+        "researchArea": "Political Sociology; Gender and Local Governance",
+        "institution": "Kota University, Kota, Rajasthan",
+        "department": "Department of Sociology",
+        "awardDate": "30 September 2008",
+        "year": 2008,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "badrilal-meena-panchayati-raj-gramin-janjatiye-samaj-2008",
+        "title": "Panchayati Raj Gramin Janjatiye Samaj 2008",
+        "studentName": "Mr. Badrilal Meena",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "M.Phil.",
+        "thesisTitle": "Panchayati raj Vyawastha Ka Gramin Janjatiye Samaj Per Prabhav",
+        "researchArea": "Rural Sociology; Tribal Studies; Local Governance",
+        "institution": "Kota University, Kota, Rajasthan",
+        "department": "Department of Sociology",
+        "awardDate": "22 October 2008",
+        "year": 2008,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "sulekha-kataria-adhunikikaran-vikas-mahilaon-shiksha-2008",
+        "title": "Adhunikikaran Vikas Mahilaon Shiksha 2008",
+        "studentName": "Mrs. Sulekha Kataria",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "M.Phil.",
+        "thesisTitle": "Adhunikikaran, Vikas Evam Mahilaon Main Sikcha Ka Prasar",
+        "researchArea": "Gender Studies; Education and Development",
+        "institution": "Kota University, Kota, Rajasthan",
+        "department": "Department of Sociology",
+        "awardDate": "22 October 2008",
+        "year": 2008,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "bhuvanesh-kumar-gramin-vikas-karyakram-samajik-vikas-2008",
+        "title": "Gramin Vikas Karyakram Samajik Vikas 2008",
+        "studentName": "Mr. Bhuvanesh Kumar",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "M.Phil.",
+        "thesisTitle": "Gramin Vikas Karyakram Evam Samajik Vikas",
+        "researchArea": "Rural Development; Social Development Programs",
+        "institution": "Kota University, Kota, Rajasthan",
+        "department": "Department of Sociology",
+        "awardDate": "17 October 2008",
+        "year": 2008,
+        "status": "awarded",
+        "notes": ""
+      }
+    ]
+  }, {
+    "id": "post-doctorate-supervision",
+    "title": "Postdoctoral Fellowship",
+    "icon": "School",
+    "description": "Postdoctoral Fellowship supervised and awarded (extracted from the provided document). Fields added where useful: researchArea, department, status, notes.",
+    "supervision": [
+      {
+        "id": "ishdeep-kaur-bhandari-identity-exclusion-third-gender-covid19-2024",
+        "title": "Identity Exclusion Third Gender Covid19 2024",
+        "studentName": "Dr. Ishdeep Kaur Bhandari",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "Post‑Doctorate",
+        "thesisTitle": "Identity and Exclusion of Third Gender in the Age of Covid-19: A Study of Selective Cities of Uttar Pradesh",
+        "researchArea": "Gender Studies; Social Exclusion; Pandemic Sociology; Urban Sociology",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "18 April 2024",
+        "year": 2024,
+        "status": "awarded",
+        "notes": ""
+      },
+      {
+        "id": "amit-kumar-impact-swachh-bharat-abhiyan-ghats-temples-ganga-varanasi-2023",
+        "title": "Impact Swachh Bharat Abhiyan Ghats Temples Ganga Varanasi 2023",
+        "studentName": "Dr. Amit Kumar",
+        "supervisorName": "Prof. (Dr.) Manish K. Verma",
+        "degreeAwarded": "Post‑Doctorate",
+        "thesisTitle": "Impact of Swachh Bharat Abhiyan on the Ghats and Temples Located at the Bank of River Ganga: A Sociological Study of Selected Ghats and Temples of Varanasi City",
+        "researchArea": "Environmental Sociology; Religious Spaces; Public Policy Evaluation; Urban Studies",
+        "institution": "Babasaheb Bhimrao Ambedkar University, Lucknow",
+        "department": "Department of Sociology",
+        "awardDate": "May 2023",
+        "year": 2023,
+        "status": "awarded",
+        "notes": ""
+      }
+    ]
+  },
 ];
 
