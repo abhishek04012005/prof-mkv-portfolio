@@ -45,7 +45,7 @@ export const supervisionData: SupervisionCategory[] = [
     "supervision": [
       {
         "id": "manisha-women-ageing-health-chapra-bihar-2025",
-        "title": "Women Ageing Health Chapra Bihar 2025",
+        "title": "Women, Ageing and Health: A Sociological Study of Chapra District of Bihar",
         "studentName": "Ms. Manisha",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -60,7 +60,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "pawan-kumar-river-bank-erosion-displacement-sharda-2023",
-        "title": "River Bank Erosion Displacement Sharda 2023",
+        "title": "River Bank Erosion, Displacement and Sustainability: A Sociological Study of People Affected by River Sharda",
         "studentName": "Mr. Pawan Kumar",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -75,7 +75,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "khusboo-globalization-new-tourism-wellness-yoga-2023",
-        "title": "Globalization New Tourism Wellness Yoga 2023",
+        "title": "Globalization and New Tourism: A Sociological Study of Wellness with Special Focus on Yoga",
         "studentName": "Dr. Khusboo",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -90,7 +90,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "moni-chandra-ujjawala-yojna-health-environment-peri-urban-up-2023",
-        "title": "Ujjawala Yojna Health Environment Peri Urban Uttar Pradesh 2023",
+        "title": "Ujjawala Yojna, Health and Environment: A Sociological Study of Women of Peri-Urban Areasof Selected Cities of Uttar Pradesh",
         "studentName": "Dr. Moni Chandra",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -105,7 +105,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "soniya-singh-sanitation-health-slums-allahabad-2022",
-        "title": "Sanitation Health Slums Allahabad 2022",
+        "title": "Issues of Sanitation and Health: A Sociological Study of Selected Slums of Allahabad City",
         "studentName": "Dr. Soniya Singh",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -120,7 +120,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "arti-kureel-women-health-schemes-maternal-health-lucknow-2020",
-        "title": "Women Health Schemes Maternal Health Lucknow 2020",
+        "title": "Implementation of Women Health Related Schemes and its Impact on Maternal Health: A Sociological Study of Lucknow district",
         "studentName": "Dr. Arti Kureel",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -135,7 +135,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "narendra-gupta-poverty-food-insecurity-health-bundelkhand-2017",
-        "title": "Poverty Food Insecurity Health Bundelkhand 2017",
+        "title": "Poverty, Food Insecurity and Health Predicaments: A Sociological Study of Selected Villages of Banda and Mahoba Districts of Bundelkhand Region of Uttar Pradesh",
         "studentName": "Dr. Narendra Gupta",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -150,7 +150,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "alka-shah-development-ecological-changes-tribal-health-up-2015",
-        "title": "Development Ecological Changes Tribal Health Uttar Pradesh 2015",
+        "title": "Development, Ecological Changes and Tribal Health: A Sociological Study of Selected Districts of Uttar Pradesh",
         "studentName": "Dr. Alka Shah",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -165,7 +165,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "sandeep-kumar-rural-urban-interface-peri-urban-lucknow-2015",
-        "title": "Rural Urban Interface Peri Urban Lucknow 2015",
+        "title": "Rural Urban Interface and Formation of Peri-Urban Areas: A Sociological Study ofLucknow City",
         "studentName": "Dr. Sandeep Kumar",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Ph.D.",
@@ -187,7 +187,7 @@ export const supervisionData: SupervisionCategory[] = [
     "supervision": [
       {
         "id": "pooja-tripathi-urbanization-deforestation-society-2022",
-        "title": "Urbanization Deforestation Society 2022",
+        "title": "Urbanization, Deforestation and Society: A Sociological Study",
         "studentName": "Ms. Pooja Tripathi",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "M.Phil.",
@@ -202,7 +202,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "nitu-mishra-global-warming-impact-society-2018",
-        "title": "Global Warming Impact Society 2018",
+        "title": "Global Warming and its Impact on Society: A Sociological Study",
         "studentName": "Ms. Nitu Mishra",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "M.Phil.",
@@ -217,7 +217,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "khusboo-patients-without-boundaries-medical-tourism-2017",
-        "title": "Patients Without Boundaries Medical Tourism 2017",
+        "title": "Patients Without Boundaries: A Sociological Inquiry into Medical Tourism in India",
         "studentName": "Ms. Khusboo",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "M.Phil.",
@@ -232,7 +232,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "rakhi-agrawal-panchayati-raj-adhiniyam-mahila-prastithi-2008",
-        "title": "Panchayati Raj Adhiniyam Mahila Prastithi 2008",
+        "title": "Panchayati Raj Adhiniyam Ka Mahila Prastithi Per Prabhav",
         "studentName": "Ms. Rakhi Agrawal",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "M.Phil.",
@@ -247,7 +247,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "badrilal-meena-panchayati-raj-gramin-janjatiye-samaj-2008",
-        "title": "Panchayati Raj Gramin Janjatiye Samaj 2008",
+        "title": "Panchayati raj Vyawastha Ka Gramin Janjatiye Samaj Per Prabhav",
         "studentName": "Mr. Badrilal Meena",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "M.Phil.",
@@ -262,7 +262,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "sulekha-kataria-adhunikikaran-vikas-mahilaon-shiksha-2008",
-        "title": "Adhunikikaran Vikas Mahilaon Shiksha 2008",
+        "title": "Adhunikikaran, Vikas Evam Mahilaon Main Sikcha Ka Prasar",
         "studentName": "Mrs. Sulekha Kataria",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "M.Phil.",
@@ -277,7 +277,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "bhuvanesh-kumar-gramin-vikas-karyakram-samajik-vikas-2008",
-        "title": "Gramin Vikas Karyakram Samajik Vikas 2008",
+        "title": "Gramin Vikas Karyakram Evam Samajik Vikas",
         "studentName": "Mr. Bhuvanesh Kumar",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "M.Phil.",
@@ -299,7 +299,7 @@ export const supervisionData: SupervisionCategory[] = [
     "supervision": [
       {
         "id": "ishdeep-kaur-bhandari-identity-exclusion-third-gender-covid19-2024",
-        "title": "Identity Exclusion Third Gender Covid19 2024",
+        "title": "Identity and Exclusion of Third Gender in the Age of Covid-19: A Study of Selective Cities of Uttar Pradesh",
         "studentName": "Dr. Ishdeep Kaur Bhandari",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Post‑Doctorate",
@@ -314,7 +314,7 @@ export const supervisionData: SupervisionCategory[] = [
       },
       {
         "id": "amit-kumar-impact-swachh-bharat-abhiyan-ghats-temples-ganga-varanasi-2023",
-        "title": "Impact Swachh Bharat Abhiyan Ghats Temples Ganga Varanasi 2023",
+        "title": "Impact of Swachh Bharat Abhiyan on the Ghats and Temples Located at the Bank of River Ganga: A Sociological Study of Selected Ghats and Temples of Varanasi City",
         "studentName": "Dr. Amit Kumar",
         "supervisorName": "Prof. (Dr.) Manish K. Verma",
         "degreeAwarded": "Post‑Doctorate",

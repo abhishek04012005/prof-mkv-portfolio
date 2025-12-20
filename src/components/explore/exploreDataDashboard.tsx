@@ -215,7 +215,7 @@ export default function ExploreDataDashboard({
                         <th className={styles.colIsbn}>Keywords</th>
                         <th className={styles.colAuthor}>Focus Area</th>
                       </>
-                    ) : data.id === 'phd-supervision' || data.id === 'mphil-supervision' || data.id === 'pg-dissertation-supervision' ? (
+                    ) : data.id === 'phd-supervision' || data.id === 'mphil-supervision' || data.id === 'post-doctorate-supervision' ? (
                       <>
                         <th className={styles.colIsbn}>Student Name</th>
                         <th className={styles.colAuthor}>Research Area</th>
@@ -323,7 +323,7 @@ export default function ExploreDataDashboard({
                               </span>
                             </td>
                           </>
-                        ) : data.id === 'phd-supervision' || data.id === 'mphil-supervision' || data.id === 'pg-dissertation-supervision' ? (
+                        ) : data.id === 'phd-supervision' || data.id === 'mphil-supervision' || data.id === 'post-doctorate-supervision' ? (
                           <>
                             <td className={styles.colIsbn}>
                               <span className={styles.isbnText}>{item.studentName || 'N/A'}</span>
