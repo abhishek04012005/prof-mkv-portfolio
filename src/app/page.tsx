@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher & Academic Leader",
     description: "Distinguished sociologist with 25+ years of research expertise in environmental sociology and sustainable development. Explore publications, research, and academic leadership.",
-    url: "https://prof-manish-k-verma.com",
+    url: "https://manishkverma.in",
     type: "website",
     locale: "en_IN",
     siteName: "Prof. (Dr.) Manish K. Verma - Academic Portfolio",
     images: [
       {
-        url: "https://prof-manish-k-verma.com/assets/hero.png",
+        url: "https://manishkverma.in/assets/hero.png",
         width: 1200,
         height: 630,
         alt: "Prof. (Dr.) Manish K. Verma - Sociology Researcher",
@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher",
     description: "Distinguished sociologist with expertise in environmental sociology and sustainable development.",
-    images: ["https://prof-manish-k-verma.com/assets/hero.png"],
+    images: ["https://manishkverma.in/assets/hero.png"],
   },
   alternates: {
-    canonical: "https://prof-manish-k-verma.com",
+    canonical: "https://manishkverma.in",
   },
 };
 
@@ -64,8 +64,8 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Prof. (Dr.) Manish K. Verma's Academic Portfolio",
-              url: "https://prof-manish-k-verma.com",
-              logo: "https://prof-manish-k-verma.com/assets/logo.png",
+              url: "https://manishkverma.in",
+              logo: "https://manishkverma.in/assets/logo.png",
               description: "Academic portfolio of Prof. (Dr.) Manish K. Verma - Distinguished sociologist with expertise in environmental sociology and sustainable development",
               sameAs: [
                 "https://scholar.google.com",
@@ -96,9 +96,9 @@ export default function Home() {
               "@type": "Person",
               name: "Prof. (Dr.) Manish K. Verma",
               jobTitle: "Professor of Sociology",
-              url: "https://prof-manish-k-verma.com",
+              url: "https://manishkverma.in",
               description: "Distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change",
-              image: "https://prof-manish-k-verma.com/assets/professor.png",
+              image: "https://manishkverma.in/assets/professor.png",
               worksFor: {
                 "@type": "EducationalOrganization",
                 name: "Indian Institute of Technology, Delhi",
@@ -129,13 +129,13 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Prof. (Dr.) Manish K. Verma - Academic Portfolio",
-              url: "https://prof-manish-k-verma.com",
+              url: "https://manishkverma.in",
               description: "Comprehensive academic portfolio showcasing publications, research projects, student supervision, and professional achievements",
               potentialAction: {
                 "@type": "SearchAction",
                 target: {
                   "@type": "EntryPoint",
-                  urlTemplate: "https://prof-manish-k-verma.com/search?q={search_term_string}",
+                  urlTemplate: "https://manishkverma.in/search?q={search_term_string}",
                 },
                 query_input: "required name=search_term_string",
               },
@@ -155,7 +155,7 @@ export default function Home() {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://prof-manish-k-verma.com",
+                  item: "https://manishkverma.in",
                 },
               ],
             }),

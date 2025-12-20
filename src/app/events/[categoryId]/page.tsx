@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const baseUrl = 'https://prof-manish-k-verma.com';
+  const baseUrl = 'https://manishkverma.in';
 
   return {
     title: `${category.title} | Prof. (Dr.) Manish K. Verma`,

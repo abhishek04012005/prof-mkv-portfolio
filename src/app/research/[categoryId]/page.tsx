@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'research-outputs': `Browse ${category.research.length} research publications, articles and documented research deliverables by Prof. (Dr.) Manish K. Verma.`,
   };
 
-  const baseUrl = 'https://prof-manish-k-verma.com';
+  const baseUrl = 'https://manishkverma.in';
   const categoryKeywords: Record<string, string[]> = {
     'research-projects-completed': ['research projects', 'completed projects', 'sociology', 'development research', 'Prof. (Dr.) Manish K. Verma'],
     'research-projects-ongoing': ['ongoing research', 'research initiatives', 'sociology', 'social research', 'Prof. (Dr.) Manish K. Verma'],

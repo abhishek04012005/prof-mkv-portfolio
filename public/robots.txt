@@ -18,7 +18,7 @@ Disallow: /.next/
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://prof-manish-k-verma.com/sitemap.xml
+Sitemap: https://manishkverma.in/sitemap.xml
 
 # Specific crawlers
 User-agent: Googlebot

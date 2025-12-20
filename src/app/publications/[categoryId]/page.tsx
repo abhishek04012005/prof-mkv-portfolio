@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'book-reviews': `Browse ${category.publications.length} professional book reviews by Prof. (Dr.) Manish K. Verma on sociology, development, and related topics.`,
   };
 
-  const baseUrl = 'https://prof-manish-k-verma.com';
+  const baseUrl = 'https://manishkverma.in';
   const categoryKeywords: Record<string, string[]> = {
     'books-published': ['books', 'authored books', 'sociology', 'education', 'sustainable development', 'Prof. (Dr.) Manish K. Verma'],
     'books-edited': ['edited books', 'textbooks', 'sociology', 'social sciences', 'peer review', 'Prof. (Dr.) Manish K. Verma'],

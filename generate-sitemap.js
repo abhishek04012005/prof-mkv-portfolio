@@ -7,7 +7,7 @@ const { researchData } = require('./src/data/research.ts');
 const { supervisionData } = require('./src/data/supervision.ts');
 const { eventsData } = require('./src/data/events.ts');
 
-const baseUrl = 'https://prof-manish-k-verma.com';
+const baseUrl = 'https://manishkverma.in';
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

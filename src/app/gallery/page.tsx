@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'Gallery | Prof. (Dr.) Manish K. Verma',
     description: 'Photo gallery of professional moments and academic achievements',
     type: 'website',
-    url: 'https://prof-manish-k-verma.com/gallery',
+    url: 'https://manishkverma.in/gallery',
   },
 };
 

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const baseUrl = 'https://prof-manish-k-verma.com';
+  const baseUrl = 'https://manishkverma.in';
   const description = item.abstract || item.description || item.title;
   const keywords = item.keywords || [item.title, 'Prof. (Dr.) Manish K. Verma', 'research'];
 

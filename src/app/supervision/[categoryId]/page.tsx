@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'session-chairing': `Chaired ${category.supervision.length} academic conference sessions and research presentations.`,
   };
 
-  const baseUrl = 'https://prof-manish-k-verma.com';
+  const baseUrl = 'https://manishkverma.in';
   const categoryKeywords: Record<string, string[]> = {
     'phd-supervision': ['Ph.D supervision', 'doctoral research', 'sociology', 'supervision', 'Prof. (Dr.) Manish K. Verma'],
     'mphil-supervision': ['M.Phil supervision', 'postgraduate research', 'social research', 'Prof. (Dr.) Manish K. Verma'],

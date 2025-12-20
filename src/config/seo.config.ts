@@ -5,7 +5,7 @@ export const SEO_CONFIG = {
   // Site-wide SEO configuration
   site: {
     name: 'Prof. (Dr.) Manish K. Verma - Academic Portfolio',
-    url: 'https://prof-manish-k-verma.com',
+    url: 'https://manishkverma.in',
     author: 'Prof. (Dr.) Manish K. Verma',
     description: 'Distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change. Ph.D advisor, published researcher, and thought leader.',
     locale: 'en_IN',
@@ -73,7 +73,7 @@ export const SEO_CONFIG = {
     type: 'website',
     locale: 'en_IN',
     siteTitle: 'Prof. (Dr.) Manish K. Verma - Academic Portfolio',
-    imageUrl: 'https://prof-manish-k-verma.com/assets/professor.png',
+    imageUrl: 'https://manishkverma.in/assets/professor.png',
     imageWidth: 1200,
     imageHeight: 630,
   },
@@ -91,8 +91,8 @@ export const SEO_CONFIG = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Prof. (Dr.) Manish K. Verma',
-      url: 'https://prof-manish-k-verma.com',
-      logo: 'https://prof-manish-k-verma.com/assets/logo.png',
+      url: 'https://manishkverma.in',
+      logo: 'https://manishkverma.in/assets/logo.png',
       sameAs: [
         'https://orcid.org/0000-0000-0000-0000', // Add actual ORCID
         'https://scholar.google.com/citations?user=YOUR_ID',
@@ -144,7 +144,7 @@ export const SEO_CONFIG = {
 
   // Sitemap Configuration
   sitemap: {
-    baseUrl: 'https://prof-manish-k-verma.com',
+    baseUrl: 'https://manishkverma.in',
     routes: [
       { path: '/', priority: 1.0, changefreq: 'weekly' },
       { path: '/publications/books-published', priority: 0.9, changefreq: 'monthly' },
@@ -255,13 +255,13 @@ export const RICH_SNIPPETS = {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://prof-manish-k-verma.com',
+        item: 'https://manishkverma.in',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Category',
-        item: 'https://prof-manish-k-verma.com/category',
+        item: 'https://manishkverma.in/category',
       },
     ],
   },

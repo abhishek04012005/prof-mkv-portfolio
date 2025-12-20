@@ -42,13 +42,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://prof-manish-k-verma.com",
+    url: "https://manishkverma.in",
     siteName: "Prof. (Dr.) Manish K. Verma - Academic Portfolio",
     title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher",
     description: "Distinguished sociologist with expertise in environmental sociology, sustainable development, and social policy research.",
     images: [
       {
-        url: "https://prof-manish-k-verma.com/assets/professor.png",
+        url: "https://manishkverma.in/assets/professor.png",
         width: 1200,
         height: 630,
         alt: "Prof. (Dr.) Manish K. Verma",
@@ -60,13 +60,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher",
     description: "Distinguished sociologist with expertise in environmental sociology and sustainable development.",
-    images: ["https://prof-manish-k-verma.com/assets/professor.png"],
+    images: ["https://manishkverma.in/assets/professor.png"],
   },
   verification: {
     google: "google-site-verification-code",
   },
   alternates: {
-    canonical: "https://prof-manish-k-verma.com",
+    canonical: "https://manishkverma.in",
   },
 };
 
@@ -82,7 +82,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="x-ua-compatible" content="IE=edge" />
         <meta name="theme-color" content="#000000" />
-        <link rel="canonical" href="https://prof-manish-k-verma.com" />
+        <link rel="canonical" href="https://manishkverma.in" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
@@ -103,7 +103,7 @@ export default function RootLayout({
                 name: "Babasaheb Bhimrao Ambedkar University",
                 url: "https://www.bbau.ac.in",
               },
-              email: "contact@prof-manish-k-verma.com",
+              email: "contact@manishkverma.in",
               knowsAbout: [
                 "Environmental Sociology",
                 "Sustainable Development",
@@ -111,7 +111,7 @@ export default function RootLayout({
                 "Rural Sociology",
                 "Development Studies",
               ],
-              url: "https://prof-manish-k-verma.com",
+              url: "https://manishkverma.in",
               sameAs: [
                 "https://orcid.org",
                 "https://scholar.google.com",

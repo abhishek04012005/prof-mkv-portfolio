@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const baseUrl = 'https://prof-manish-k-verma.com';
+  const baseUrl = 'https://manishkverma.in';
   const itemName = (item as any).studentName || (item as any).name || (item as any).title || 'Supervision Item';
   const researchArea = (item as any).researchArea || (item as any).keywords?.join(', ') || '';
   
