@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const categoryNames: Record<string, string> = {
-    'phd-supervision': 'PhD Student Supervision by Prof. (Dr.) Manish K. Verma',
-    'mphil-supervision': 'MPhil Student Supervision by Prof. (Dr.) Manish K. Verma',
+    'phd-supervision': 'Ph.D Student Supervision by Prof. (Dr.) Manish K. Verma',
+    'mphil-supervision': 'M.Phil Student Supervision by Prof. (Dr.) Manish K. Verma',
     'pg-dissertation-supervision': 'Postgraduate Dissertation Supervision by Prof. (Dr.) Manish K. Verma',
     'pg-professional-development': 'Postgraduate Professional Development Programs',
     'organizing-roles': 'Academic and Professional Organizing Roles',
@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const categoryDescriptions: Record<string, string> = {
-    'phd-supervision': `Prof. (Dr.) Manish K. Verma has supervised ${category.supervision.length} PhD students on research topics including sociology, environment, and sustainable development.`,
-    'mphil-supervision': `Prof. (Dr.) Manish K. Verma has supervised ${category.supervision.length} MPhil students in advanced social research and academic studies.`,
+    'phd-supervision': `Prof. (Dr.) Manish K. Verma has supervised ${category.supervision.length} Ph.D students on research topics including sociology, environment, and sustainable development.`,
+    'mphil-supervision': `Prof. (Dr.) Manish K. Verma has supervised ${category.supervision.length} M.Phil students in advanced social research and academic studies.`,
     'pg-dissertation-supervision': `Supervised ${category.supervision.length} postgraduate dissertations across various social science disciplines.`,
     'pg-professional-development': `Facilitated professional development programs for ${category.supervision.length} postgraduate students and early-career researchers.`,
     'organizing-roles': `Prof. (Dr.) Manish K. Verma has held ${category.supervision.length} organizational and academic leadership positions.`,
@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const baseUrl = 'https://prof-manish-k-verma.com';
   const categoryKeywords: Record<string, string[]> = {
-    'phd-supervision': ['PhD supervision', 'doctoral research', 'sociology', 'supervision', 'Prof. (Dr.) Manish K. Verma'],
-    'mphil-supervision': ['MPhil supervision', 'postgraduate research', 'social research', 'Prof. (Dr.) Manish K. Verma'],
+    'phd-supervision': ['Ph.D supervision', 'doctoral research', 'sociology', 'supervision', 'Prof. (Dr.) Manish K. Verma'],
+    'mphil-supervision': ['M.Phil supervision', 'postgraduate research', 'social research', 'Prof. (Dr.) Manish K. Verma'],
     'pg-dissertation-supervision': ['dissertation supervision', 'postgraduate', 'research mentorship', 'Prof. (Dr.) Manish K. Verma'],
     'pg-professional-development': ['professional development', 'postgraduate training', 'academic development', 'Prof. (Dr.) Manish K. Verma'],
     'organizing-roles': ['academic leadership', 'organizing roles', 'professional roles', 'Prof. (Dr.) Manish K. Verma'],

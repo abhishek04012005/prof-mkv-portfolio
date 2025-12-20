@@ -4872,7 +4872,7 @@ export const eventsData: EventCategory[] = [
         "audience": "Pre-Ph.D. participants; Academics; Researchers",
         "keywords": [
           "Research Methodology",
-          "Pre-PhD",
+          "Pre-Ph.D",
           "Marathwada",
           "Invited Lecture"
         ],
@@ -6389,7 +6389,7 @@ export const eventsData: EventCategory[] = [
         "location": "Vellore, Tamil Nadu, India",
         "organized_by": "Vellore Institute of Technology (VIT) in collaboration with Indian Sociological Society (ISS)",
         "role": "Collaborator",
-        "audience": "Early-career researchers; PhD scholars; Postgraduate students",
+        "audience": "Early-career researchers; Ph.D scholars; Postgraduate students",
         "keywords": [
           "Young Researchers",
           "Workshop",
@@ -6451,7 +6451,7 @@ export const eventsData: EventCategory[] = [
         "location": "Guwahati, Assam, India",
         "organized_by": "IIT Guwahati in collaboration with Indian Sociological Society (ISS)",
         "role": "Collaborator",
-        "audience": "Early-career researchers; PhD scholars; Postgraduate students",
+        "audience": "Early-career researchers; Ph.D scholars; Postgraduate students",
         "keywords": [
           "Young Researchers",
           "Workshop",

@@ -53,8 +53,8 @@ export default function Navbar() {
     {
       label: 'Supervision',
       dropdown: [
-        { label: 'PhD Supervision', href: '/supervision/phd-supervision' },
-        { label: 'MPhil Supervision', href: '/supervision/mphil-supervision' },
+        { label: 'Ph.D Supervision', href: '/supervision/phd-supervision' },
+        { label: 'M.Phil Supervision', href: '/supervision/mphil-supervision' },
         { label: 'Post Doctorate (PDF)', href: '/supervision/post-doctorate-supervision' },
       ],
     },

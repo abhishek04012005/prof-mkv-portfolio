@@ -39,9 +39,9 @@ export interface SupervisionCategory {
 export const supervisionData: SupervisionCategory[] = [
   {
     "id": "phd-supervision",
-    "title": "PhD Supervision",
+    "title": "Ph.D Supervision",
     "icon": "SchoolOutlined",
-    "description": "PhD students supervised and mentored; degrees awarded",
+    "description": "Ph.D students supervised and mentored; degrees awarded",
     "supervision": [
       {
         "id": "manisha-women-ageing-health-chapra-bihar-2025",
@@ -181,9 +181,9 @@ export const supervisionData: SupervisionCategory[] = [
     ]
   }, {
   "id": "mphil-supervision",
-  "title": "MPhil Supervision",
+  "title": "M.Phil Supervision",
   "icon": "AutoStoriesOutlined",
-  "description": "MPhil students supervised and guided; degrees awarded (extracted from provided document)",
+  "description": "M.Phil students supervised and guided; degrees awarded (extracted from provided document)",
   "supervision": [
     {
       "id": "pooja-tripathi-urbanization-deforestation-society-2022",
@@ -293,9 +293,9 @@ export const supervisionData: SupervisionCategory[] = [
   ]
 }, {
   "id": "post-doctorate-supervision",
-  "title": "Post Doctrate (PDF)",
+  "title": "PDF",
   "icon": "School",
-  "description": "Postgraduate and post‑doctoral dissertations supervised and awarded (extracted from the provided document). Fields added where useful: researchArea, department, status, notes.",
+  "description": "PDF supervised and awarded (extracted from the provided document). Fields added where useful: researchArea, department, status, notes.",
   "supervision": [
     {
       "id": "ishdeep-kaur-bhandari-identity-exclusion-third-gender-covid19-2024",

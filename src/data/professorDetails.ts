@@ -382,7 +382,7 @@ export const professorDetails: ProfessorDetailsType = {
         },
         {
             category: 'Research & Mentorship',
-            skills: ['PhD Supervision', 'Postgraduate Teaching', 'Research Projects', 'Publication'],
+            skills: ['Ph.D Supervision', 'Postgraduate Teaching', 'Research Projects', 'Publication'],
         },
     ],
 

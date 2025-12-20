@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Prof. (Dr.) Manish K. Verma | Sociology Researcher, Academic Excellence",
-  description: "Explore the academic portfolio of Prof. (Dr.) Manish K. Verma - distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change. PhD advisor, published researcher, and thought leader.",
+  description: "Explore the academic portfolio of Prof. (Dr.) Manish K. Verma - distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change. Ph.D advisor, published researcher, and thought leader.",
   keywords: [
     "Prof. (Dr.) Manish K. Verma",
     "Sociology",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Research",
     "Academia",
     "Publications",
-    "PhD Supervision",
+    "Ph.D Supervision",
     "Social Justice",
     "Policy Research",
   ],

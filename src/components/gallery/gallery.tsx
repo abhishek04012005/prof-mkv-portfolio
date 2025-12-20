@@ -32,8 +32,8 @@ export default function Gallery() {
     {
       id: '3',
       src: '/assets/gallery/3.jpeg',
-      alt: 'PhD student graduation celebration',
-      title: 'PhD Graduation Ceremony',
+      alt: 'Ph.D student graduation celebration',
+      title: 'Ph.D Graduation Ceremony',
     },
     {
       id: '4',

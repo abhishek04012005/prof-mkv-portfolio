@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Research",
     "Academic Excellence",
     "Publications",
-    "PhD Supervision",
+    "Ph.D Supervision",
     "Social Justice",
     "Policy Research",
   ],

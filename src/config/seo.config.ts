@@ -7,7 +7,7 @@ export const SEO_CONFIG = {
     name: 'Prof. (Dr.) Manish K. Verma - Academic Portfolio',
     url: 'https://prof-manish-k-verma.com',
     author: 'Prof. (Dr.) Manish K. Verma',
-    description: 'Distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change. PhD advisor, published researcher, and thought leader.',
+    description: 'Distinguished sociologist with 25+ years of research in environmental sociology, sustainable development, and social change. Ph.D advisor, published researcher, and thought leader.',
     locale: 'en_IN',
     language: 'en',
   },
@@ -23,7 +23,7 @@ export const SEO_CONFIG = {
       'Academic Leadership',
     ],
     secondary: [
-      'PhD Supervision',
+      'Ph.D Supervision',
       'Research Publications',
       'Social Justice',
       'Policy Research',
@@ -49,9 +49,9 @@ export const SEO_CONFIG = {
       schema: 'ResearchProject',
     },
     supervision: {
-      title: 'PhD & Student Supervision | Prof. (Dr.) Manish K. Verma',
-      description: 'Details about PhD students supervised, dissertation guidance, and academic mentoring by Prof. (Dr.) Manish K. Verma.',
-      keywords: ['supervision', 'PhD students', 'academic mentoring', 'dissertation', 'Prof. (Dr.) Manish K. Verma'],
+      title: 'Ph.D & Student Supervision | Prof. (Dr.) Manish K. Verma',
+      description: 'Details about Ph.D students supervised, dissertation guidance, and academic mentoring by Prof. (Dr.) Manish K. Verma.',
+      keywords: ['supervision', 'Ph.D students', 'academic mentoring', 'dissertation', 'Prof. (Dr.) Manish K. Verma'],
       schema: 'EducationalOccupationalCredential',
     },
     events: {
