@@ -293,9 +293,9 @@ export const supervisionData: SupervisionCategory[] = [
   ]
 }, {
   "id": "post-doctorate-supervision",
-  "title": "PDF",
+  "title": "Postdoctoral Fellowship",
   "icon": "School",
-  "description": "PDF supervised and awarded (extracted from the provided document). Fields added where useful: researchArea, department, status, notes.",
+  "description": "Postdoctoral Fellowship supervised and awarded (extracted from the provided document). Fields added where useful: researchArea, department, status, notes.",
   "supervision": [
     {
       "id": "ishdeep-kaur-bhandari-identity-exclusion-third-gender-covid19-2024",

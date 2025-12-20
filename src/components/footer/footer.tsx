@@ -67,7 +67,7 @@ export default function Footer() {
       links: [
         { label: 'Ph.D Supervision', href: '/supervision/phd-supervision' },
         { label: 'M.Phil Supervision', href: '/supervision/mphil-supervision' },
-        { label: 'Post Doctorate (PDF)', href: '/supervision/post-doctorate-supervision' },
+        { label: 'Post Doctorate (Postdoctoral Fellowship)', href: '/supervision/post-doctorate-supervision' },
       ],
     },
     {
