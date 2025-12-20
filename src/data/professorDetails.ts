@@ -196,7 +196,7 @@ export const professorDetails: ProfessorDetailsType = {
         designation: 'Dean, Professor & Head, Department of Sociology',
         department: 'Department of Sociology',
         university: 'Babasaheb Bhimrao Ambedkar University',
-        email: 'contact@manishkverma.in',
+        email: 'mkvbbau@gmail.com',
         phone: '+91-9198277999',
         whatsapp: '+91-9198277999',
     },
