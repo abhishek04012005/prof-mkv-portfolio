@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: space-between;
   height: 70px;
+
 }
 
 /* ============================================
@@ -433,6 +434,8 @@
    ============================================ */
 
 @media (max-width: 767px) {
+
+
   .container {
     height: 64px;
     padding: 0 1rem;
@@ -496,6 +499,7 @@
 }
 
 @media (min-width: 1024px) and (max-width: 1399px) {
+
   .navLink,
   .navButton {
     padding: 0.6rem 0.9rem;

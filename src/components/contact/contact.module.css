@@ -1503,6 +1503,7 @@
 @media (max-width: 640px) {
   .contact {
     padding: 3rem 1rem;
+    padding-top: 6rem;
   }
 
   .bgDecor1,

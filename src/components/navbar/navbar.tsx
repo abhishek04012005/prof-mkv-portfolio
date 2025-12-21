@@ -235,9 +235,8 @@ export default function Navbar() {
 
           <div className={styles.mobileActions}>
             <a
-              href={professorDetails.resources.cv}
+              href="/contact"
               className={styles.mobileContactBtn}
-              download
             >
               Contact Me
             </a>
